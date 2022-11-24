@@ -1,0 +1,8 @@
+require 'plugins.configs.decay'
+require 'plugins.configs.nvim-tree'
+require 'plugins.configs.telescope'
+require 'plugins.configs.treesitter'
+require 'plugins.configs.colorizer'
+require 'plugins.configs.lualine'
+require 'plugins.configs.autopairs'
+require 'plugins.configs.mason'
