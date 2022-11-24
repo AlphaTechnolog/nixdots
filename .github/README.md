@@ -39,8 +39,11 @@ mv /mnt/etc/nixos/hardware-configuration.nix /mnt/etc/nixos/hosts/ultra
 # make sure you're in this path
 cd /mnt/etc/nixos
 
+# remove .git to avoid some issues with nixos-rebuild
+rm -rf ./.git
+
 # install it!
-nixos-install --flake .#ultra
+nixos-install --flake '.#ultra'
 ```
 
 - Reboot, login as root, and change the password for your user using `passwd` (by default, it's alpha)
@@ -51,12 +54,19 @@ nixos-install --flake .#ultra
 sudo chown -R $USER /etc/nixos
 ```
 
-# Enjoy
+# Some extra-things to-do.
+
+There is just one extra thing to do if you want to get gtk
+working properly (this would be managed by nix later lol).
+
+You have to install the [decay theme](https://github.com/decaycs/decay-gtk)
+
+## Enjoy
 
 Now, you're done, remember that this is in work in progress so, some
 things could stop working...
 
-# Thanks to
+## Thanks to
 
 This good people who helped me when learning nix-related stuff! really, thanks!
 
