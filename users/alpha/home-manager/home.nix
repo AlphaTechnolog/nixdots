@@ -2,6 +2,7 @@
 
 let
   run = import ./bin/run.nix { inherit pkgs; };
+  decay-vscode = import ./programs/vscode-extensions.nix { inherit pkgs; };
 in
 
 {
@@ -103,21 +104,9 @@ in
     maim
     xfce.thunar
     neovim-nightly
-	dconf
+    dconf
+    decay-vscode
     run # my own script :)
-    # vscode
-    (vscode-with-extensions.override {
-      vscodeExtensions = with vscode-extensions; [
-        bbenoist.nix
-      ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-        {
-          name = "decay";
-          publisher = "decaycs";
-          version = "1.0.4";
-          sha256 = "sha256-ZxiTdMkl7LtoomGdVFCIKUGLpgwk7Nb4g9EwS842wp4=";
-        }
-      ];
-    })
     # more fonts
     (pkgs.nerdfonts.override {
       fonts = ["Iosevka"];
