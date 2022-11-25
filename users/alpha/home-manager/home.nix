@@ -3,6 +3,7 @@
 let
   run = import ./bin/run.nix { inherit pkgs; };
   decay-vscode = import ./programs/vscode-extensions.nix { inherit pkgs; };
+  nfonts = import ./fonts/nerdfonts.nix { inherit pkgs; };
 in
 
 {
@@ -107,10 +108,7 @@ in
     dconf
     decay-vscode
     run # my own script :)
-    # more fonts
-    (pkgs.nerdfonts.override {
-      fonts = ["Iosevka"];
-    })
+    nfonts
   ];
 
   # shell
