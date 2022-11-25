@@ -61,6 +61,16 @@ in
     }))
   ];
 
+  # bat (cat clone)
+  programs.bat = {
+    enable = true;
+    config = {
+      paging = "never";
+      style = "plain";
+      theme = "base16";
+    };
+  };
+
   # terminal (kitty)
   programs.kitty = {
     enable = true;
@@ -120,6 +130,7 @@ in
       tree = "exa --tree";
       vim = "nvim";
       vi = "nvim";
+      cat = "bat";
     };
     zplug = {
       enable = true;
