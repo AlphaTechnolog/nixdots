@@ -151,7 +151,7 @@ in
     enable = true;
     settings = {
       add_newline = false;
-      format = "[ ](fg:cyan)[|](fg:black) ";
+      format = "[ ](fg:blue)[|](fg:black) ";
     };
   };
 
