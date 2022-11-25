@@ -105,10 +105,11 @@ in
     spotify
     exa
     gcc
-    nodejs
     gh
     python3
     git
+    obs-studio
+    vlc
     postman
     mongodb-compass
     picom
