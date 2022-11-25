@@ -25,6 +25,7 @@ end
 local function save_keybinds ()
 	keymap('n', '<C-s>', ':w!<cr>')
 	keymap('n', '<C-q>', ':wq!<cr>')
+  keymap('n', '<space>fs', ':w!<cr>')
 end
 
 local function buffer_keybinds ()
