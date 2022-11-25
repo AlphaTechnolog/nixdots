@@ -56,8 +56,11 @@ local function mkdock (s)
 			create_callback = function (self, c)
 				local function extract_icon ()
 					if c.class then
+            -- exceptions
 						if string.lower(c.class) == 'st' then
 							return theme:get_icon_path(string.lower(c.class))
+            elseif string.lower(c.class) == 'telegram-desktop' or string.lower(c.class) == 'telegramdesktop' then
+              return theme:get_icon_path('telegram')
 						end
 					end
 
