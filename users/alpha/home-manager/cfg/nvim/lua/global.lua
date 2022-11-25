@@ -11,4 +11,5 @@ opt.clipboard = 'unnamedplus'
 opt.laststatus = 3
 opt.cursorline = true
 opt.wrap = true
+opt.title = true
 opt.guifont = { "BlexMono Nerd Font", ":h8" }

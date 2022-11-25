@@ -100,7 +100,7 @@ in
 
   # import more packages to home-manager ones.
   home.packages = with pkgs; [
-  	xclip
+    xclip
     discord
     spotify
     exa
@@ -118,8 +118,9 @@ in
     neovim-nightly
     dconf
     decay-vscode
-    run # my own script :)
     nfonts
+    tdesktop
+    run # my own script :)
   ];
 
   # shell
