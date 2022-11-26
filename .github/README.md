@@ -69,13 +69,6 @@ doas nixos-rebuild switch --flake '.#ultra'
 
 But it throws errors with git that i can't solve for now, if you remove the `.git` folder it works fine :/
 
-# Some extra-things to-do.
-
-There is just one extra thing to do if you want to get gtk
-working properly (this would be managed by nix later lol).
-
-You have to install the [decay theme](https://github.com/decaycs/decay-gtk)
-
 ## Enjoy
 
 Now, you're done, remember that this is in work in progress so, some
