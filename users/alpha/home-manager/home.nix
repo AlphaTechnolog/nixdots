@@ -146,7 +146,6 @@ in
     gcc
     gh
     python3
-    git
     obs-studio
     vlc
     postman
