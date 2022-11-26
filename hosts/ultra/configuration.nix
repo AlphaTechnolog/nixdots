@@ -5,7 +5,9 @@
 
 { config, pkgs, lib, ... }:
 
-{
+let
+  decayce-gtk = with pkgs; callPackage ../../pkgs/decayce-gtk.nix { };
+in {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -105,6 +107,7 @@
     playerctl
     docker-compose
     mongodb
+    decayce-gtk
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
