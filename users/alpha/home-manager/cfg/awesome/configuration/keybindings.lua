@@ -11,6 +11,8 @@ local function set_keybindings ()
                   {description = "quit awesome", group = "awesome"}),
         awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
                   {description = "open a terminal", group = "launcher"}),
+        awful.key({modkey}, "d", function () awesome.emit_signal("dashboard::toggle") end,
+                  {description = "open dashboard", group = "launcher"}),
         awful.key({ modkey }, "p", function() menubar.show() end,
                   {description = "show the menubar", group = "launcher"}),
         awful.key({ modkey, "Shift" }, "Return", function () awful.spawn("rofi -show drun") end,

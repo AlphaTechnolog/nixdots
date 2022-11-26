@@ -46,7 +46,11 @@ local function sbutton (cb)
 	end)
 end
 
-local dashboard = itext('舘')
+local dashboard = itext('')
+
+dashboard:add_button(sbutton(function ()
+  awesome.emit_signal('dashboard::toggle')
+end))
 
 layout:add(dashboard)
 
