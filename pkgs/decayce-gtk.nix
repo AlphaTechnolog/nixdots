@@ -30,6 +30,6 @@ stdenv.mkDerivation rec {
     homepage = "https://github.com/decaycs/decay-gtk";
     license = lib.licenses.gpl3;
     platforms = lib.platforms.unix;
-    maintainers = [lib.maintainers.sioodmy];
+    maintainers = [lib.maintainers.decaycs];
   };
 }
