@@ -59,7 +59,7 @@ end
 
 -- define servers to load
 local servers = {
-	-- 'tsserver',
+	'tsserver',
 	'pyright',
 	'sumneko_lua'
 }
