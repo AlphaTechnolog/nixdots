@@ -69,6 +69,12 @@ doas nixos-rebuild switch --flake '.#ultra'
 
 But it throws errors with git that i can't solve for now, if you remove the `.git` folder it works fine :/
 
+## Extra fonts
+
+> This fonts will be managed by nix in the next commits, this is a temporary step.
+
+Install [Google Sans](https://www.cufonfonts.com/font/google-sans) inside `~/.local/share/fonts` and run `fc-cache -vf`
+
 ## Enjoy
 
 Now, you're done, remember that this is in work in progress so, some
