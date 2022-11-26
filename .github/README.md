@@ -54,21 +54,6 @@ nixos-install --flake '.#ultra'
 doas chown -R $USER /etc/nixos
 ```
 
-# Known Issues
-
-There is some misconfiguration in this repo that i can't solve for now, i just don't found the bug :/
-if you know what can i be doing bad, please, open an issue and tell me! i'll be very grateful.
-
-The issue is related with nixos-rebuild, after the `nixos-install`, you would need to use `nixos-rebuild`
-to rebuild the system when changing some thing in this flake, so the right command to do that should be this:
-
-```sh
-cd /etc/nixos
-doas nixos-rebuild switch --flake '.#ultra'
-```
-
-But it throws errors with git that i can't solve for now, if you remove the `.git` folder it works fine :/
-
 ## Extra fonts
 
 > This fonts will be managed by nix in the next commits, this is a temporary step.
