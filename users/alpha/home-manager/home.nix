@@ -3,6 +3,7 @@
 let
   run = import ./bin/run.nix { inherit pkgs; };
   decay-vscode = import ./programs/vscode-extensions.nix { inherit pkgs; };
+  decayce-gtk = with pkgs; callPackage ../../../pkgs/decayce-gtk.nix { };
   nfonts = import ./fonts/nerdfonts.nix { inherit pkgs; };
 in
 
@@ -90,6 +91,35 @@ in
     };
   };
 
+  # shell
+  programs.zsh = {
+    enable = true;
+    shellAliases = {
+      ls = "exa --icons";
+      la = "ls -la";
+      tree = "exa --tree";
+      vim = "nvim";
+      vi = "nvim";
+      cat = "bat";
+    };
+    zplug = {
+      enable = true;
+      plugins = [
+        { name = "zsh-users/zsh-autosuggestions"; }
+        { name = "zsh-users/zsh-syntax-highlighting"; }
+      ];
+    };
+  };
+
+  # shell prompt
+  programs.starship = {
+    enable = true;
+    settings = {
+      add_newline = false;
+      format = "[ ](fg:blue)[|](fg:black) ";
+    };
+  };
+
   # enable unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -97,6 +127,11 @@ in
   home.file = with pkgs; {
     ".icons/default".source = "${phinger-cursors}/share/icons/phinger-cursors";
   };
+
+  # add support for .local/bin
+  home.sessionPath = [
+    "$HOME/.local/bin"
+  ];
 
   # import more packages to home-manager ones.
   home.packages = with pkgs; [
@@ -120,42 +155,9 @@ in
     decay-vscode
     nfonts
     tdesktop
+    decayce-gtk # gtk theme :P
     run # my own script :)
   ];
-
-  # shell
-  programs.zsh = {
-    enable = true;
-    shellAliases = {
-      ls = "exa --icons";
-      la = "ls -la";
-      tree = "exa --tree";
-      vim = "nvim";
-      vi = "nvim";
-      cat = "bat";
-    };
-    zplug = {
-      enable = true;
-      plugins = [
-        { name = "zsh-users/zsh-autosuggestions"; }
-        { name = "zsh-users/zsh-syntax-highlighting"; }
-      ];
-    };
-  };
-
-  # add support for .local/bin
-  home.sessionPath = [
-    "$HOME/.local/bin"
-  ];
-
-  # shell prompt
-  programs.starship = {
-    enable = true;
-    settings = {
-      add_newline = false;
-      format = "[ ](fg:blue)[|](fg:black) ";
-    };
-  };
 
   # import configuration files
   xdg.configFile.awesome.source = ./cfg/awesome;
