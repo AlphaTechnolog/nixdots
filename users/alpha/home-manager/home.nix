@@ -105,6 +105,7 @@ in
     zplug = {
       enable = true;
       plugins = [
+        { name = "olets/zsh-window-title"; }
         { name = "zsh-users/zsh-autosuggestions"; }
         { name = "zsh-users/zsh-syntax-highlighting"; }
       ];
@@ -116,7 +117,10 @@ in
     enable = true;
     settings = {
       add_newline = false;
-      format = "[ ](fg:blue)[|](fg:black) ";
+      format = "$cmd_duration$git_branch$git_status[ ](fg:blue)[|](fg:black) ";
+      git_branch = {
+        format = "via [$symbol$branch(:$remote_branch)]($style) ";
+      };
     };
   };
 
