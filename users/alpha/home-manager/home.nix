@@ -158,6 +158,7 @@ in
     decay-vscode
     nfonts
     tdesktop
+    redshift
     decayce-gtk # gtk theme :P
     run # my own script :)
   ];

@@ -12,5 +12,11 @@ vscode-with-extensions.override {
       version = "1.0.4";
       sha256 = "sha256-ZxiTdMkl7LtoomGdVFCIKUGLpgwk7Nb4g9EwS842wp4=";
     }
+    {
+      name = "material-icon-theme";
+      publisher = "pkief";
+      version = "4.22.0";
+      sha256 = "sha256-U9P9BcuZi+SUcvTg/fC2SkjGRD4CvgJEc1i+Ft2OOUc=";
+    }
   ];
 }
