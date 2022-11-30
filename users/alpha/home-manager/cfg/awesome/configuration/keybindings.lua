@@ -1,11 +1,8 @@
 local awful = require "awful"
-local hotkeys_popup = require "awful.hotkeys_popup"
 local bling = require "modules.bling"
 
 local function set_keybindings ()
     awful.keyboard.append_global_keybindings({
-        awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
-                  {description="show help", group="awesome"}),
         awful.key({ modkey, "Control" }, "r", awesome.restart,
                   {description = "reload awesome", group = "awesome"}),
         awful.key({ modkey, "Shift"   }, "q", awesome.quit,
@@ -16,8 +13,8 @@ local function set_keybindings ()
                   {description = "open dashboard", group = "launcher"}),
         awful.key({ modkey }, "p", function() menubar.show() end,
                   {description = "show the menubar", group = "launcher"}),
-        awful.key({ modkey, "Shift" }, "Return", function () awful.spawn("rofi -show drun") end,
-                  {description = "Open rofi", group = "launcher"}),
+        awful.key({ modkey, "Shift" }, "Return", function () LauncherObject:toggle() end,
+                  {description = "Open apps launcher", group = "launcher"}),
     })
 
     -- Tags related keybindings
@@ -59,6 +56,13 @@ local function set_keybindings ()
         description = "Iter through tabbed clients",
         group = "client"
       }),
+    }
+
+    -- window switcher
+    awful.keyboard.append_global_keybindings {
+      awful.key({ Mod1 }, "Tab", function ()
+        awesome.emit_signal("bling::window_switcher::turn_on")
+      end, { description = "Open window switcher", group = "client" })
     }
 
     -- Focus related keybindings

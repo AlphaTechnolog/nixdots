@@ -92,6 +92,14 @@ local function mkdock (s)
 				end
 
 				self.update(c)
+
+        -- enable bling's tasklist preview
+        self:connect_signal('mouse::enter', function ()
+          awesome.emit_signal('bling::task_preview::visibility', s, true, c)
+        end)
+        self:connect_signal('mouse::leave', function ()
+          awesome.emit_signal('bling::task_preview::visibility', s, false, c)
+        end)
 			end,
 			update_callback = function (self, c)
 				self.update(c)

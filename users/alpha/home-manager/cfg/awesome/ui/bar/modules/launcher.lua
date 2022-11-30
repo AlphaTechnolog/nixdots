@@ -28,7 +28,7 @@ local transition = helpers.add_hover(launcher, beautiful.bg_normal, beautiful.bl
 
 launcher:add_button(awful.button({}, 1, function ()
 	transition.off()
-	awful.spawn('rofi -show drun')
+  LauncherObject:toggle()
 end))
 
 return wibox.widget {

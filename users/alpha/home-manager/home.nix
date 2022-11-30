@@ -164,7 +164,7 @@ in
   ];
 
   # import configuration files
-  xdg.configFile.awesome.source = ./cfg/awesome;
+  # xdg.configFile.awesome.source = ./cfg/awesome;
   xdg.configFile.rofi.source = ./cfg/rofi;
   xdg.configFile.nvim.source = ./cfg/nvim;
   xdg.configFile."BetterDiscord/themes".source = ./cfg/bd-themes;

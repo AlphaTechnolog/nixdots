@@ -4,3 +4,7 @@ require 'ui.menu'
 require 'ui.bar'
 require 'ui.titlebars'
 require 'ui.dashboard'
+require 'ui.taskpreview'
+require 'ui.tagpreview'
+require "ui.windows_switcher"
+require 'ui.flash_focus'

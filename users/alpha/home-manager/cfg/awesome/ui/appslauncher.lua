@@ -1,0 +1,105 @@
+local beautiful = require "beautiful"
+local awful = require "awful"
+local helpers = require "helpers"
+local gears = require "gears"
+local xresources = require "beautiful.xresources"
+local bling = require "modules.bling"
+
+local dpi = xresources.apply_dpi
+
+return bling.widget.app_launcher {
+  terminal = terminal,
+  favorites = {
+    "kitty",
+    "firefox",
+    "thunar",
+    "nvim",
+    "code",
+  },
+  search_commands = true,
+  skip_empty_icons = true,
+  sort_alphabetically = true,
+  reverse_sort_alphabetically = false,
+  select_before_spawn = false,
+  hide_on_left_clicked_outside = true,
+  hide_on_right_clicked_outside = false,
+  hide_on_launch = true,
+  try_to_keep_index_after_searching = false,
+  reset_on_hide = true,
+  save_history = true,
+  wrap_page_scrolling = true,
+  wrap_app_scrolling = true,
+
+  default_app_icon_name = "standard.svg",
+  default_app_icon_path = "~/icons/",
+  icon_theme = "application",
+  icon_size = 48,
+
+  type = "normal",
+  show_on_focused_screen = true,
+  screen = awful.screen,
+  placement = awful.placement.centered,
+  shrink_width = true,
+  shrink_height = true,
+  background = beautiful.bg_normal,
+  prompt_shape = gears.shape.rounded_bar,
+  prompt_height = dpi(50),
+  prompt_margins = {
+    left = dpi(40),
+    right = dpi(40),
+    top = dpi(20),
+    bottom = dpi(20),
+  },
+  prompt_paddings = {
+    top = dpi(0),
+    bottom = dpi(0),
+    left = dpi(24),
+    right = dpi(24),
+  },
+  prompt_color = beautiful.bg_lighter,
+  prompt_border_width = dpi(0),
+  prompt_border_color = "#000000",
+  prompt_text_halign = "left",
+  prompt_text_valign = "center",
+  prompt_icon_text_spacing = dpi(10),
+  prompt_show_icon = true,
+  prompt_icon_font = beautiful.nerd_font,
+  prompt_icon_color = beautiful.blue,
+  prompt_icon = "異",
+  prompt_icon_markup = string.format(
+      "<span size='xx-large' foreground='%s'>%s</span>",
+      beautiful.blue, "異"
+  ),
+  prompt_text = " ",
+  prompt_start_text = "manager",
+  prompt_font = beautiful.font_name,
+  prompt_text_color = beautiful.fg_normal,
+  prompt_cursor_color = beautiful.blue,
+
+  apps_per_row = 3,
+  apps_per_column = 3,
+  apps_margin = {left = dpi(40), right = dpi(40), bottom = dpi(30)}, 
+  apps_spacing = dpi(20),
+  
+  expand_apps = true,
+  app_width = dpi(120),
+  app_height = dpi(100),
+  app_shape = helpers.mkroundedrect(),
+  app_normal_color = beautiful.bg_lighter,
+  app_normal_hover_color = beautiful.black,
+  app_selected_color = beautiful.dimblack,
+  app_selected_hover_color = beautiful.light_black,
+  app_content_padding = dpi(30),
+  app_content_spacing = dpi(0),
+  app_show_icon = true,
+  app_icon_halign = "center",
+  app_icon_width = dpi(120),
+  app_icon_height = dpi(110),
+  app_show_name = true,
+  app_name_generic_name_spacing = dpi(0),
+  app_name_halign = "center",
+  app_name_font = beautiful.font_name,
+  app_name_normal_color = beautiful.fg_normal,
+  app_name_selected_color = beautiful.fg_normal,
+  app_show_generic_name = true,
+}
