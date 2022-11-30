@@ -189,4 +189,45 @@ theme.tabbar_color_close = theme.red -- chnges the color of the close button
 theme.tabbar_color_min   = theme.yellow -- chnges the color of the minimize button
 theme.tabbar_color_float = theme.green -- chnges the color of the float button
 
+-- window switcher
+theme.window_switcher_widget_bg = theme.bg_normal              -- The bg color of the widget
+theme.window_switcher_widget_border_width = 0            -- The border width of the widget
+theme.window_switcher_widget_border_radius = 0           -- The border radius of the widget
+theme.window_switcher_widget_border_color = "#ffffff"    -- The border color of the widget
+theme.window_switcher_clients_spacing = 20               -- The space between each client item
+theme.window_switcher_client_icon_horizontal_spacing = 7 -- The space between client icon and text
+theme.window_switcher_client_width = 240                 -- The width of one client widget
+theme.window_switcher_client_height = 310                -- The height of one client widget
+theme.window_switcher_client_margins = 10                -- The margin between the content and the border of the widget
+theme.window_switcher_thumbnail_margins = 10             -- The margin between one client thumbnail and the rest of the widget
+theme.thumbnail_scale = true                            -- If set to true, the thumbnails fit policy will be set to "fit" instead of "auto"
+theme.window_switcher_name_margins = 10                  -- The margin of one clients title to the rest of the widget
+theme.window_switcher_name_valign = "center"             -- How to vertically align one clients title
+theme.window_switcher_name_forced_width = 200            -- The width of one title
+theme.window_switcher_name_font = theme.font              -- The font of all titles
+theme.window_switcher_name_normal_color = theme.fg_normal      -- The color of one title if the client is unfocused
+theme.window_switcher_name_focus_color = theme.blue       -- The color of one title if the client is focused
+theme.window_switcher_icon_valign = "center"             -- How to vertically align the one icon
+theme.window_switcher_icon_width = 20                    -- The width of one icon
+
+-- flash focus
+theme.flash_focus_start_opacity = 0.8
+theme.flash_focus_step = 0.01
+
+-- mstab
+theme.mstab_bar_disable = false        -- disable the tabbar
+theme.mstab_bar_ontop = false          -- whether you want to allow the bar to be ontop of clients
+theme.mstab_dont_resize_slaves = false -- whether the tabbed stack windows should be smaller than the
+                                       -- currently focused stack window (set it to true if you use
+                                       -- transparent terminals. False if you use shadows on solid ones
+theme.mstab_bar_padding = "default"    -- how much padding there should be between clients and your tabbar
+                                       -- by default it will adjust based on your useless gaps.
+                                       -- If you want a custom value. Set it to the number of pixels (int)
+theme.mstab_border_radius = dpi(7)     -- border radius of the tabbar
+theme.mstab_bar_height = 40            -- height of the tabbar
+theme.mstab_tabbar_position = "bottom" -- position of the tabbar (mstab currently does not support left,right)
+theme.mstab_tabbar_style = "modern"    -- style of the tabbar ("default", "boxes" or "modern")
+                                       -- defaults to the tabbar_style so only change if you want a
+                                       -- different style for mstab and tabbed
+
 return theme

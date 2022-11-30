@@ -1,4 +1,5 @@
 require "configuration.theme"
+require "user_likes"
 require "configuration.layouts"
 require "configuration.mousebindings"
 require "configuration.keybindings"

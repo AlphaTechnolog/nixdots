@@ -4,6 +4,7 @@ local awful = require 'awful'
 local beautiful = require 'beautiful'
 local helpers = require 'helpers'
 
+local bling = require 'modules.bling'
 local rubato = require 'modules.rubato'
 
 local function get_taglist (s)
@@ -15,16 +16,16 @@ local function get_taglist (s)
 			layout = wibox.layout.fixed.vertical,
 		},
 		buttons = {
-            awful.button({}, 1, function (t)
-                t:view_only()
-            end),
-            awful.button({}, 4, function (t)
-                awful.tag.viewprev(t.screen)
-            end),
-            awful.button({}, 5, function (t)
-                awful.tag.viewnext(t.screen)
-            end)
-        },
+      awful.button({}, 1, function (t)
+        t:view_only()
+      end),
+      awful.button({}, 4, function (t)
+        awful.tag.viewprev(t.screen)
+      end),
+      awful.button({}, 5, function (t)
+        awful.tag.viewnext(t.screen)
+      end)
+    },
 		widget_template = {
 			{
 				id = 'bg_role',
@@ -66,6 +67,17 @@ local function get_taglist (s)
 				end
 
 				self.update()
+
+        -- enable bling's tagpreview
+        self:connect_signal('mouse::enter', function ()
+          if #tag:clients() > 0 then
+            awesome.emit_signal("bling::tag_preview::update", tag)
+            awesome.emit_signal("bling::tag_preview::visibility", s, true)
+          end
+        end)
+        self:connect_signal("mouse::leave", function ()
+          awesome.emit_signal("bling::tag_preview::visibility", s, false)
+        end)
 			end,
 			update_callback = function (self)
 				self.update()
