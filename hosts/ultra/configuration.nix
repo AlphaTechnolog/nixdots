@@ -106,6 +106,9 @@
     playerctl
     docker-compose
     mongodb
+
+    # utils
+    xorg.xwininfo
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

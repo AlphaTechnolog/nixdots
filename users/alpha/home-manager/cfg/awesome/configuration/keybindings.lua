@@ -1,5 +1,6 @@
 local awful = require "awful"
 local hotkeys_popup = require "awful.hotkeys_popup"
+local bling = require "modules.bling"
 
 local function set_keybindings ()
     awful.keyboard.append_global_keybindings({
@@ -37,6 +38,28 @@ local function set_keybindings ()
             })
         end, { description = 'Center a floating window', group = 'client' })
     })
+
+    -- tabbed
+    awful.keyboard.append_global_keybindings {
+      awful.key({ modkey }, "t", function ()
+        bling.module.tabbed.pick()
+      end, {
+        description = "pick a client and make it a tab of another one",
+        group = "client"
+      }),
+      awful.key({ modkey, "Shift" }, "t", function ()
+        bling.module.tabbed.pop()
+      end, {
+        description = "pop a tabbed client",
+        group = "client"
+      }),
+      awful.key({ modkey }, "i", function ()
+        bling.module.tabbed.iter()
+      end, {
+        description = "Iter through tabbed clients",
+        group = "client"
+      }),
+    }
 
     -- Focus related keybindings
     awful.keyboard.append_global_keybindings({

@@ -162,4 +162,31 @@ theme.tag_preview_widget_margin = dpi(7)
 theme.tooltip_bg = theme.bg_normal
 theme.tooltip_fg = theme.fg_normal
 
+-- tabbed
+
+-- For tabbed only
+theme.tabbed_spawn_in_tab = true  -- whether a new client should spawn into the focused tabbing container
+
+-- For tabbar in general
+theme.tabbar_ontop  = false
+theme.tabbar_radius = dpi(7)                -- border radius of the tabbar
+theme.tabbar_style = "modern"         -- style of the tabbar ("default", "boxes" or "modern")
+theme.tabbar_font = theme.font_name          -- font of the tabbar
+theme.tabbar_size = 40                 -- size of the tabbar
+theme.tabbar_position = "bottom"          -- position of the tabbar
+theme.tabbar_bg_normal = theme.bg_normal     -- background color of the focused client on the tabbar
+theme.tabbar_fg_normal = theme.fg_normal     -- foreground color of the focused client on the tabbar
+theme.tabbar_bg_focus  = theme.bg_lighter    -- background color of unfocused clients on the tabbar
+theme.tabbar_fg_focus  = theme.fg_normal     -- foreground color of unfocused clients on the tabbar
+theme.tabbar_bg_focus_inactive = nil   -- background color of the focused client on the tabbar when inactive
+theme.tabbar_fg_focus_inactive = nil   -- foreground color of the focused client on the tabbar when inactive
+theme.tabbar_bg_normal_inactive = nil  -- background color of unfocused clients on the tabbar when inactive
+theme.tabbar_fg_normal_inactive = nil  -- foreground color of unfocused clients on the tabbar when inactive
+theme.tabbar_disable = false           -- disable the tab bar entirely
+
+-- the following variables are currently only for the "modern" tabbar style
+theme.tabbar_color_close = theme.red -- chnges the color of the close button
+theme.tabbar_color_min   = theme.yellow -- chnges the color of the minimize button
+theme.tabbar_color_float = theme.green -- chnges the color of the float button
+
 return theme
