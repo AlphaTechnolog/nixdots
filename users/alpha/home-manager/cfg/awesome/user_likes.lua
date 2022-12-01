@@ -1,6 +1,6 @@
 local menubar = require "menubar"
 
-terminal = "kitty --single-instance"
+terminal = "wezterm"
 explorer = "thunar"
 browser = "firefox"
 LauncherObject = require "ui.appslauncher"
