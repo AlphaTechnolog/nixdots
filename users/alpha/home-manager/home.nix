@@ -2,12 +2,15 @@
 
 let
   run = import ./bin/run.nix { inherit pkgs; };
-  decay-vscode = import ./programs/vscode-extensions.nix { inherit pkgs; };
   decayce-gtk = with pkgs; callPackage ../../../pkgs/decayce-gtk.nix { };
   nfonts = import ./fonts/nerdfonts.nix { inherit pkgs; };
 in
 
 {
+  imports = [
+    (import ./programs/wezterm { inherit builtins; })
+  ];
+
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "alpha";
@@ -69,25 +72,6 @@ in
       paging = "never";
       style = "plain";
       theme = "base16";
-    };
-  };
-
-  # terminal (kitty)
-  programs.kitty = {
-    enable = true;
-    extraConfig = import ./programs/kitty-theme.nix;
-    settings = {
-      window_padding_width = 30;
-      confirm_os_window_close = 0;
-      cursor_shape = "beam";
-      cursor_beam_thickness = "0.5";
-    };
-    font = {
-      size = 10;
-      name = "BlexMono Nerd Font";
-      package = (pkgs.nerdfonts.override {
-        fonts = ["IBMPlexMono"];
-      });
     };
   };
 
@@ -155,7 +139,7 @@ in
     xfce.thunar
     neovim-nightly
     dconf
-    decay-vscode
+    (import ./programs/vscode { inherit pkgs; })
     nfonts
     tdesktop
     redshift
