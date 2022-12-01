@@ -9,6 +9,7 @@ in
 {
   imports = [
     (import ./programs/wezterm { inherit builtins; })
+    (import ./programs/kitty { inherit pkgs; })
   ];
 
   # Home Manager needs a bit of information about you and the
