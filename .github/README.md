@@ -54,12 +54,6 @@ nixos-install --flake '.#ultra' --impure
 doas chown -R $USER /etc/nixos
 ```
 
-## Extra fonts
-
-> This fonts will be managed by nix in the next commits, this is a temporary step.
-
-Install [Google Sans](https://www.cufonfonts.com/font/google-sans) inside `~/.local/share/fonts` and run `fc-cache -vf`
-
 ## Enjoy
 
 Now, you're done, remember that this is in work in progress so, some
