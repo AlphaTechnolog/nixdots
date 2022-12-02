@@ -13,7 +13,7 @@ local function set_keybindings ()
                   {description = "open dashboard", group = "launcher"}),
         awful.key({ modkey }, "p", function() menubar.show() end,
                   {description = "show the menubar", group = "launcher"}),
-        awful.key({ modkey, "Shift" }, "Return", function () LauncherObject:toggle() end,
+        awful.key({ modkey, "Shift" }, "Return", function () awful.spawn("rofi -show drun") end,
                   {description = "Open apps launcher", group = "launcher"}),
     })
 

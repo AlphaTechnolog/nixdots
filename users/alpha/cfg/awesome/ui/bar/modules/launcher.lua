@@ -25,7 +25,7 @@ local container = wibox.widget {
 helpers.add_hover(container, beautiful.bg_normal, beautiful.black)
 
 container:add_button(awful.button({}, 1, function ()
-  LauncherObject:toggle()
+  awful.spawn("rofi -show drun")
 end))
 
 return wibox.container.margin(
