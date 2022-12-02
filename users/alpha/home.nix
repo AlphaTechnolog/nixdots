@@ -69,7 +69,7 @@ in
   };
 
   # editor (nvim)
-  systemd.user.sessionVariables = { EDITOR = "nvim"; };
+  systemd.user.sessionVariables.EDITOR = "nvim";
 
   # make it nightly
   nixpkgs.overlays = [

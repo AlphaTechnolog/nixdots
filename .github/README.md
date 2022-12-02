@@ -43,7 +43,7 @@ cd /mnt/etc/nixos
 rm -rf ./.git
 
 # install it!
-nixos-install --flake '.#ultra'
+nixos-install --flake '.#ultra' --impure
 ```
 
 - Reboot, login as root, and change the password for your user using `passwd` (by default, it's alpha)
