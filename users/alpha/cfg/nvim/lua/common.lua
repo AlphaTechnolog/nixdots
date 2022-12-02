@@ -1,0 +1,3 @@
+return {
+	italic = true
+}

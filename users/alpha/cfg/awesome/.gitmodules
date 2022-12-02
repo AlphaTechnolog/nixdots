@@ -1,0 +1,6 @@
+[submodule "modules/rubato"]
+	path = modules/rubato
+	url = https://github.com/andOrlando/rubato.git
+[submodule "modules/color"]
+	path = modules/color
+	url = https://github.com/andOrlando/color.git
