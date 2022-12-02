@@ -11,6 +11,7 @@
 
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
     nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
+    nur.url = github:nix-community/NUR;
   };
 
   outputs = { self, nixpkgs, home-manager, nixpkgs-f2k, ... }@inputs:
@@ -37,6 +38,7 @@
         )
         neovim-nightly.overlay
         nixpkgs-f2k.overlays.default
+        nur.overlay
       ];
     in {
       nixosConfigurations = {

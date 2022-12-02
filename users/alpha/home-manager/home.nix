@@ -1,15 +1,28 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   run = import ./bin/run.nix { inherit pkgs; };
   decayce-gtk = with pkgs; callPackage ../../../pkgs/decayce-gtk.nix { };
+  vscode-custom = with pkgs; callPackage ./programs/vscode { inherit pkgs; };
   nfonts = import ./fonts/nerdfonts.nix { inherit pkgs; };
+
+  # integrates nur within Home-Manager
+  nur = import (builtins.fetchTarball {
+    url = "https://github.com/nix-community/NUR/archive/master.tar.gz";
+    sha256 = "0z6w28kcsd3q31mgk67a7izn6zl07scsc8xvw5c6i35mkx0qyl43";
+  }) { inherit pkgs; };
+
+  colors = import ./theme/colors.nix {};
+  base16-theme = import ./theme/base16.nix {};
 in
 
 {
-  imports = [
+  theme.base16.colors = base16-theme;
+
+  imports = lib.attrValues nur.repos.rycee.hmModules ++ [
     (import ./programs/wezterm { inherit builtins; })
     (import ./programs/kitty { inherit pkgs; })
+    (import ./programs/firefox { inherit pkgs config nur colors; })
   ];
 
   # Home Manager needs a bit of information about you and the
@@ -33,9 +46,8 @@ in
   # font-config
   fonts.fontconfig.enable = true;
 
-  # some packages
+  # rofi
   programs.rofi.enable = true;
-  programs.firefox.enable = true;
 
   # services
   services.playerctld.enable = true;
@@ -137,10 +149,11 @@ in
     mongodb-compass
     picom
     maim
+    networkmanagerapplet
     xfce.thunar
     neovim-nightly
     dconf
-    (import ./programs/vscode { inherit pkgs; })
+    vscode-custom
     nfonts
     tdesktop
     redshift
@@ -149,7 +162,7 @@ in
   ];
 
   # import configuration files
-  xdg.configFile.awesome.source = ./cfg/awesome;
+  # xdg.configFile.awesome.source = ./cfg/awesome;
   xdg.configFile.rofi.source = ./cfg/rofi;
   xdg.configFile.nvim.source = ./cfg/nvim;
   xdg.configFile."BetterDiscord/themes".source = ./cfg/bd-themes;
