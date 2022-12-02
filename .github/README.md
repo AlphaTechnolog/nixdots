@@ -2,9 +2,6 @@
 
 This repo contains my dotfiles for a flakes-based WIP nixos-setup.
 
-It's WIP (work in progress) because there are many things that should be managed
-by nix itself, like some fonts lol
-
 ![banner](./assets/banner.png)
 
 ## Installation
