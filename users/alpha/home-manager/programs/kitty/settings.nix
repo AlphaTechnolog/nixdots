@@ -29,7 +29,7 @@ color14 #98d3ee
 color7  #cbced3
 color15 #d0d3d8
 # Cursor
-cursor #86aaec
+cursor #cbced3
 cursor_text_color #a5b6cf
 # Selection highlight
 selection_foreground #a5b6cf
