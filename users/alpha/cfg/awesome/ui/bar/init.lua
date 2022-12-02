@@ -6,6 +6,7 @@ local sep = require("ui.bar.modules.sep")
 
 local launcher = require("ui.bar.modules.launcher")
 local workspaces = require("ui.bar.modules.workspaces")
+local stats = require("ui.bar.modules.stats")
 local dock = require("ui.bar.modules.dock")
 local dashboard_toggler = require("ui.bar.modules.dashboard_toggler")
 local clock = require("ui.bar.modules.clock")
@@ -32,6 +33,8 @@ screen.connect_signal("request::desktop_decoration", function (s)
       {
         launcher,
         workspaces(s),
+        sep,
+        stats,
         spacing = 4,
         layout = wibox.layout.fixed.horizontal,
       },
