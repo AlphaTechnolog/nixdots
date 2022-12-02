@@ -14,6 +14,8 @@ let
 
   colors = import ./theme/colors.nix {};
   base16-theme = import ./theme/base16.nix {};
+
+  extra-fonts = import ./fonts {};
 in
 
 {
@@ -126,8 +128,8 @@ in
   nixpkgs.config.allowUnfree = true;
 
   # cursor
-  home.file = with pkgs; {
-    ".icons/default".source = "${phinger-cursors}/share/icons/phinger-cursors";
+  home.file = extra-fonts // {
+    ".icons/default".source = "${pkgs.phinger-cursors}/share/icons/phinger-cursors";
   };
 
   # add support for .local/bin
