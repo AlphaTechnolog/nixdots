@@ -5,10 +5,13 @@
 
 { config, pkgs, lib, ... }:
 
-{
+let
+  virtualisation-packages = import ./virtualisation/pkgs.nix { inherit pkgs; };
+in {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./virtualisation
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -91,7 +94,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.alpha = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "networkmanager" ];
+    extraGroups = [ "wheel" "docker" "networkmanager" "libvirtd" ];
     initialPassword = "alpha123.";
   };
 
@@ -100,7 +103,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = virtualisation-packages ++ (with pkgs; [
     wget
     git
     playerctl
@@ -109,7 +112,7 @@
 
     # utils
     xorg.xwininfo
-  ];
+  ]);
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
