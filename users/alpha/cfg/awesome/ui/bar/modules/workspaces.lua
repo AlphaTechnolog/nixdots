@@ -7,6 +7,17 @@ local function mktaglist(s)
   return awful.widget.taglist {
     screen = s,
     filter = awful.widget.taglist.filter.all,
+    buttons = {
+      awful.button({}, 1, function (t)
+        t:view_only()
+      end),
+      awful.button({}, 4, function (t)
+        awful.tag.viewprev(t.screen)
+      end),
+      awful.button({}, 5, function (t)
+        awful.tag.viewnext(t.screen)
+      end)
+    },
     layout = {
       spacing = 4,
       layout = wibox.layout.fixed.horizontal,
