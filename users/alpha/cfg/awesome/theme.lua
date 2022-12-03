@@ -65,7 +65,7 @@ theme.actions = {
 theme.bar_height = 32
 
 -- gaps and borders
-theme.useless_gap         = dpi(8)
+theme.useless_gap         = dpi(4)
 theme.border_width        = dpi(0)
 theme.border_color_normal = theme.bg_normal
 theme.border_color_active = theme.bg_normal

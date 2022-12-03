@@ -9,7 +9,7 @@ local opts = require 'common'
 local theme = decay_lualine
 
 local function override_color(mode, color_key)
-	theme[mode].a.bg = decay_colors.statusline_bg
+	theme[mode].a.bg = decay_colors.background
 	theme[mode].a.fg = decay_colors[color_key]
 	if opts.italic then
 		theme[mode].a.gui = 'italic'
@@ -28,6 +28,21 @@ local colors = {
 for mode, color in pairs(colors) do
 	override_color(mode, color)
 end
+
+local function override_statusline_colors(color)
+  local modes = {'normal', 'insert', 'command', 'visual', 'replace', 'inactive'}
+  local keys = {'a', 'b', 'c', 'x', 'y', 'z'}
+  for _, mode in ipairs(modes) do
+    for _, key in ipairs(keys) do
+      if not theme[mode][key] then
+        theme[mode][key] = {}
+      end
+      theme[mode][key].bg = color
+    end
+  end
+end
+
+override_statusline_colors(decay_colors.background)
 
 -- start
 if not present then
@@ -48,7 +63,7 @@ local layout = {
 		},
 		{
 			'location',
-			color = { fg = decay_colors.brightblack, bg = decay_colors.statusline_bg }
+			color = { fg = decay_colors.brightblack, bg = decay_colors.background }
 		},
 	},
 	lualine_b = {},
@@ -58,11 +73,11 @@ local layout = {
 	lualine_z = {
 		{
 			'branch',
-			color = { fg = decay_colors.yellow, bg = decay_colors.statusline_bg },
+			color = { fg = decay_colors.yellow, bg = decay_colors.background },
 		},
 		{
 			'filename',
-			color = { fg = decay_colors.brightblack, bg = decay_colors.statusline_bg }
+			color = { fg = decay_colors.brightblack, bg = decay_colors.background }
 		}
 	},
 }
