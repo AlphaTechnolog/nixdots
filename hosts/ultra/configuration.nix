@@ -112,6 +112,11 @@ in {
 
     # utils
     xorg.xwininfo
+
+    # wine
+    wineWowPackages.stable
+    (wine.override { wineBuild = "wine64"; })
+    winetricks
   ]);
 
   # Some programs need SUID wrappers, can be configured further or are
