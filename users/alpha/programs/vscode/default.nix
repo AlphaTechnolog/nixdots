@@ -5,6 +5,7 @@ with pkgs;
 vscode-with-extensions.override {
   vscodeExtensions = with vscode-extensions; [
     bbenoist.nix
+    esbenp.prettier-vscode
   ] ++ vscode-utils.extensionsFromVscodeMarketplace [
     {
       name = "decay";
@@ -17,12 +18,6 @@ vscode-with-extensions.override {
       publisher = "pkief";
       version = "4.22.0";
       sha256 = "sha256-U9P9BcuZi+SUcvTg/fC2SkjGRD4CvgJEc1i+Ft2OOUc=";
-    }
-    {
-      name = "prettier-vscode";
-      publisher = "esbenp";
-      version = "9.10.3";
-      sha265 = "sha256-BTuTTElPYRtbzQvUC3iMYlj7NDkGSDa/IppOGBXjfUM=";
     }
   ];
 }
