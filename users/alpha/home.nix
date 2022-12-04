@@ -150,6 +150,7 @@ in
     vlc
     postman
     mongodb-compass
+    notion-app-enhanced
     picom
     maim
     networkmanagerapplet
