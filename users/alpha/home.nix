@@ -19,15 +19,6 @@ let
 in
 
 {
-  theme.base16.colors = base16-theme;
-
-  imports = lib.attrValues nur.repos.rycee.hmModules ++ [
-    (import ./programs/wezterm { inherit builtins; })
-    (import ./programs/kitty { inherit pkgs; })
-    (import ./programs/alacritty { inherit pkgs colors; })
-    (import ./programs/firefox { inherit pkgs config nur colors; })
-  ];
-
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "alpha";
@@ -42,6 +33,21 @@ in
   # the Home Manager release notes for a list of state version
   # changes in each release.
   home.stateVersion = "22.05";
+
+  # link some configuration files
+  xdg.configFile.awesome.source = ./cfg/awesome;
+  xdg.configFile.rofi.source = ./cfg/rofi;
+  xdg.configFile."BetterDiscord/themes".source = ./cfg/bd-themes;
+
+  theme.base16.colors = base16-theme;
+
+  imports = lib.attrValues nur.repos.rycee.hmModules ++ [
+    (import ./programs/wezterm { inherit builtins; })
+    (import ./programs/kitty { inherit pkgs; })
+    (import ./programs/alacritty { inherit pkgs colors; })
+    (import ./programs/firefox { inherit pkgs config nur colors; })
+    (import ./theme/nvim { inherit colors; })
+  ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -165,10 +171,4 @@ in
     decayce-gtk # gtk theme :P
     run # my own script :)
   ];
-
-  # import configuration files
-  xdg.configFile.awesome.source = ./cfg/awesome;
-  xdg.configFile.rofi.source = ./cfg/rofi;
-  xdg.configFile.nvim.source = ./cfg/nvim;
-  xdg.configFile."BetterDiscord/themes".source = ./cfg/bd-themes;
 }

@@ -6,6 +6,7 @@ vscode-with-extensions.override {
   vscodeExtensions = with vscode-extensions; [
     bbenoist.nix
     esbenp.prettier-vscode
+    naumovs.color-highlight
   ] ++ vscode-utils.extensionsFromVscodeMarketplace [
     {
       name = "decay";

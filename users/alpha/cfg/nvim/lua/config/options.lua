@@ -1,14 +1,15 @@
 local opt = vim.opt
 
-opt.termguicolors = true
+opt.number = true
 opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
+opt.termguicolors = true
 opt.showmode = false
 opt.clipboard = 'unnamedplus'
 opt.laststatus = 3
-opt.cursorline = true
-opt.wrap = true
+opt.cursorline = false
+opt.wrap = false
 opt.guifont = { "BlexMono Nerd Font", ":h8" }
 
 opt.shortmess = opt.shortmess + {

@@ -1,4 +1,5 @@
-require 'global'
-require 'plugins'
-require 'keymaps'.main()
-require 'autocmds'
+require("config.options")
+require("config.keymaps")
+require("config.theme")
+require("config.plugins")
+require("modules")
