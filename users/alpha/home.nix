@@ -160,6 +160,7 @@ in
     nfonts
     tdesktop
     redshift
+    wirelesstools
     decayce-gtk # gtk theme :P
     run # my own script :)
   ];
