@@ -1,85 +1,103 @@
-local awful = require 'awful'
+---@diagnostic disable: undefined-global
 local wibox = require 'wibox'
-local beautiful = require 'beautiful'
-local gears = require 'gears'
+local awful = require 'awful'
 local helpers = require 'helpers'
+local gears = require 'gears'
+local beautiful = require 'beautiful'
 
-local function close_button (c)
-	local b = wibox.widget {
-		{
+local dpi = beautiful.xresources.apply_dpi
+
+local function make_button(label, onclick)
+	return function (c)
+		local button = wibox.widget {
 			{
-				markup = '',
-				font = beautiful.nerd_font .. ' 13',
-				widget = wibox.widget.textbox,
+				{
+					markup = label,
+					font = beautiful.icons_font .. ' 10',
+					valign = 'center',
+					align = 'center',
+					widget = wibox.widget.textbox,
+				},
+				right = 1,
+				widget = wibox.container.margin,
 			},
-			top = 4,
-			bottom = 4,
-			left = 9,
-			right = 9,
-			widget = wibox.container.margin,
-		},
-		shape = gears.shape.circle,
-		bg = beautiful.black,
-		widget = wibox.container.background
-	}
+			forced_height = 24,
+			forced_width = 25,
+			bg = beautiful.black,
+			fg = beautiful.fg_normal,
+			shape = gears.shape.circle,
+			widget = wibox.container.background,
+		}
 
-	helpers.add_hover(b, beautiful.black, beautiful.dimblack)
+		local transition = helpers.add_hover(button, beautiful.dimblack, beautiful.light_black)
 
-	b:add_button(awful.button({}, 1, function ()
-		c:kill()
-	end))
+		button:add_button(awful.button({}, 1, function ()
+			transition.off()
+			if onclick then
+				onclick(c)
+			end
+		end))
 
-	return b
+		return button
+	end
 end
+
+local minimize_button = make_button('', function (c)
+	gears.timer.delayed_call(function ()
+		c.minimized = not c.minimized
+	end)
+end)
+
+local maximize_button = make_button('', function (c)
+	c.maximized = not c.maximized
+end)
+
+local close_button = make_button('', function (c)
+	c:kill()
+end)
 
 client.connect_signal('request::titlebars', function (c)
 	if c.requests_no_titlebar then
 		return
 	end
 
-	local titlebar = awful.titlebar(c, {
-		position = 'top',
-		size = 40,
-	})
-
-	local titlebars_buttons = {
+	local buttons = {
 		awful.button({}, 1, function ()
-			c:activate {
-				context = 'titlebar',
-				action = 'mouse_move',
-			}
+			c:emit_signal('request::activate', 'titlebar', { raise = true })
+			awful.mouse.client.move(c)
 		end),
 		awful.button({}, 3, function ()
-			c:activate {
-				context = 'titlebar',
-				action = 'mouse_resize',
-			}
+			c:emit_signal('request::activate', 'titlebar', { raise = true })
+			awful.mouse.client.resize(c)
 		end)
 	}
 
-	local buttons_loader = {
+	local titlebar = awful.titlebar(c, {
+		size = 40,
+		position = 'top'
+	})
+
+	local buttons_loader = wibox.widget {
 		layout = wibox.layout.fixed.horizontal,
-		buttons = titlebars_buttons,
+		buttons = buttons
 	}
 
+	local title = awful.titlebar.widget.titlewidget(c)
+
+	title.align = 'center'
+	title.valign = 'center'
+	title.buttons = buttons
+
 	titlebar:setup {
-		{
-			awful.titlebar.widget.titlewidget(c),
-			left = 14,
-			widget = wibox.container.margin,
-			buttons = titlebars_buttons,
-		},
 		buttons_loader,
+		title,
 		{
 			{
-				{
-					close_button(c),
-					margins = 8,
-					widget = wibox.container.margin,
-				},
+				close_button(c),
+				spacing = dpi(7),
 				layout = wibox.layout.fixed.horizontal,
 			},
-			right = 4,
+			right = dpi(12),
 			widget = wibox.container.margin,
 		},
 		layout = wibox.layout.align.horizontal,

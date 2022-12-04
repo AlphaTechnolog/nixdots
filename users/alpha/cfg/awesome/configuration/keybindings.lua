@@ -1,20 +1,20 @@
 local awful = require "awful"
-local bling = require "modules.bling"
+local hotkeys_popup = require "awful.hotkeys_popup"
 
 local function set_keybindings ()
     awful.keyboard.append_global_keybindings({
+        awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
+                  {description="show help", group="awesome"}),
         awful.key({ modkey, "Control" }, "r", awesome.restart,
                   {description = "reload awesome", group = "awesome"}),
         awful.key({ modkey, "Shift"   }, "q", awesome.quit,
                   {description = "quit awesome", group = "awesome"}),
         awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
                   {description = "open a terminal", group = "launcher"}),
-        awful.key({modkey}, "d", function () awesome.emit_signal("dashboard::toggle") end,
-                  {description = "open dashboard", group = "launcher"}),
         awful.key({ modkey }, "p", function() menubar.show() end,
                   {description = "show the menubar", group = "launcher"}),
         awful.key({ modkey, "Shift" }, "Return", function () awful.spawn("rofi -show drun") end,
-                  {description = "Open apps launcher", group = "launcher"}),
+                  {description = "Open rofi", group = "launcher"}),
     })
 
     -- Tags related keybindings
@@ -35,35 +35,6 @@ local function set_keybindings ()
             })
         end, { description = 'Center a floating window', group = 'client' })
     })
-
-    -- tabbed
-    awful.keyboard.append_global_keybindings {
-      awful.key({ modkey }, "t", function ()
-        bling.module.tabbed.pick()
-      end, {
-        description = "pick a client and make it a tab of another one",
-        group = "client"
-      }),
-      awful.key({ modkey, "Shift" }, "t", function ()
-        bling.module.tabbed.pop()
-      end, {
-        description = "pop a tabbed client",
-        group = "client"
-      }),
-      awful.key({ modkey }, "i", function ()
-        bling.module.tabbed.iter()
-      end, {
-        description = "Iter through tabbed clients",
-        group = "client"
-      }),
-    }
-
-    -- window switcher
-    awful.keyboard.append_global_keybindings {
-      awful.key({ Mod1 }, "Tab", function ()
-        awesome.emit_signal("bling::window_switcher::turn_on")
-      end, { description = "Open window switcher", group = "client" })
-    }
 
     -- Focus related keybindings
     awful.keyboard.append_global_keybindings({
