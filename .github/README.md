@@ -1,8 +1,14 @@
 # nixdots
 
-This repo contains my dotfiles for a flakes-based WIP nixos-setup.
+My personal dotfiles for a Nix-Managed Operative System (NixOS).
 
-![banner](./assets/banner.png)
+> X11 (AwesomeWM)
+
+![x11](./assets/x11.png)
+
+> Wayland (Hyprland)
+
+![wayland](./assets/wayland.png)
 
 ## Installation
 
@@ -39,8 +45,11 @@ cd /mnt/etc/nixos
 # remove .git to avoid some issues with nixos-rebuild
 rm -rf ./.git
 
-# install it!
+# to install the xorg version:
 nixos-install --flake '.#ultra' --impure
+
+# to install the wayland version
+nixos-install --flake '.#wayland' --impure
 ```
 
 - Reboot, login as root, and change the password for your user using `passwd` (by default, it's alpha)
