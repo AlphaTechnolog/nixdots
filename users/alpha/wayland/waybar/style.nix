@@ -1,89 +1,110 @@
 let
   colors = import ../../theme/colors.nix {};
 in with colors; ''
-* {
-  min-height: 0;
-  border: none;
-  border-radius: 0;
-}
-
 window#waybar {
   background: ${bg};
   color: ${fg};
-  font-family: BlexMono NF;
-  margin: 15px;
 }
 
 #custom-launcher {
-  all: initial;
-  min-width: 0;
-  margin: 5px 6px;
-  font-size: 22px;
-  background-color: ${blue};
+  border-radius: 4px;
   color: ${bg};
-  padding: 0px 10px;
-  border-radius: 6px;
+  background: ${blue};
+  margin: 6px;
+  font-family: BlexMono NF;
+  font-size: 22px;
+}
+
+#workspaces {
+  font-family: BlexMono Nerd Font Mono;
+  font-size: 24px;
 }
 
 #workspaces button {
-  all: initial;
-  min-width: 0;
-  box-shadow: inset 0 -3px transparent;
+  all: unset;
   border-radius: 4px;
-  font-size: 22px;
-  color: ${fg};
-  font-family: BlexMono NF;
-  padding: 0px 5px;
-  margin: 4px 6px;
-  border-bottom: solid 1px ${bg};
+  transition: all ease 0.6s;
+  margin: 2px 6px;
+}
+
+#workspaces button:hover {
+  background: ${dimblack};
 }
 
 #workspaces button.active {
   color: ${magenta};
-  border-bottom: solid 1px ${magenta};
+  background: ${black};
+  border-left: solid 1px ${magenta};
+  border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
 }
 
-#workspaces button.urgent {
-  color: ${red};
-}
-
-#network {
-  margin: 6px 6px;
-  padding: 0px 14px;
-  color: ${bg};
-  background: ${magenta};
-  font-size: 13px;
-  border-radius: 6px;
+#keyboard-state {
   font-family: BlexMono Nerd Font;
+  font-size: 14px;
+  padding-right: 6px;
+  color: ${yellow};
+}
+
+#custom-settings {
+  all: unset;
+  font-family: BlexMono Nerd Font Mono;
+  font-size: 20px;
+  margin: 6px 6px 0px 6px;
+  padding: 0px 2px 0px 0px;
+  color: ${magenta};
 }
 
 #pulseaudio {
-  color: ${blue};
-  font-size: 13px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  font-size: 26px;
+  font-family: BlexMono NF;
+  color: ${cyan};
+  background-color: ${black};
+  margin: 6px 6px 0px 6px;
+}
+
+#network {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  font-size: 14px;
   font-family: BlexMono Nerd Font;
-  margin: 0 12px;
+  padding: 4px 7px 6px 0px;
+  color: ${green};
+  background-color: ${black};
+  margin: 0px 6px 6px 6px;
 }
 
-#backlight {
-  color: ${yellow};
-  font-size: 13px;
+#custom-hour {
+  margin: 0px 6px;
+  padding-top: 4px;
   font-family: BlexMono Nerd Font;
-  margin-right: 12px;
-}
-
-#tray {
-  margin: 0px 12px;
-}
-
-#clock {
-  margin: 6px 6px;
-  padding: 0px 10px;
+  font-size: 13px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  background-color: ${white};
   color: ${bg};
-  background: ${green};
-  font-size: 13px;
-  border-radius: 6px;
+}
+
+#custom-mins {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  background-color: ${white};
+  color: ${bg};
+  padding: 4px 0px;
+  margin-bottom: 4px;
   font-family: BlexMono Nerd Font;
+  font-size: 13px;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+#custom-powermenu {
+  all: unset;
+  font-family: BlexMono Nerd Font Mono;
+  font-size: 20px;
+  margin: 0px 6px 4px;
+  color: ${red};
 }
 ''

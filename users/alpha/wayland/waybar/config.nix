@@ -1,15 +1,14 @@
 { pkgs }:
 
 let
-  brightnessctl = pkgs.brightnessctl + "/bin/brightnessctl";
-  pamixer = pkgs.pamixer + "/bin/pamixer";
+  pavucontrol = "${pkgs.pavucontrol}/bin/pavucontrol";
 in {
   mainBar = {
     layer = "top";
-    position = "top";
-    height = 34;
+    position = "left";
+    width = 40;
     modules-left = ["custom/launcher" "wlr/workspaces"];
-    modules-right = ["network" "pulseaudio" "backlight" "clock" "tray"];
+    modules-right = ["keyboard-state" "custom/settings" "pulseaudio" "network" "custom/hour" "custom/mins" "custom/powermenu"];
     "custom/launcher" = {
       format = "";
       on-click = "rofi -show drun";
@@ -17,6 +16,7 @@ in {
     };
     "wlr/workspaces" = {
       format = "{icon}";
+      on-click = "activate";
       format-icons = {
         "1" = "";
         "2" = "亂";
@@ -25,37 +25,47 @@ in {
         "5" = "";
         "6" = "";
       };
-      on-click = "activate";
-      all-outputs = true;
-      disable-scroll = true;
     };
-    tray = {
-      icon-size = 18;
-      spacing = 10;
+    keyboard-state = {
+      tooltip = false;
+      numlock = false;
+      capslock = true;
+      format.capslock = "{icon}";
+      format-icons = {
+        locked = "";
+        unlocked = ""; # an empty string will disable the module
+      };
     };
-    network = {
-      interface = "wlp1s0";
-      format = "{ifname}";
-      format-wifi = " {essid} ({signalStrength}%)";
-      format-disconnected = "Disconnected";
+    "custom/settings" = {
+      format = "";
       tooltip = false;
     };
     pulseaudio = {
-      tooltip = false;
-      format = " {volume}%";
-      on-click = "${pamixer} --default-source -t";
-      on-scroll-up = "${pamixer} --default-source -d 1";
-      on-scroll-down = "${pamixer} --default-source -i 1";
+      format = "{icon}";
+      format-bluetooth = "{icon}";
+      format-muted = "婢";
+      on-click = "${pavucontrol}";
+      format-icons = {
+        headphone = "";
+        default = ["" "" "墳" ""];
+      };
     };
-    backlight = {
+    network = {
+      format-wifi = "";
+      format-disconnected = "睊";
       tooltip = false;
-      format = " {percent}%";
-      on-scroll-up = "${brightnessctl} s 1%-";
-      on-scroll-down = "${brightnessctl} s +1%";
     };
-    clock = {
-      interval = 60;
-      format = " {:%I:%M %p}";
+    "custom/hour" = {
+      exec = "date '+%H'";
+      tooltip = false;
+    };
+    "custom/mins" = {
+      exec = "date '+%M'";
+      tooltip = false;
+    };
+    "custom/powermenu" = {
+      format = "襤";
+      tooltip = false;
     };
   };
 }
