@@ -28,8 +28,7 @@ with nixpkgs; lib.nixosSystem rec {
         imports = [
           inputs.hyprland.homeManagerModules.default
           ../../users/alpha/home.nix
-          ../../users/alpha/wayland/hyprland
-          ../../users/alpha/wayland/waybar
+          ../../users/alpha/wayland
         ];
       };
     }

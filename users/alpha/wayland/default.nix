@@ -1,0 +1,9 @@
+{ ... }:
+
+{
+  imports = [
+    ./hyprland
+    ./waybar
+    ./foot
+  ];
+}

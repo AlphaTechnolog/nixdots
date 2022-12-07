@@ -21,6 +21,7 @@ monitor=,preferred,auto,1
 
 exec-once = swaybg --mode fill --image ~/.config/.wallpaper.png
 exec-once = waybar
+exec-once = foot --server
 
 # Source a file (multi-file configs)
 # source = ~/.config/hypr/myColors.conf
@@ -108,7 +109,7 @@ windowrule = float, Rofi
 $mainMod = SUPER
 
 # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
-bind = $mainMod, RETURN, exec, alacritty
+bind = $mainMod, RETURN, exec, footclient
 bind = $mainMod SHIFT, RETURN, exec, rofi -show drun
 bind = $mainMod, W, killactive
 bind = $mainMod SHIFT, Q, exit
