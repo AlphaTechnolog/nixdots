@@ -56,10 +56,12 @@ in {
       tooltip = false;
     };
     "custom/hour" = {
+      interval = 60;
       exec = "date '+%H'";
       tooltip = false;
     };
     "custom/mins" = {
+      interval = 60;
       exec = "date '+%M'";
       tooltip = false;
     };
