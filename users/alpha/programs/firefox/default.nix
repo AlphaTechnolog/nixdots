@@ -3,6 +3,8 @@
 {
   programs.firefox = {
     enable = true;
+    package = pkgs.firefox-wayland;
+
     extensions = with nur.repos.rycee.firefox-addons; [
       enhanced-github
       enhancer-for-youtube

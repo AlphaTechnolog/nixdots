@@ -12,6 +12,11 @@
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
     nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
     nur.url = github:nix-community/NUR;
+
+    hyprland = {
+      url = github:hyprwm/Hyprland;
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, nixpkgs-f2k, ... }@inputs:
@@ -44,6 +49,10 @@
       nixosConfigurations = {
         ultra = import ./hosts/ultra {
           inherit config nixpkgs overlays inputs system home-manager;
+        };
+        fancy = import ./hosts/fancy {
+          inherit config nixpkgs overlays inputs system home-manager;
+          hyprland = inputs.hyprland;
         };
       };
     };

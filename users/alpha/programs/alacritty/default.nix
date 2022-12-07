@@ -13,7 +13,7 @@ in {
         dynamic_padding = true;
       };
       font = setfont "BlexMono Nerd Font" // {
-        size = 8;
+        size = 9;
       };
       colors = theme;
       cursor.style = {

@@ -21,7 +21,6 @@ configuration {
 }
 
 window {
-	border-radius:                  7px;
 	width:			    	37%;
 	padding: 			5px;
 }
