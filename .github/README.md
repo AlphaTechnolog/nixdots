@@ -29,7 +29,7 @@ nix-shell -p git nixUnstable
 mkdir -p /mnt/etc/
 
 # clone the repo
-git clone https://github.com/AlphaTechnolog/nixfiles.git /mnt/etc/nixos.git --recurse-submodules
+git clone https://github.com/AlphaTechnolog/nixdots.git /mnt/etc/nixos --recurse-submodules
 
 # remove this file
 rm /mnt/etc/nixos/hosts/ultra/hardware-configuration.nix
