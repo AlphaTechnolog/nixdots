@@ -42,15 +42,14 @@ mv /mnt/etc/nixos/hardware-configuration.nix /mnt/etc/nixos/hosts/ultra
 # make sure you're in this path
 cd /mnt/etc/nixos
 
-# remove .git to avoid some issues with nixos-rebuild
-rm -rf ./.git
-
 # to install the xorg version:
 nixos-install --flake '.#ultra' --impure
 
 # to install the wayland version
-nixos-install --flake '.#wayland' --impure
+nixos-install --flake '.#fancy' --impure
 ```
+
+> You could get some hashes errors, just change the bad hashes in the config file to the given ones by the Nix Output.
 
 - Reboot, login as root, and change the password for your user using `passwd` (by default, it's alpha)
 - Log-in in the displayManager.
