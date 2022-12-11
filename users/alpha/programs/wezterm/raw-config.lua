@@ -69,7 +69,7 @@ C.front_end = "OpenGL"
 C.check_for_updates = false
 
 -- fonts
-local font_name = "BlexMono Nerd Font"
+local font_name = "JetBrainsMono Nerd Font"
 
 C.font = font_with_fallback(font_name)
 

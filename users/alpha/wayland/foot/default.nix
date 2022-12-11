@@ -7,10 +7,13 @@ in with colors; {
     enable = true;
     settings = {
       main = {
-        font = "BlexMono Nerd Font:size=9";
+        font = "JetBrainsMono Nerd Font:size=9";
         dpi-aware = "no";
         resize-delay-ms = 0;
         pad = "30x30";
+      };
+      cursor = {
+        color = "${bg} ${blue}";
       };
       colors = {
         foreground = fg;

@@ -11,32 +11,34 @@ local assets_path = gfs.get_configuration_dir() .. "assets/"
 -- assets
 local icons_path = assets_path .. "icons/"
 local shapes_path = assets_path .. "shapes/"
+local titlebar_assets_path = assets_path .. "titlebar/"
 
 local theme = {}
 
 -- fonts
 theme.font_name = 'Product Sans'
 theme.nerd_font = 'JetBrainsMono NF'
-theme.icons_font = 'Material Icons Round'
 theme.material_icons = 'Material Icons'
 theme.font_size = '10'
 theme.font = theme.font_name .. ' ' .. theme.font_size
 
 -- base colors
-theme.black = '#1b1b25'
-theme.dimblack = '#1d1d27'
-theme.light_black = '#1f1f29'
-theme.red = '#fc8e8e'
-theme.yellow = '#fae3a2'
-theme.magenta = '#bfa6fa'
-theme.green = '#a5f1a5'
-theme.blue = '#8cbef7'
-theme.cyan = '#93cff7'
+theme.black = '#151720'
+theme.dimblack = '#1a1c25'
+theme.light_black = '#262831'
+theme.grey = '#666891'
+theme.red = '#dd6777'
+theme.yellow = '#ecd3a0'
+theme.magenta = '#c296eb'
+theme.green = '#90ceaa'
+theme.blue = '#86aaec'
+theme.cyan = '#93cee9'
+theme.aqua = '#7bd9e6'
 
 -- backgrounds
-theme.bg_normal     = "#14141e"
-theme.bg_contrast   = "#161620"
-theme.bg_lighter    = "#181822"
+theme.bg_normal     = "#0d0f18"
+theme.bg_contrast   = "#0f111a"
+theme.bg_lighter    = "#11131c"
 
 -- elements bg
 theme.bg_focus      = theme.bg_normal
@@ -45,7 +47,7 @@ theme.bg_minimize   = theme.bg_normal
 theme.bg_systray    = theme.bg_normal
 
 -- foregrounds
-theme.fg_normal     = "#c3cddb"
+theme.fg_normal     = "#a5b6cf"
 theme.fg_focus      = theme.fg_nromal
 theme.fg_urgent     = theme.fg_normal
 theme.fg_minimize   = theme.fg_normal
@@ -59,10 +61,10 @@ theme.actions = {
 }
 
 -- bar
-theme.bar_height = 45
+theme.bar_height = 40
 
 -- gaps and borders
-theme.useless_gap         = dpi(6)
+theme.useless_gap         = dpi(4)
 theme.border_width        = dpi(0)
 theme.border_color_normal = theme.bg_normal
 theme.border_color_active = theme.bg_normal
@@ -76,14 +78,19 @@ theme.tasklist_bg_focus = theme.dimblack
 theme.tasklist_bg_urgent = theme.red .. '4D' -- 30% of transparency
 
 -- taglist
-theme.taglist_bg_empty = theme.black
-theme.taglist_bg_occupied = theme.light_black
-theme.taglist_bg_urgent = theme.red
-theme.taglist_bg_focus = theme.blue
+theme.taglist_bg = theme.bg_normal
+theme.taglist_bg_urgent = theme.taglist_bg
+theme.normal_tag_format = '󰊠'
+theme.occupied_tag_format = theme.normal_tag_format
+theme.selected_tag_format = '󰮯'
+theme.taglist_fg_focus = theme.yellow
+theme.taglist_fg = theme.dimblack
+theme.taglist_fg_occupied = theme.blue
+theme.taglist_font = theme.material_icons .. ' 13'
 
 -- systray
 theme.systray_icon_spacing = dpi(12)
-theme.systray_max_rows = 6
+theme.systray_max_rows = 7
 
 -- menu
 theme.menu_font = theme.font
@@ -93,9 +100,23 @@ theme.menu_width = dpi(180)
 theme.menu_bg_focus = theme.bg_lighter
 
 -- titlebar
-theme.titlebar_bg = theme.bg_lighter
-theme.titlebar_bg_focus = theme.bg_contrast
+theme.titlebar_bg = theme.bg_contrast
+theme.titlebar_bg_focus = theme.bg_normal
 theme.titlebar_fg = theme.fg_normal
+
+-- close
+theme.titlebar_close_button_normal = gears.color.recolor_image(titlebar_assets_path .. "circle.png", theme.dimblack)
+theme.titlebar_close_button_focus = gears.color.recolor_image(titlebar_assets_path .. "circle.png", theme.red)
+
+-- maximized
+theme.titlebar_maximized_button_normal_active = gears.color.recolor_image(titlebar_assets_path .. "circle.png", theme.dimblack)
+theme.titlebar_maximized_button_normal_inactive = gears.color.recolor_image(titlebar_assets_path .. "circle.png", theme.dimblack)
+theme.titlebar_maximized_button_focus_active = gears.color.recolor_image(titlebar_assets_path .. "circle.png", theme.yellow)
+theme.titlebar_maximized_button_focus_inactive = gears.color.recolor_image(titlebar_assets_path .. "circle.png", theme.yellow)
+
+-- minimize
+theme.titlebar_minimize_button_normal = gears.color.recolor_image(titlebar_assets_path .. "circle.png", theme.dimblack)
+theme.titlebar_minimize_button_focus = gears.color.recolor_image(titlebar_assets_path .. "circle.png", theme.green)
 
 -- wallpaper
 theme.wallpaper = assets_path .. "wallpaper.jpg"
@@ -141,7 +162,7 @@ theme.fallback_music = assets_path .. 'fallback-music.png'
 theme.fallback_notif_icon = gears.color.recolor_image(icons_path .. 'hints.svg', theme.blue)
 
 -- disable icon theme
-theme.icon_theme = nil
+theme.icon_theme = "Papirus-Dark"
 
 -- task preview
 theme.task_preview_widget_border_radius = dpi(7)

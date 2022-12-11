@@ -12,10 +12,7 @@
     };
     font = {
       size = 9;
-      name = "BlexMono Nerd Font";
-      package = (with pkgs; nerdfonts.override {
-        fonts = ["IBMPlexMono"];
-      });
+      name = "JetBrainsMono Nerd Font";
     };
   };
 }

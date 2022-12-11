@@ -7,7 +7,20 @@ vscode-with-extensions.override {
     bbenoist.nix
     esbenp.prettier-vscode
     naumovs.color-highlight
+    svelte.svelte-vscode
   ] ++ vscode-utils.extensionsFromVscodeMarketplace [
+    {
+      name = "volar";
+      publisher = "vue";
+      version = "1.0.12";
+      sha256 = "sha256-Ft1HUgV9Y1fsBMrd8C04KRmVOn1BL6l5VY5Mssx61q4=";
+    }
+    {
+      name = "vscode-typescript-vue-plugin";
+      publisher = "vue";
+      version = "1.0.12";
+      sha256 = "sha256-WiL+gc9+U861ubLlY/acR+ZcrFT7TdIDR0K1XNNidX8=";
+    }
     {
       name = "decay";
       publisher = "decaycs";

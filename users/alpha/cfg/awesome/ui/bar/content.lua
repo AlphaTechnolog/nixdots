@@ -1,41 +1,47 @@
-local wibox = require 'wibox'
-local beautiful = require 'beautiful'
-local dpi = beautiful.xresources.apply_dpi
+local wibox = require("wibox")
 
-local pfp = require 'ui.bar.modules.pfp'
-local dock = require 'ui.bar.modules.dock'
-local dropdown = require 'ui.bar.modules.dropdown'
-local airplane = require 'ui.bar.modules.airplane'
-local network = require 'ui.bar.modules.wifi'
-local volume = require 'ui.bar.modules.volume'
-local date = require 'ui.bar.modules.date'
+local launcher = require("ui.bar.modules.launcher")
+local searchbox = require("ui.bar.modules.searchbox")
+local dispatch_dashboard = require("ui.bar.modules.dispatch_dashboard")
+local workspaces = require("ui.bar.modules.workspaces")
+local dispatch_notification = require("ui.bar.modules.dispatch_notification")
+local infobox = require("ui.bar.modules.infobox")
+local powermenu = require("ui.bar.modules.powermenu")
 
 return function (s)
-    return {
+  return {
+    {
+      {
         {
-            {
-                pfp,
-                nil,
-                {
-                    dropdown,
-                    airplane,
-                    network,
-                    volume,
-                    date,
-                    spacing = dpi(8),
-                    layout = wibox.layout.fixed.horizontal,
-                },
-                layout = wibox.layout.align.horizontal,
-            },
-            left = beautiful.useless_gap * 2,
-            right = beautiful.useless_gap * 2,
-            widget = wibox.container.margin,
+          launcher,
+          searchbox,
+          dispatch_dashboard,
+          spacing = 6,
+          layout = wibox.layout.fixed.horizontal,
         },
+        left = 6,
+        widget = wibox.container.margin,
+      },
+      nil,
+      {
         {
-            dock(s),
-            halign = 'center',
-            layout = wibox.container.place,
+          dispatch_notification,
+          infobox(s),
+          powermenu,
+          spacing = 6,
+          layout = wibox.layout.fixed.horizontal,
         },
-        layout = wibox.layout.stack,
-    }
+        right = 6,
+        widget = wibox.container.margin,
+      },
+      layout = wibox.layout.align.horizontal,
+    },
+    {
+      workspaces(s),
+      halign = 'center',
+      valign = 'center',
+      layout = wibox.container.place,
+    },
+    layout = wibox.layout.stack,
+  }
 end

@@ -12,8 +12,8 @@ in {
         padding.y = 40;
         dynamic_padding = true;
       };
-      font = setfont "BlexMono Nerd Font" // {
-        size = 9;
+      font = setfont "JetBrainsMono Nerd Font" // {
+        size = 8;
       };
       colors = theme;
       cursor.style = {

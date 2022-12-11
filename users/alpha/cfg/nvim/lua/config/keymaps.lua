@@ -22,4 +22,4 @@ keymap('n', '<space>x', '<cmd>bd!<cr>')
 keymap('n', '<C-b>', '<cmd>bd!<cr>')
 
 keymap('n', '<Tab>', '<cmd>bn!<cr>')
-keymap('n', '<S-Tab>', '<cmd>bn!<cr>')
+keymap('n', '<S-Tab>', '<cmd>bp!<cr>')

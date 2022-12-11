@@ -30,7 +30,7 @@ function helpers.apply_transition(opts)
     local background = color.color { hex = bg }
     local hover_background = color.color { hex = hbg }
 
-    local transition = color.transition(background, hover_background, color.transition.RGB)
+    local transition = color.transition(background, hover_background)
 
     local fading = rubato.timed { duration = 0.30 }
 
@@ -60,7 +60,7 @@ function helpers.add_hover(element, bg, hbg)
     element:connect_signal('mouse::enter', transition.on)
     element:connect_signal('mouse::leave', transition.off)
 
-	return transition
+    return transition
 end
 
 -- create a rounded rect using a custom radius

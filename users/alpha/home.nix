@@ -145,6 +145,7 @@ in
 
   # import more packages to home-manager ones.
   home.packages = with pkgs; [
+    gimp
     xclip
     discord
     spotify
