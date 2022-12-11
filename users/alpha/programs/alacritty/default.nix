@@ -7,6 +7,8 @@ in {
   programs.alacritty = {
     enable = true;
     settings = {
+      colors = theme;
+      mouse.hide_when_typing = true;
       window = {
         padding.x = 40;
         padding.y = 40;
@@ -15,12 +17,13 @@ in {
       font = setfont "JetBrainsMono Nerd Font" // {
         size = 8;
       };
-      colors = theme;
-      cursor.style = {
-        shape = "Block";
-        blinking = "on";
+      cursor = {
+        thickness = 0.3;
+        style = {
+          shape = "Block";
+          blinking = "on";
+        };
       };
-      mouse.hide_when_typing = true;
     };
   };
 }
