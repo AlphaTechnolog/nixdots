@@ -6,7 +6,7 @@ theme.setup {
     contrast = true,
   },
   italics = {
-    code = true,
-    comments = true,
+    code = false,
+    comments = false,
   }
 }
