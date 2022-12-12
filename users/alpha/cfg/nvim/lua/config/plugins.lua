@@ -1,6 +1,6 @@
 vim.cmd [[ packadd! packer.nvim ]]
 
-return require("packer").startup(function (use)
+local define_plugs = function (use)
   use "wbthomason/packer.nvim"
   use "nvim-treesitter/nvim-treesitter"
   use "nvim-lualine/lualine.nvim"
@@ -16,4 +16,18 @@ return require("packer").startup(function (use)
     "nvim-telescope/telescope.nvim",
     requires = { "nvim-lua/plenary.nvim" }
   }
-end)
+end
+
+return require("packer").startup({define_plugs, config = {
+  git = {
+    depth = 1,
+    clone_timeout = -1,
+  },
+  display = {
+    open_fn = function ()
+      return require("packer.util").float({
+        border = "single"
+      })
+    end
+  }
+}})
