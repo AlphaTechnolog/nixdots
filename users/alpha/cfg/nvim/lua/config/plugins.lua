@@ -7,6 +7,7 @@ local define_plugs = function (use)
   use "norcalli/nvim-colorizer.lua"
   use "windwp/nvim-autopairs"
   use "akinsho/bufferline.nvim"
+  use "lewis6991/impatient.nvim"
 
   use {
     "nvim-tree/nvim-tree.lua",
