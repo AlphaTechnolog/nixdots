@@ -11,6 +11,7 @@ opt.laststatus = 3
 opt.cursorline = false
 opt.wrap = false
 opt.guifont = { "JetBrainsMono Nerd Font", ":h8" }
+opt.cmdheight = 0
 
 opt.shortmess = opt.shortmess + {
   c = true, -- Do not show completion messages in command line
