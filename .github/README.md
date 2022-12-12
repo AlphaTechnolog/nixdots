@@ -75,3 +75,7 @@ This good people who helped me when learning nix-related stuff! really, thanks!
 ## Inspiration
 
 - nvim: [dharmx](https://github.com/dharmx). What a beautiful nvim that he has!
+
+> How looks mine:
+
+![nvim](./assets/nvim.png)
