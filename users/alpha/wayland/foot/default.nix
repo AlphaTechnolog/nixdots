@@ -10,7 +10,7 @@ in with colors; {
         font = "JetBrainsMono Nerd Font:size=9";
         dpi-aware = "no";
         resize-delay-ms = 0;
-        pad = "30x30";
+        pad = "20x20";
       };
       cursor = {
         color = "${bg} ${blue}";
