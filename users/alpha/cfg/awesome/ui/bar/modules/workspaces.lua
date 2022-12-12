@@ -3,6 +3,21 @@ local beautiful = require("beautiful")
 local helpers = require("helpers")
 local awful = require("awful")
 
+local icon_theme = require("modules.bling.helpers.icon_theme")
+local theme = icon_theme()
+
+local extract_icon = function (c)
+  -- exceptions (add support for simple terminal and many mores).
+  if c.class then
+    if string.lower(c.class) == 'st' then
+      return theme:get_icon_path(string.lower(c.class))
+    end
+  end
+
+  -- has support for some others apps like spotify
+  return theme:get_client_icon_path(c)
+end
+
 local mktag = function (tag)
   local content_layout = wibox.layout.fixed.horizontal()
 
@@ -28,7 +43,7 @@ local mktag = function (tag)
       margin_widget.left = 6
       for _, c in ipairs(tag:clients()) do
         clients_layout:add(wibox.widget {
-          image = c.icon,
+          image = c.icon or extract_icon(c),
           valign = "center",
           forced_height = 16,
           forced_width = 16,
