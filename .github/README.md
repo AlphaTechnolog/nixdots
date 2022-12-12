@@ -71,3 +71,7 @@ This good people who helped me when learning nix-related stuff! really, thanks!
 - [AloneER0](https://github.com/AloneER0)
 - [JavaCafe01](https://github.com/JavaCafe01)
 - [rxyhn](https://github.com/rxyhn)
+
+## Inspiration
+
+- nvim: [dharmx](https://github.com/dharmx). What a beautiful nvim that he has!
