@@ -2,6 +2,7 @@ local wibox = require("wibox")
 local awful = require("awful")
 local beautiful = require("beautiful")
 local gears = require("gears")
+local helpers = require("helpers")
 
 local mkbutton = function (color, onclick)
   return function (c)
@@ -13,6 +14,21 @@ local mkbutton = function (color, onclick)
       shape = gears.shape.circle,
       widget = wibox.container.background,
     }
+
+    local color_transition = helpers.apply_transition {
+      element = button,
+      prop = 'bg',
+      bg = color,
+      hbg = beautiful.black,
+    }
+
+    client.connect_signal("property::active", function ()
+      if c.active then
+        color_transition.off()
+      else
+        color_transition.on()
+      end
+    end)
 
     button:add_button(awful.button({}, 1, function ()
       if onclick then

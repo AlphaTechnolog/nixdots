@@ -1,20 +1,22 @@
 local wibox = require("wibox")
-local beautiful = require("beautiful")
 local helpers = require("helpers")
+local gears = require("gears")
+local beautiful = require("beautiful")
 local awful = require("awful")
+
+local dimensions = require("ui.infosidebar.dimensions")
 
 local icon = wibox.widget.textbox()
 local placeholder = wibox.widget.textbox()
 
-icon.font = beautiful.nerd_font .. ' 20'
-icon.markup = helpers.get_colorized_markup('', beautiful.grey)
-
--- to make a large input by default
-placeholder.markup = helpers.get_colorized_markup('Launch...                          ', beautiful.grey)
+icon.font = beautiful.nerd_font .. " 20"
+icon.markup = helpers.get_colorized_markup("", beautiful.blue)
 
 local reset = function ()
-  placeholder.markup = helpers.get_colorized_markup('Launch...                          ', beautiful.grey)
+  placeholder.markup = helpers.get_colorized_markup("Launch App...", beautiful.light_black)
 end
+
+reset()
 
 local get_input = function ()
   awful.prompt.run {
@@ -36,36 +38,34 @@ local get_input = function ()
   }
 end
 
-local input = wibox.widget {
+local searchbox = wibox.widget {
   {
     {
       icon,
       placeholder,
-      spacing = 8,
+      spacing = dimensions.spacing,
       layout = wibox.layout.fixed.horizontal,
     },
-    top = 4,
-    bottom = 4,
-    left = 12,
-    right = 16,
+    top = 0,
+    bottom = 0,
+    left = 15,
+    right = 15,
     widget = wibox.container.margin,
   },
   bg = beautiful.black,
-  shape = helpers.mkroundedrect(),
+  shape = gears.shape.rounded_bar,
+  forced_width = 274,
   widget = wibox.container.background,
 }
 
-helpers.add_hover(input, beautiful.black, beautiful.dimblack)
+helpers.add_hover(searchbox, beautiful.black, beautiful.dimblack)
 
-awesome.connect_signal("bar::searchbox::get_input", get_input)
-
-input:add_button(awful.button({}, 1, function ()
-  awesome.emit_signal("bar::searchbox::get_input")
+searchbox:add_button(awful.button({}, 1, function ()
+  get_input()
 end))
 
 return wibox.widget {
-  input,
-  top = 6,
-  bottom = 6,
-  widget = wibox.container.margin,
+  searchbox,
+  halign = "center",
+  layout = wibox.container.place,
 }

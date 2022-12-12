@@ -2,9 +2,9 @@ local wibox = require("wibox")
 
 local launcher = require("ui.bar.modules.launcher")
 local searchbox = require("ui.bar.modules.searchbox")
-local dispatch_dashboard = require("ui.bar.modules.dispatch_dashboard")
+local dispatch_infosidebar = require("ui.bar.modules.dispatch_infosidebar")
 local workspaces = require("ui.bar.modules.workspaces")
-local dispatch_notification = require("ui.bar.modules.dispatch_notification")
+local dispatch_dashboard = require("ui.bar.modules.dispatch_dashboard")
 local infobox = require("ui.bar.modules.infobox")
 local powermenu = require("ui.bar.modules.powermenu")
 
@@ -15,7 +15,7 @@ return function (s)
         {
           launcher,
           searchbox,
-          dispatch_dashboard,
+          dispatch_infosidebar,
           spacing = 6,
           layout = wibox.layout.fixed.horizontal,
         },
@@ -25,7 +25,7 @@ return function (s)
       nil,
       {
         {
-          dispatch_notification,
+          dispatch_dashboard,
           infobox(s),
           powermenu,
           spacing = 6,

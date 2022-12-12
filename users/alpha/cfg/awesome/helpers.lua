@@ -30,7 +30,7 @@ function helpers.apply_transition(opts)
     local background = color.color { hex = bg }
     local hover_background = color.color { hex = hbg }
 
-    local transition = color.transition(background, hover_background)
+    local transition = color.transition(background, hover_background, color.transition.RGB)
 
     local fading = rubato.timed { duration = 0.30 }
 
