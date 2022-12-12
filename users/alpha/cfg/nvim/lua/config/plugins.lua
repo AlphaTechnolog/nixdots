@@ -6,6 +6,7 @@ return require("packer").startup(function (use)
   use "nvim-lualine/lualine.nvim"
   use "norcalli/nvim-colorizer.lua"
   use "windwp/nvim-autopairs"
+  use "akinsho/bufferline.nvim"
 
   use {
     "nvim-tree/nvim-tree.lua",

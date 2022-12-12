@@ -14,8 +14,8 @@ for _, sec in ipairs(secs) do
   sections['lualine_' .. sec] = {}
 end
 
-local function ins (params)
-  table.insert(sections['lualine_' .. params.sec], params.cmp)
+local function ins (sec, cmp)
+  table.insert(sections['lualine_' .. sec], cmp)
 end
 
 local function wtext (txt)
@@ -24,48 +24,30 @@ local function wtext (txt)
   end
 end
 
-ins {
-  sec = 'a',
-  cmp = {
-    wtext(''),
-    padding = { right = 0 },
-  }
-}
+local function simple(name)
+  return { name }
+end
 
-ins {
-  sec = 'a',
-  cmp = {
-    'mode',
-    fmt = string.lower
-  }
-}
+ins('x', {
+  'mode',
+  fmt = function (s)
+    return s:sub(1, 1)
+  end
+})
 
-ins {
-  sec = 'b',
-  cmp = {
-    'location',
-    padding = { right = 0 },
-    color = { fg = colors.brightblack, bg = colors.background }
-  }
-}
+ins('y', {
+  'filetype',
+  icon_only = true,
+  padding = { right = 0, left = 1 }
+})
 
-ins {
-  sec = 'x',
-  cmp = {
-    'branch',
-    padding = { right = 1 },
-    color = { fg = colors.magenta, bg = colors.background }
-  },
-}
+ins('y', simple('filename'))
 
-ins {
-  sec = 'z',
-  cmp = {
-    'filename',
-    padding = { right = 0, left = 0 },
-    color = { fg = colors.brightblack, bg = colors.background }
-  },
-}
+ins('y', {
+  'branch',
+  padding = { left = 1 },
+  color = { bg = colors.statusline_bg, fg = colors.magenta }
+})
 
 lualine.setup {
   options = {

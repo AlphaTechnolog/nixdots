@@ -364,7 +364,17 @@ M.highlights_base = function (colors, opts)
     healthWarning = { fg = colors.magenta },
 
     -- BufferLine
-    BufferLineIndicatorSelected = { fg = colors.green },
+    BufferLineIndicatorSelected = { fg = colors.blue },
+    BufferLineBufferSelected = { bg = colors.blue, fg = colors.background },
+    BufferLineCloseButtonSelected = { bg = colors.blue, fg = colors.background },
+    BufferLineModifiedSelected = { bg = colors.blue, fg = colors.background },
+    BufferLineHintSelected = { bg = colors.blue, fg = colors.background },
+    BufferLineInfoDiagnosticSelected = { bg = colors.blue, fg = colors.background },
+    BufferLineIndicatorDiagnosticSelected = { bg = colors.blue, fg = colors.background },
+    BufferLineDiagnosticSelected = { bg = colors.blue, fg = colors.background },
+    BufferLineDuplicateSelected = { bg = colors.blue, fg = colors.background },
+    BufferLineSeparatorSelected = { bg = colors.blue, fg = colors.background },
+    BufferLineOffsetSeparator = { bg = colors.background, fg = colors.background },
     BufferLineFill = { fg = colors.foreground, bg = colors.contrast },
     BufferLineGroupLabel = { fg = colors.contrast, bg = colors.accent },
     BufferLineGroupSeparator = { fg = colors.accent, bg = colors.contrast },

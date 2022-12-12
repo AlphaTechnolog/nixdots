@@ -10,8 +10,8 @@ in {
       colors = theme;
       mouse.hide_when_typing = true;
       window = {
-        padding.x = 40;
-        padding.y = 40;
+        padding.x = 20;
+        padding.y = 20;
         dynamic_padding = true;
       };
       font = setfont "JetBrainsMono Nerd Font" // {

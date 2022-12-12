@@ -7,33 +7,39 @@ function M.mklualinetheme ()
   local custom = {}
 
   custom.normal = {
-    a = { fg = colors.blue, bg = colors.background },
+    a = { bg = colors.blue, fg = colors.background },
+    x = { bg = colors.blue, fg = colors.background },
     b = { bg = colors.lighter, fg = colors.foreground },
     c = { bg = colors.background, fg = colors.background },
   }
 
   custom.insert = {
-    a = { fg = colors.green, bg = colors.background },
+    a = { bg = colors.green, fg = colors.background },
+    x = { bg = colors.green, fg = colors.background },
     b = { bg = colors.lighter, fg = colors.foreground },
   }
 
   custom.command = {
-    a = { fg = colors.red, bg = colors.background },
+    a = { bg = colors.red, fg = colors.background },
+    x = { bg = colors.red, fg = colors.background },
     b = { bg = colors.lighter, fg = colors.foreground },
   }
 
   custom.visual = {
-    a = { fg = colors.cyan, bg = colors.background },
+    a = { bg = colors.cyan, fg = colors.background },
+    x = { bg = colors.cyan, fg = colors.background },
     b = { bg = colors.lighter, fg = colors.foreground },
   }
 
   custom.replace = {
-    a = { fg = colors.red, bg = colors.background },
+    a = { bg = colors.red, fg = colors.background },
+    x = { bg = colors.red, fg = colors.background },
     b = { bg = colors.lighter, fg = colors.foreground },
   }
 
   custom.inactive = {
-    a = { fg = colors.background, bg = colors.background },
+    a = { bg = colors.background, fg = colors.background },
+    x = { bg = colors.background, fg = colors.background },
     b = { bg = colors.lighter, fg = colors.foreground },
     c = { bg = colors.background, fg = colors.foreground },
   }
