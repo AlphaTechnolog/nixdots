@@ -8,6 +8,7 @@ bufferline.setup {
   options = {
     show_buffer_icons = false,
     show_buffer_default_icon = false,
+    separator_style = {'', ''},
     indicator = {
       style = 'none',
     },

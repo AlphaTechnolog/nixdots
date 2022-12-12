@@ -364,7 +364,7 @@ M.highlights_base = function (colors, opts)
     healthWarning = { fg = colors.magenta },
 
     -- BufferLine
-    BufferLineIndicatorSelected = { fg = colors.blue },
+    BufferLineIndicatorSelected = { bg = colors.blue, fg = colors.background },
     BufferLineBufferSelected = { bg = colors.blue, fg = colors.background },
     BufferLineCloseButtonSelected = { bg = colors.blue, fg = colors.background },
     BufferLineModifiedSelected = { bg = colors.blue, fg = colors.background },
@@ -373,11 +373,14 @@ M.highlights_base = function (colors, opts)
     BufferLineIndicatorDiagnosticSelected = { bg = colors.blue, fg = colors.background },
     BufferLineDiagnosticSelected = { bg = colors.blue, fg = colors.background },
     BufferLineDuplicateSelected = { bg = colors.blue, fg = colors.background },
-    BufferLineSeparatorSelected = { bg = colors.blue, fg = colors.background },
     BufferLineOffsetSeparator = { bg = colors.background, fg = colors.background },
     BufferLineFill = { fg = colors.foreground, bg = colors.contrast },
-    BufferLineGroupLabel = { fg = colors.contrast, bg = colors.accent },
-    BufferLineGroupSeparator = { fg = colors.accent, bg = colors.contrast },
+    BufferLineGroupLabel = { fg = colors.background, bg = colors.accent },
+    BufferLineGroupSeparator = { fg = colors.background, bg = colors.background },
+
+    BufferLineSeparator = { fg = colors.background, bg = colors.background },
+    BufferLineSeparatorVisible = { fg = colors.background, bg = colors.background },
+    BufferLineSeparatorSelected = { fg = colors.background, bg = colors.background },
 
     -- Barbar
     BufferCurrentSign = { fg = colors.blue },
