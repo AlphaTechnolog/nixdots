@@ -1,7 +1,7 @@
 {}:
 
 rec {
-  bg-darker = "#0b0d16";
+  bg-darker = "#090b14";
   bg = "#0d0f18";
   bg-contrast = "#0f111a";
   bg-lighter = "#11131c";
