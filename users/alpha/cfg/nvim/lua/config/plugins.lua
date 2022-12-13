@@ -10,6 +10,7 @@ local define_plugs = function (use)
   use "lewis6991/impatient.nvim"
   use "akinsho/toggleterm.nvim"
   use "folke/tokyonight.nvim"
+  use "rcarriga/nvim-notify"
 
   use {
     "nvim-tree/nvim-tree.lua",
