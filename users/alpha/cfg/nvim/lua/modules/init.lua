@@ -6,3 +6,5 @@ require("modules.colorizer")
 require("modules.autopairs")
 require("modules.bufferline")
 require("modules.toggleterm")
+
+-- mason isn't loaded here ok!
