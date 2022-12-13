@@ -8,6 +8,7 @@ local define_plugs = function (use)
   use "windwp/nvim-autopairs"
   use "akinsho/bufferline.nvim"
   use "lewis6991/impatient.nvim"
+  use "akinsho/toggleterm.nvim"
 
   use {
     "nvim-tree/nvim-tree.lua",

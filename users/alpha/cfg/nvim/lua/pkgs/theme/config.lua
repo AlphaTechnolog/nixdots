@@ -272,7 +272,7 @@ M.highlights_base = function (colors, opts)
     -- NvimTree
     NvimTreeNormal = { fg = colors.foreground, bg = colors.background },
     NvimTreeNormalNC = { fg = colors.foreground, bg = colors.background },
-    NvimTreeRootFolder = { fg = colors.red },
+    NvimTreeRootFolder = { fg = colors.yellow },
     NvimTreeGitDirty = { fg = colors.magenta },
     NvimTreeGitNew = { fg = colors.blue },
     NvimTreeGitDeleted = { fg = colors.red },

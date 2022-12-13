@@ -3,6 +3,7 @@ vim.defer_fn(function ()
 end, 0)
 
 require("config.options")
+require("config.autocmds")
 require("config.keymaps")
 require("config.theme")
 
