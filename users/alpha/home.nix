@@ -64,15 +64,11 @@ in
   # gtk configuration
   gtk = {
     enable = true;
-    gtk3.extraConfig = {
-      gtk-decoration-layout = "menu:";
-    };
+    gtk3.extraConfig.gtk-decoration-layout = "menu:";
+    theme.name = "Decayce";
     iconTheme = with pkgs; {
       name = "Papirus-Dark";
       package = papirus-icon-theme;
-    };
-    theme = {
-      name = "Decayce";
     };
   };
 
