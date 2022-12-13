@@ -58,6 +58,8 @@ in {
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
+  services.xserver.videoDrivers = [ "intel" ];
+
   services.xserver.displayManager.gdm.enable = true;
 
   services.xserver.windowManager.awesome = {
@@ -159,5 +161,9 @@ in {
 
   # allow unfree pkgs through configuration.nix
   nixpkgs.config.allowUnfree = true;
+
+  hardware.opengl = {
+    enable = true;
+  };
 }
 
