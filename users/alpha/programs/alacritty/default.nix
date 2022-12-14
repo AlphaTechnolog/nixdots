@@ -16,8 +16,6 @@ in {
       };
       font = setfont "JetBrainsMono Nerd Font" // {
         size = 8;
-        offset.y = 4;
-        glyph_offset.y = 2;
       };
       cursor = {
         thickness = 0.3;
