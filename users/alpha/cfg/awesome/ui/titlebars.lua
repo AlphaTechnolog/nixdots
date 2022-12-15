@@ -61,7 +61,7 @@ client.connect_signal("request::titlebars", function (c)
 
   local titlebar = awful.titlebar(c, {
     position = "top",
-    size = 36,
+    size = 39,
   })
 
   local controls_layout = wibox.layout.fixed.horizontal()
