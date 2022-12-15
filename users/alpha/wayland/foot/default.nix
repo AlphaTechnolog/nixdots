@@ -13,6 +13,8 @@ in with colors; {
         pad = "20x20";
       };
       cursor = {
+        style = "beam";
+        beam-thickness = "1px";
         color = "${bg} ${blue}";
       };
       colors = {

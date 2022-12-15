@@ -52,7 +52,9 @@ window#waybar {
   font-size: 20px;
   margin: 6px 6px 0px 6px;
   padding: 0px 2px 0px 0px;
-  color: ${magenta};
+  color: ${fg};
+  background-color: ${black};
+  border-radius: 4px;
 }
 
 #pulseaudio {
@@ -83,15 +85,15 @@ window#waybar {
   font-size: 13px;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-  background-color: ${white};
-  color: ${bg};
+  background-color: ${black};
+  color: ${fg};
 }
 
 #custom-mins {
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
-  background-color: ${white};
-  color: ${bg};
+  background-color: ${black};
+  color: ${fg};
   padding: 4px 0px;
   margin-bottom: 4px;
   font-family: BlexMono Nerd Font;
@@ -106,5 +108,7 @@ window#waybar {
   font-size: 20px;
   margin: 0px 6px 4px;
   color: ${red};
+  border-radius: 4px;
+  background-color: ${black};
 }
 ''
