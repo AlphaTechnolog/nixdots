@@ -17,12 +17,9 @@ in {
       font = setfont "JetBrainsMono Nerd Font" // {
         size = 8;
       };
-      cursor = {
-        thickness = 0.3;
-        style = {
-          shape = "Block";
-          blinking = "on";
-        };
+      cursor.style = {
+        shape = "Beam";
+        blinking = "on";
       };
     };
   };
