@@ -35,11 +35,14 @@ local mkdot = function (color)
 end
 
 hour_widgets.sep = wibox.widget {
-  mkdot(beautiful.blue),
-  mkdot(beautiful.cyan),
-  mkdot(beautiful.aqua),
-  spacing = spacing,
-  layout = wibox.layout.flex.vertical,
+  {
+    mkdot(beautiful.blue),
+    mkdot(beautiful.blue),
+    spacing = dimensions.spacing * 1.5,
+    layout = wibox.layout.fixed.vertical,
+  },
+  valign = 'center',
+  layout = wibox.container.place,
 }
 
 local hour = wibox.widget {

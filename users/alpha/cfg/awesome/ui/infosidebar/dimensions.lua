@@ -1,4 +1,4 @@
 return {
-  width = 350,
+  width = 322,
   spacing = 8
 }

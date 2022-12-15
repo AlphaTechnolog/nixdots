@@ -15,7 +15,7 @@ in {
         dynamic_padding = true;
       };
       font = setfont "Iosevka Nerd Font" // {
-        size = 8;
+        size = 9;
         offset.y = 3;
         glyph_offset.y = 1;
       };
