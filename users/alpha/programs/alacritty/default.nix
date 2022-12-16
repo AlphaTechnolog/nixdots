@@ -14,8 +14,8 @@ in {
         padding.y = 20;
         dynamic_padding = true;
       };
-      font = setfont "Iosevka Nerd Font" // {
-        size = 9;
+      font = setfont "Monofur Nerd Font" // {
+        size = 10;
         offset.y = 3;
         glyph_offset.y = 1;
       };

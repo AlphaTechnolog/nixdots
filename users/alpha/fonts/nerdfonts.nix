@@ -6,5 +6,6 @@ with pkgs; nerdfonts.override {
     "JetBrainsMono"
     "IBMPlexMono"
     "Mononoki"
+    "Monofur"
   ];
 }
