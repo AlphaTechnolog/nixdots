@@ -39,6 +39,7 @@ in {
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.nameservers = [ "8.8.8.8" ];
 
   # Set your time zone.
   time.timeZone = "America/Caracas";
@@ -60,7 +61,7 @@ in {
 
   services.xserver.videoDrivers = [ "intel" ];
 
-  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.displayManager.lightdm.enable = true;
 
   services.xserver.windowManager.awesome = {
     enable = true;

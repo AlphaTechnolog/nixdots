@@ -87,7 +87,7 @@ client.connect_signal("request::titlebars", function (c)
   titlebar:setup {
     {
       controls_layout,
-      left = 12,
+      left = 16,
       widget = wibox.container.margin,
     },
     buttons,
