@@ -13,7 +13,7 @@ vscode-with-extensions.override {
       name = "volar";
       publisher = "vue";
       version = "1.0.12";
-      sha256 = "sha256-Ft1HUgV9Y1fsBMrd8C04KRmVOn1BL6l5VY5Mssx61q4=";
+      sha256 = "sha256-D9E3KRUOlNVXH4oMv1W0+/mbqO8Se7+6E2F5P/KvCro=";
     }
     {
       name = "vscode-typescript-vue-plugin";
