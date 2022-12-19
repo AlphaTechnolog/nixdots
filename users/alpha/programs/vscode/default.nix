@@ -24,8 +24,8 @@ vscode-with-extensions.override {
     {
       name = "decay";
       publisher = "decaycs";
-      version = "1.0.4";
-      sha256 = "sha256-ZxiTdMkl7LtoomGdVFCIKUGLpgwk7Nb4g9EwS842wp4=";
+      version = "1.0.5";
+      sha256 = "sha256-UKPGopCNY0A4J+E9Egu1lhM7woDW+4lNOs3L1CfQq+0=";
     }
     {
       name = "material-icon-theme";
