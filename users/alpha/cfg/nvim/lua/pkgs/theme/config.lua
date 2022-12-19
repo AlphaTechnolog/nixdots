@@ -274,6 +274,7 @@ M.highlights_base = function (colors, opts)
     IndentBlanklineContextStart = { sp = colors.comments, underline = true, bg = 'NONE' },
 
     -- NvimTree
+    NvimTreeVertSplit = { bg = colors.background, fg = colors.background },
     NvimTreeNormal = { fg = colors.foreground, bg = colors.background },
     NvimTreeNormalNC = { fg = colors.foreground, bg = colors.background },
     NvimTreeRootFolder = { fg = colors.yellow },

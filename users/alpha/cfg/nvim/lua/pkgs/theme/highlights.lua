@@ -27,11 +27,11 @@ function M.highlight_all(colors, opts)
 
     if ntree.contrast == true then
         M.bulk_hi {
+            NvimTreeVertSplit = { bg = colors.contrast, fg = colors.contrast },
             NvimTreeNormal = { bg = colors.contrast },
             NvimTreeNormalNC = { bg = colors.contrast },
             NvimTreeEndOfBuffer = { bg = colors.contrast, fg = colors.contrast },
             NvimTreeEndOfBufferNC = { bg = colors.contrast, fg = colors.contrast },
-            NvimTreeVertSplit = { fg = colors.background, bg = colors.background },
         }
     end
 
