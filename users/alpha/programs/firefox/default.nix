@@ -9,6 +9,9 @@
       enhancer-for-youtube
       refined-github
       stylus
+      vue-js-devtools
+      react-devtools
+      reduxdevtools
     ];
 
     profiles.alpha = {

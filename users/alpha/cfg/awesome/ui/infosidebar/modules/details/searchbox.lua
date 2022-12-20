@@ -13,7 +13,7 @@ icon.font = beautiful.nerd_font .. " 20"
 icon.markup = helpers.get_colorized_markup("", beautiful.blue)
 
 local reset = function ()
-  placeholder.markup = helpers.get_colorized_markup("Launch App...", beautiful.light_black)
+  placeholder.markup = helpers.get_colorized_markup("Launch App...", beautiful.grey)
 end
 
 reset()

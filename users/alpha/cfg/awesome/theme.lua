@@ -23,22 +23,22 @@ theme.font_size = '10'
 theme.font = theme.font_name .. ' ' .. theme.font_size
 
 -- base colors
-theme.black = '#151720'
-theme.dimblack = '#1a1c25'
-theme.light_black = '#262831'
-theme.grey = '#666891'
-theme.red = '#dd6777'
-theme.yellow = '#ecd3a0'
-theme.magenta = '#c296eb'
-theme.green = '#90ceaa'
-theme.blue = '#86aaec'
-theme.cyan = '#93cee9'
-theme.aqua = '#7bd9e6'
+theme.black = '#171721'
+theme.dimblack = '#191923'
+theme.light_black = '#1c1c26'
+theme.grey = '#4e4e58'
+theme.red = '#fa9a9a'
+theme.yellow = '#f8e7b7'
+theme.magenta = '#bfa6fa'
+theme.green = '#b0e2ae'
+theme.blue = '#8cbef7'
+theme.cyan = '#93cff7'
+theme.aqua = '#93cff7'
 
 -- backgrounds
-theme.bg_normal     = "#0d0f18"
-theme.bg_contrast   = "#0f111a"
-theme.bg_lighter    = "#11131c"
+theme.bg_normal     = "#12121c"
+theme.bg_contrast   = "#10101a"
+theme.bg_lighter    = "#15151f"
 
 -- elements bg
 theme.bg_focus      = theme.bg_normal
@@ -47,7 +47,7 @@ theme.bg_minimize   = theme.bg_normal
 theme.bg_systray    = theme.bg_normal
 
 -- foregrounds
-theme.fg_normal     = "#a5b6cf"
+theme.fg_normal     = "#c3cddb"
 theme.fg_focus      = theme.fg_nromal
 theme.fg_urgent     = theme.fg_normal
 theme.fg_minimize   = theme.fg_normal
