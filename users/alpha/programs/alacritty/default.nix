@@ -10,8 +10,8 @@ in {
       colors = theme;
       mouse.hide_when_typing = true;
       window = {
-        padding.x = 20;
-        padding.y = 20;
+        padding.x = 14;
+        padding.y = 14;
         dynamic_padding = true;
       };
       font = setfont "Monaco Nerd Font" // {
