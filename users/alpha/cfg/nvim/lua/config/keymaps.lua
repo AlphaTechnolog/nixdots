@@ -18,8 +18,8 @@ for _, nk in ipairs(nks) do
   keymap('n', '<C-' .. nk .. '>', '<C-w>' .. nk)
 end
 
-keymap('n', '<space>x', '<cmd>bd!<cr>')
-keymap('n', '<C-b>', '<cmd>bd!<cr>')
+keymap('n', '<space>x', '<cmd>Bdelete!<cr>')
+keymap('n', '<C-b>', '<cmd>Bdelete!<cr>')
 
 keymap('n', '<Tab>', '<cmd>bn!<cr>')
 keymap('n', '<S-Tab>', '<cmd>bp!<cr>')
