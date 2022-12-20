@@ -16,8 +16,6 @@ in {
       };
       font = setfont "Monaco Nerd Font" // {
         size = 8;
-        offset.y = 3;
-        glyph_offset.y = 1;
       };
       cursor.style = {
         shape = "Beam";
