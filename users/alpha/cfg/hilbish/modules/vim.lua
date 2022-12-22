@@ -8,7 +8,7 @@ local modes = {
 }
 
 -- turn on vim mode
-hilbish.inputMode("vim")
+-- hilbish.inputMode("vim")
 
 -- load cursors
 bait.catch("hilbish.vimMode", function (mode)
