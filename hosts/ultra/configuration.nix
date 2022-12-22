@@ -114,6 +114,8 @@ in {
     docker-compose
     mongodb
     hilbish-new
+    cargo
+    rustc
 
     # utils
     xorg.xwininfo
