@@ -37,6 +37,7 @@ in
   # link some configuration files
   xdg.configFile.awesome.source = ./cfg/awesome;
   xdg.configFile.rofi.source = ./cfg/rofi;
+  xdg.configFile.hilbish.source = ./cfg/hilbish;
   xdg.configFile."BetterDiscord/themes".source = ./cfg/bd-themes;
 
   theme.base16.colors = base16-theme;
@@ -93,45 +94,18 @@ in
     };
   };
 
-  # shell
-  programs.zsh = {
-    enable = true;
-    shellAliases = {
-      ls = "exa --icons";
-      la = "ls -la";
-      tree = "exa --tree";
-      vim = "nvim";
-      vi = "nvim";
-      cat = "bat";
-    };
-    zplug = {
-      enable = true;
-      plugins = [
-        { name = "olets/zsh-window-title"; }
-        { name = "zsh-users/zsh-autosuggestions"; }
-        { name = "zsh-users/zsh-syntax-highlighting"; }
-      ];
-    };
-  };
-
-  # shell prompt
-  programs.starship = {
-    enable = true;
-    settings = {
-      add_newline = false;
-      format = "$cmd_duration$git_branch$git_status[ ](fg:blue)[|](fg:black) ";
-      git_branch = {
-        format = "via [$symbol$branch(:$remote_branch)]($style) ";
-      };
-    };
-  };
-
   # enable unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # cursor
+  # cursor, extra fonts, hilbish plugins, etc
   home.file = extra-fonts // {
     ".icons/default".source = "${pkgs.phinger-cursors}/share/icons/phinger-cursors";
+    ".local/share/hilbish/libs/promptua".source = pkgs.fetchFromGitHub {
+      owner = "TorchedSammy";
+      repo = "Promptua";
+      rev = "d0ab5202ed68a6dc1a959e7a69f8b45854a4dd40";
+      sha256 = "gqfh7q8esp5S6hussOSKU1SmuDaoTdRK84ccM/Qzm/s=";
+    };
   };
 
   # add support for .local/bin

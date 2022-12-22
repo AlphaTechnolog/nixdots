@@ -7,6 +7,7 @@
 
 let
   virtualisation-packages = import ./virtualisation/pkgs.nix { inherit pkgs; };
+  hilbish-new = pkgs.callPackage ../../pkgs/hilbish.nix {};
 in {
   imports =
     [ # Include the results of the hardware scan.
@@ -101,8 +102,8 @@ in {
     initialPassword = "alpha123.";
   };
 
-  # shell (zsh)
-  users.defaultUserShell = pkgs.zsh;
+  # shell (hilbish)
+  users.defaultUserShell = hilbish-new;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -112,6 +113,7 @@ in {
     playerctl
     docker-compose
     mongodb
+    hilbish-new
 
     # utils
     xorg.xwininfo
