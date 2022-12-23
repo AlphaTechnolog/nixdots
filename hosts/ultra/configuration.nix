@@ -9,15 +9,23 @@ let
   virtualisation-packages = import ./virtualisation/pkgs.nix { inherit pkgs; };
   hilbish-new = pkgs.callPackage ../../pkgs/hilbish.nix {};
 in {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./virtualisation
-    ];
+  imports = [./hardware-configuration.nix ./virtualisation];
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # use grub with os-prober support
+  boot.loader = {
+    systemd-boot.enable = false;
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot";
+    };
+    grub = {
+      enable = true;
+      version = 2;
+      device = "nodev";
+      efiSupport = true;
+      useOSProber = true;
+    };
+  };
 
   # use doas instead-of sudo
   security.sudo.enable = false;
@@ -59,9 +67,7 @@ in {
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
-
   services.xserver.videoDrivers = [ "intel" ];
-
   services.xserver.displayManager.lightdm.enable = true;
 
   services.xserver.windowManager.awesome = {
@@ -74,6 +80,10 @@ in {
         luaposix;
     };
   };
+
+  # automount usb
+  services.devmon.enable = true;
+  services.udisks2.enable = true;
 
   # Configure keymap in X11
   services.xserver.layout = "us";

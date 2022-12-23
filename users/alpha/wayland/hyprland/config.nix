@@ -48,7 +48,7 @@ general {
 
     gaps_in = 8
     gaps_out = 14
-    border_size = 1
+    border_size = 2
 
     col.active_border = rgb(${colors.blue})
     col.inactive_border = rgb(${colors.grey})

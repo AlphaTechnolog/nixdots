@@ -7,7 +7,7 @@ in with colors; {
     enable = true;
     settings = {
       main = {
-        font = "JetBrainsMono Nerd Font:size=9";
+        font = "Monaco Nerd Font:size=9";
         dpi-aware = "no";
         resize-delay-ms = 0;
         pad = "20x20";

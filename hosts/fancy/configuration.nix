@@ -15,9 +15,21 @@ in {
       ./virtualisation
     ];
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # use grub with os-prober support
+  boot.loader = {
+    systemd-boot.enable = false;
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot";
+    };
+    grub = {
+      enable = true;
+      version = 2;
+      device = "nodev";
+      efiSupport = true;
+      useOSProber = true;
+    };
+  };
 
   # use doas instead-of sudo
   security.sudo.enable = false;
@@ -93,6 +105,10 @@ in {
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
+
+  # automount usb
+  services.devmon.enable = true;
+  services.udisks2.enable = true;
 
   # docker
   virtualisation.docker.enable = true;
