@@ -8,4 +8,5 @@ util.process_table(hilbish.alias, {
   vim = "nvim",
   vi = "nvim",
   cat = "bat",
+  reset = "exec hilbish -S -l" -- replaces current shell into a new one
 })
