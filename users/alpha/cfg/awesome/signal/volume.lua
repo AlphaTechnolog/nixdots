@@ -26,14 +26,14 @@ function volume.re_emit_muted_signal ()
 end
 
 function volume.set(vol, reemit)
-    awful.spawn(gfs.get_configuration_dir () .. 'scripts/set-volume.sh ' .. tonumber(vol))
+    awful.spawn(gfs.get_configuration_dir() .. 'scripts/set-volume.sh ' .. tonumber(vol))
     if reemit then
         volume.re_emit_volume_value_signal()
     end
 end
 
 function volume.toggle_muted ()
-    awful.spawn.with_shell(sink_part .. "pactl set-sink-mute $SINK toggle")
+    awful.spawn(gfs.get_configuration_dir() .. "scripts/toggle-muted.sh")
     volume.re_emit_muted_signal()
 end
 

@@ -14,9 +14,9 @@ awful.spawn.easy_async_with_shell("whoami", function (whoami)
 end)
 
 local os = wibox.widget.textbox()
-local osname = [[cat /etc/os-release | grep "PRETTY_NAME" | sed 's/=//g' | sed 's/"//g' | sed 's/PRETTY_NAME//g']]
+local osname = [[bash -c "cat /etc/os-release | grep 'PRETTY_NAME' | sed 's/=//g' | sed 's/\"//g' | sed 's/PRETTY_NAME//g'"]]
 
-awful.spawn.easy_async_with_shell(osname, function (pretty_osname)
+awful.spawn.easy_async(osname, function (pretty_osname)
   os.markup = pretty_osname:gsub("\n", "")
 end)
 
@@ -29,7 +29,7 @@ end)
 local uptime = wibox.widget.textbox()
 
 local function update_uptime ()
-  awful.spawn.easy_async_with_shell(gfs.get_configuration_dir() .. "scripts/uptime.sh", function (processed_uptime)
+  awful.spawn.easy_async(gfs.get_configuration_dir() .. "scripts/uptime.sh", function (processed_uptime)
     uptime.markup = processed_uptime:gsub("\n", "")
   end)
 end

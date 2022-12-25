@@ -4,8 +4,6 @@ local helpers = require("helpers")
 local gears = require("gears")
 local awful = require("awful")
 
-local rubato = require("modules.rubato")
-
 local tabs_layout = wibox.layout.fixed.horizontal()
 
 tabs_layout.spacing = 1
@@ -86,16 +84,8 @@ local settings = require "ui.dashboard.modules.settings"
 local content = wibox.layout.flex.horizontal()
 
 local update_content = function(new_widget)
-  local change_opacity = rubato.timed { duration = 0.45 }
-
-  change_opacity:subscribe(function (val)
-    content.opacity = val
-  end)
-
-  change_opacity.target = 0
   content:reset()
   content:add(new_widget)
-  change_opacity.target = 1
 end
 
 update_content(info)

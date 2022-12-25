@@ -116,7 +116,7 @@ in {
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.alpha = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "networkmanager" "libvirtd" "input" ];
+    extraGroups = [ "wheel" "docker" "networkmanager" "libvirtd" "video" "audio" "input" ];
     initialPassword = "alpha123.";
   };
 

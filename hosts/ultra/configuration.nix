@@ -108,12 +108,15 @@ in {
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.alpha = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "networkmanager" "libvirtd" ];
+    extraGroups = [ "wheel" "docker" "networkmanager" "libvirtd" "video" "audio" "input" ];
     initialPassword = "alpha123.";
   };
 
   # shell (hilbish)
   users.defaultUserShell = hilbish-new;
+
+  # light
+  programs.light.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

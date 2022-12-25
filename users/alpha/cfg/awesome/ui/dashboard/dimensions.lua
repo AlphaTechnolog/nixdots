@@ -1,5 +1,5 @@
 return {
-  width = 690,
-  height = 680,
+  width = 670,
+  height = 700,
   spacing = 12,
 }

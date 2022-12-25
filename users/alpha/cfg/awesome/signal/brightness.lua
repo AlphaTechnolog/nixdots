@@ -2,14 +2,14 @@
 local gears = require 'gears'
 local awful = require 'awful'
 
-local script = 'light -G | sed -s "s/\\./ /g" | awk "{print \\$1}"'
+local script = [[bash -c "light -G | sed 's/\..*/ /g'"]]
 
 gears.timer {
     timeout = 5,
     call_now = true,
     autostart = true,
     callback = function ()
-        awful.spawn.easy_async_with_shell(script, function (out)
+        awful.spawn.easy_async(script, function (out)
             awesome.emit_signal('brightness::value', tonumber(out))
         end)
     end

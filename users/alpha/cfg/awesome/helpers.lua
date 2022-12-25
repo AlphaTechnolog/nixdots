@@ -238,4 +238,24 @@ function helpers.apply_margin(widget, margins, top, bottom, right, left)
     }
 end
 
+function helpers.contained (spacing, widget)
+  if not widget then
+    widget = wibox.widget.textbox()
+    widget.markup = 'Hello, World!'
+    widget.valign = 'center'
+    widget.align = 'center'
+  end
+
+  return wibox.widget {
+    {
+      widget,
+      margins = spacing,
+      widget = wibox.container.margin,
+    },
+    bg = beautiful.bg_lighter,
+    shape = helpers.mkroundedrect(),
+    widget = wibox.container.background,
+  }
+end
+
 return helpers
