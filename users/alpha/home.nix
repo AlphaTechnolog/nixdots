@@ -3,6 +3,7 @@
 let
   run = import ./bin/run.nix { inherit pkgs; };
   decayce-gtk = with pkgs; callPackage ../../pkgs/decayce-gtk.nix { };
+  monaco-nf = with pkgs; callPackage ../../pkgs/monaco-nf.nix { };
   vscode-custom = with pkgs; callPackage ./programs/vscode { inherit pkgs; };
   nfonts = import ./fonts/nerdfonts.nix { inherit pkgs; };
 
@@ -139,6 +140,7 @@ in
     dconf
     vscode-custom
     nfonts
+    monaco-nf
     tdesktop
     redshift
     wirelesstools
