@@ -19,7 +19,6 @@ promptua.setConfig {
 }
 
 promptua.setTheme {
-  { provider = "command.execTime", style = "yellow" },
   { provider = "prompt.icon", style = "blue" },
   { provider = get_cwd, style = "cyan", separator = "" },
   { provider = "git.branch", style = "magenta", separator = "", icon = "  " },
