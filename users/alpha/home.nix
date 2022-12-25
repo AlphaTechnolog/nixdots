@@ -134,6 +134,7 @@ in
     notion-app-enhanced
     picom
     maim
+    jq
     networkmanagerapplet
     xfce.thunar
     neovim-nightly
