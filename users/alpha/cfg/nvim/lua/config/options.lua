@@ -11,7 +11,7 @@ opt.laststatus = 3
 opt.cursorline = false
 opt.wrap = false
 opt.guifont = { "JetBrainsMono Nerd Font", ":h8" }
-opt.cmdheight = 0
+opt.cmdheight = 1
 opt.completeopt = "menu,menuone,noselect"
 
 opt.shortmess = opt.shortmess + {

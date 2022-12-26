@@ -12,6 +12,7 @@ local define_plugs = function (use)
   use "folke/tokyonight.nvim"
   use "rcarriga/nvim-notify"
   use "famiu/bufdelete.nvim"
+  use "Pocco81/true-zen.nvim"
 
   use {
     "nvim-tree/nvim-tree.lua",
