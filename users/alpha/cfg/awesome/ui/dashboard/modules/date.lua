@@ -8,7 +8,7 @@ local dimensions = require("ui.dashboard.dimensions")
 
 local hour = wibox.widget {
   markup = '<b>00:00 AM</b>',
-  font = beautiful.font_name .. ' 46',
+  font = beautiful.font_name .. ' 42',
   align = 'center',
   widget = wibox.widget.textbox,
 }

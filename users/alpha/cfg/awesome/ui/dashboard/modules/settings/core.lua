@@ -4,6 +4,8 @@ local helpers = require 'helpers'
 local awful = require 'awful'
 local gears = require 'gears'
 
+local screenshot = require 'modules.screenshot'
+
 local dimensions = require 'ui.dashboard.dimensions'
 local sliders = require 'ui.dashboard.modules.settings.sliders'
 
@@ -28,7 +30,7 @@ local full_scr = wibox.widget {
 helpers.add_hover(full_scr, beautiful.bg_lighter, beautiful.dimblack)
 
 full_scr:add_button(awful.button({}, 1, function ()
-  require 'naughty'.notify { title = 'hello' }
+  screenshot.full { notify = true }
 end))
 
 local area_scr = wibox.widget {
@@ -52,7 +54,7 @@ local area_scr = wibox.widget {
 helpers.add_hover(area_scr, beautiful.bg_lighter, beautiful.dimblack)
 
 area_scr:add_button(awful.button({}, 1, function ()
-  require 'naughty'.notify { title = 'hello' }
+  screenshot.area { notify = true }
 end))
 
 local username = wibox.widget.textbox()
