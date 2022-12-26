@@ -6,6 +6,8 @@ local profile = require("ui.dashboard.modules.profile")
 local music = require("ui.dashboard.modules.music")
 local calendar = require("ui.dashboard.modules.calendar")
 
+local notifcenter = require("ui.dashboard.modules.notifcenter")
+
 local info = wibox.widget {
   {
     date,
@@ -15,13 +17,8 @@ local info = wibox.widget {
     spacing = dimensions.spacing,
     layout = wibox.layout.fixed.vertical,
   },
-  {
-    markup = 'right',
-    align = 'center',
-    valign = 'center',
-    widget = wibox.widget.textbox,
-  },
-  spacing = 7,
+  notifcenter,
+  spacing = dimensions.spacing,
   layout = wibox.layout.flex.horizontal,
 }
 

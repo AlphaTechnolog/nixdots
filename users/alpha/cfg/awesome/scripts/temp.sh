@@ -23,7 +23,7 @@ get () {
     path="/sys/class/thermal/thermal_zone0/temp"
   fi
 
-  local max_temp=100
+  local max_temp=200
   local temp=$(cat $path)
 
   jq -n $(jq -n $temp/1000)/$max_temp*100

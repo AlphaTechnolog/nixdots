@@ -61,7 +61,10 @@ local username = wibox.widget.textbox()
 
 username.font = beautiful.font_name .. ' ' .. tostring(tonumber(beautiful.font_size) + 8)
 username.align = 'center'
-username.markup = 'Hey! Bye? Now?'
+
+awful.spawn.easy_async('whoami', function (whoami)
+  username.markup = 'Hi ' .. helpers.capitalize(helpers.trim(whoami))
+end)
 
 local reload = wibox.widget {
   {

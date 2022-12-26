@@ -13,17 +13,19 @@ local function mkslider(icon)
       {
         id = 'slider_role',
         value = 100,
-        handle_shape = gears.shape.circle,
         handle_color = beautiful.blue,
-        handle_width = 37,
+        handle_width = 44,
         bar_border_width = 0,
         bar_active_color = beautiful.blue,
         bar_color = beautiful.blue .. '4D', -- 30% of transparency
-        bar_shape = gears.shape.rounded_bar,
+        bar_shape = helpers.mkroundedrect(12),
         widget = wibox.widget.slider,
-        bar_height = 37,
-        forced_height = 37,
+        bar_height = 44,
+        forced_height = 44,
         forced_width = 230,
+        handle_shape = function (cr, w, h)
+          return gears.shape.partially_rounded_rect(cr, w, h, false, true, true, false, 12)
+        end,
       },
       {
         {
