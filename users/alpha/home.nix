@@ -41,6 +41,8 @@ in
   xdg.configFile.hilbish.source = ./cfg/hilbish;
   xdg.configFile."BetterDiscord/themes".source = ./cfg/bd-themes;
 
+  xresources.extraConfig = "Xft.dpi: 80";
+
   theme.base16.colors = base16-theme;
 
   imports = lib.attrValues nur.repos.rycee.hmModules ++ [

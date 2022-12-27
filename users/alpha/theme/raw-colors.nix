@@ -1,20 +1,20 @@
 {}:
 
 rec {
-  bg-darker = "10101a";
-  bg = "12121c";
-  bg-contrast = "171721";
-  bg-lighter = "1c1c26";
-  black = "21212b";
-  dimblack = "262630";
-  light-black = "2b2b35";
-  fg = "c3cddb";
-  white = "c8d2e0";
-  grey = "292933";
-  red = "fa9a9a";
-  yellow = "f8e7b7";
-  magenta = "bfa6fa";
-  green = "b0e2ae";
-  blue = "8cbef7";
-  cyan = "93cff7";
+  bg-darker = "0e1217";
+  bg = "101419";
+  bg-contrast = "12161b";
+  bg-lighter = "171721";
+  black = "242931";
+  dimblack = "262b33";
+  light-black = "262b33";
+  fg = "b6beca";
+  white = "b6beca";
+  grey = "4d5768";
+  red = "e05f65";
+  yellow = "f1cf8a";
+  magenta = "c68aee";
+  green = "78dba9";
+  blue = "70a5eb";
+  cyan = "74bee9";
 }
