@@ -9,10 +9,11 @@
       confirm_os_window_close = 0;
       cursor_shape = "underline";
       cursor_underline_thickness = "0.5";
+      modify_font = "cell_height 4px";
     };
     font = {
       size = 10;
-      name = "Iosevka Nerd Font";
+      name = "Liga SFMono Nerd Font";
     };
   };
 }

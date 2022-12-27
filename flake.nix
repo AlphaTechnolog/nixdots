@@ -17,11 +17,18 @@
       url = github:hyprwm/Hyprland;
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    sf-mono-liga-src = {
+      url = "github:shaunsingh/SFMono-Nerd-Font-Ligaturized";
+      flake = false;
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, nixpkgs-f2k, ... }@inputs:
     let
       system = "x86_64-linux";
+
+      pkgs = nixpkgs.legacyPackages.${system};
 
       config = {
         system = system;
@@ -32,14 +39,18 @@
 
       overlays = with inputs; [
         (final: _:
-          let inherit (final) system;
-          in
-          {
+          let
+            inherit (final) system;
+          in {
             neovim-nightly = neovim.packages."${system}".neovim;
           } // (with nixpkgs-f2k.packages.${system}; {
             awesome = awesome-git;
             picom = picom-git;
-          })
+          }) // {
+            sf-mono-liga-bin = pkgs.callPackage ./pkgs/sfmono-nf.nix {
+              src = inputs.sf-mono-liga-src;
+            };
+          }
         )
         neovim-nightly.overlay
         nixpkgs-f2k.overlays.default
