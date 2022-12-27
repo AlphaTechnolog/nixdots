@@ -96,6 +96,14 @@ in {
         };
       }
       {
+        name = "lua";
+        auto-format = false;
+        indent = {
+          tab-width = 4;
+          unit = "    ";
+        };
+      }
+      {
         name = "rust";
         auto-format = true;
         language-server = {
