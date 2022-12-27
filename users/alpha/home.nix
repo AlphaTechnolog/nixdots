@@ -72,8 +72,8 @@ in
     vSync = true;
 
     shadow = true;
-    shadowOffsets = [(-40) (-20)];
-    shadowOpacity = 0.55;
+    shadowOffsets = [(-12) (-12)];
+    shadowOpacity = 0.6;
     shadowExclude = [
       "name = 'Notification'"
       "class_g = 'Conky'"
@@ -112,7 +112,7 @@ in
     };
 
     settings = {
-      shadow-radius = 40;
+      shadow-radius = 12;
       shadow-color = "#000000";
       shadow-ignore-shaped = false;
 
