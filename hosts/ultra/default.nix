@@ -18,7 +18,10 @@ lib.nixosSystem rec {
       home-manager.useGlobalPkgs = false;
       home-manager.useUserPackages = true;
       home-manager.users.alpha = {
-        imports = [ ../../users/alpha/home.nix ];
+        imports = [
+          ../../users/alpha/home.nix
+          ../../users/alpha/programs/helix
+        ];
       };
     }
   ];
