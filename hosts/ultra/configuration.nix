@@ -69,7 +69,7 @@ in {
   services.xserver.enable = true;
   services.xserver.videoDrivers = [ "intel" ];
   services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.dpi = 80;
+  services.xserver.dpi = 76;
 
   services.xserver.windowManager.awesome = {
     enable = true;

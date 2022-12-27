@@ -12,7 +12,7 @@
       modify_font = "cell_height 4px";
     };
     font = {
-      size = 10;
+      size = 11;
       name = "Liga SFMono Nerd Font";
     };
   };

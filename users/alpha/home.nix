@@ -41,7 +41,7 @@ in
   xdg.configFile.hilbish.source = ./cfg/hilbish;
   xdg.configFile."BetterDiscord/themes".source = ./cfg/bd-themes;
 
-  xresources.extraConfig = "Xft.dpi: 80";
+  xresources.extraConfig = "Xft.dpi: 76";
 
   theme.base16.colors = base16-theme;
 
@@ -123,7 +123,7 @@ in
         "class_g = 'Cairo-clock'"
       ];
 
-      corner-radius = 12;
+      corner-radius = 10;
       rounded-corners-exclude = [];
 
       blur-method = "dual_kawase";
