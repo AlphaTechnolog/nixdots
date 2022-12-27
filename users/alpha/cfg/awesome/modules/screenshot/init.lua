@@ -82,7 +82,7 @@ function M.full(opts)
     -- waiting a bit of time to wait the hidding of some visual elements
     -- that could be already rendered.
     gears.timer {
-        timeout = 0.25,
+        timeout = 0.55,
         call_now = false,
         autostart = true,
         single_shot = true,
