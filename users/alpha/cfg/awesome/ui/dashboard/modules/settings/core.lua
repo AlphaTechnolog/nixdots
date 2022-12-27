@@ -30,6 +30,7 @@ local full_scr = wibox.widget {
 helpers.add_hover(full_scr, beautiful.bg_lighter, beautiful.dimblack)
 
 full_scr:add_button(awful.button({}, 1, function ()
+  awesome.emit_signal('dashboard::toggle')
   screenshot.full { notify = true }
 end))
 
@@ -54,6 +55,7 @@ local area_scr = wibox.widget {
 helpers.add_hover(area_scr, beautiful.bg_lighter, beautiful.dimblack)
 
 area_scr:add_button(awful.button({}, 1, function ()
+  awesome.emit_signal('dashboard::toggle')
   screenshot.area { notify = true }
 end))
 
