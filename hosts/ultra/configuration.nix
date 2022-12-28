@@ -145,6 +145,8 @@ in {
 
     # utils
     xorg.xwininfo
+    xorg.xbacklight
+    brightnessctl
 
     # wine
     wineWowPackages.stable
