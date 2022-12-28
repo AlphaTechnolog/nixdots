@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   services.picom = {
     enable = true;
     backend = "glx";
@@ -32,11 +32,7 @@
         focus = true;
         full-shadow = true;
       };
-      dock = {
-        shadow = true;
-        clip-shadow-above = false;
-        full-shadow = true;
-      };
+      dock = {shadow = false;};
       dnd = {shadow = false;};
       popup_menu = {opacity = 1;};
       dropdown_menu = {opacity = 1;};
@@ -61,9 +57,8 @@
 
       blur-method = "dual_kawase";
       blur-kernel = "11x11gaussian";
-      blur-size = 12;
       blur-deviation = 1.0;
-      blur-strength = 8;
+      blur-strength = 10;
       blur-background = false;
       blur-background-frame = true;
       blur-background-fixed = true;

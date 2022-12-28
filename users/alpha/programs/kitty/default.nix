@@ -10,7 +10,7 @@
       cursor_shape = "underline";
       cursor_underline_thickness = "0.5";
       modify_font = "cell_height 4px";
-      background_opacity = "0.80";
+      background_opacity = "0.70";
     };
     font = {
       size = 11;
