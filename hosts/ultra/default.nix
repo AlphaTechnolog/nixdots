@@ -15,7 +15,7 @@ lib.nixosSystem rec {
     }
 
     home-manager.nixosModules.home-manager {
-      home-manager.useGlobalPkgs = false;
+      home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.users.alpha = {
         imports = [

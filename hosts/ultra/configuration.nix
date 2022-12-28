@@ -8,6 +8,7 @@
 let
   virtualisation-packages = import ./virtualisation/pkgs.nix { inherit pkgs; };
   hilbish-new = pkgs.callPackage ../../pkgs/hilbish.nix {};
+  material-symbols = pkgs.callPackage ../../pkgs/material-symbols.nix {};
 in {
   imports = [./hardware-configuration.nix ./virtualisation];
 
@@ -142,6 +143,7 @@ in {
 
   fonts.fonts = with pkgs; [
     sf-mono-liga-bin
+    material-symbols
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

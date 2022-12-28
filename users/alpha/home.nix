@@ -4,7 +4,6 @@ let
   run = import ./bin/run.nix { inherit pkgs; };
   decayce-gtk = with pkgs; callPackage ../../pkgs/decayce-gtk.nix { };
   monaco-nf = with pkgs; callPackage ../../pkgs/monaco-nf.nix { };
-  vscode-custom = with pkgs; callPackage ./programs/vscode { inherit pkgs; };
   nfonts = import ./fonts/nerdfonts.nix { inherit pkgs; };
 
   # integrates nur within Home-Manager
@@ -51,6 +50,7 @@ in
     (import ./programs/alacritty { inherit pkgs colors; })
     (import ./programs/firefox { inherit pkgs config nur colors; })
     (import ./theme/nvim { inherit colors; })
+    (import ./programs/vscode { inherit pkgs; })
   ];
 
   # Let Home Manager install and manage itself.
@@ -72,8 +72,8 @@ in
     vSync = true;
 
     shadow = true;
-    shadowOffsets = [(-12) (-12)];
-    shadowOpacity = 0.6;
+    shadowOffsets = [(-10) (-10)];
+    shadowOpacity = 0.35;
     shadowExclude = [
       "name = 'Notification'"
       "class_g = 'Conky'"
@@ -83,8 +83,8 @@ in
     ];
 
     fade = true;
-    fadeDelta = 10;
-    fadeSteps = [0.03 0.03];
+    fadeDelta = 4;
+    fadeSteps = [0.025 0.025];
     fadeExclude = [];
 
     activeOpacity = 1.0;
@@ -112,7 +112,7 @@ in
     };
 
     settings = {
-      shadow-radius = 12;
+      shadow-radius = 10;
       shadow-color = "#000000";
       shadow-ignore-shaped = false;
 
@@ -123,7 +123,7 @@ in
         "class_g = 'Cairo-clock'"
       ];
 
-      corner-radius = 10;
+      corner-radius = 12;
       rounded-corners-exclude = [];
 
       blur-method = "dual_kawase";
@@ -224,14 +224,12 @@ in
     postman
     mongodb-compass
     notion-app-enhanced
-    picom
     maim
     jq
     networkmanagerapplet
     xfce.thunar
     neovim-nightly
     dconf
-    vscode-custom
     nfonts
     monaco-nf
     tdesktop
