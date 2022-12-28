@@ -1,9 +1,6 @@
 { pkgs }:
 
 {
-  home.packages = with pkgs; [
-    luaFormatter
-  ];
 
   programs.vscode = {
     enable = true;
@@ -17,7 +14,6 @@
       "editor.fontSize" = 14;
       "editor.lineHeight" = 24;
       "window.menuBarVisibility" = "toggle";
-      "vscode-lua-format.binaryPath" = "${pkgs.luaFormatter}/bin/lua-format";
     };
     extensions = with pkgs.vscode-extensions; [
       bbenoist.nix
@@ -48,12 +44,6 @@
         publisher = "pkief";
         version = "4.22.0";
         sha256 = "sha256-U9P9BcuZi+SUcvTg/fC2SkjGRD4CvgJEc1i+Ft2OOUc=";
-      }
-      {
-        name = "vscode-lua-format";
-        publisher = "koihik";
-        version = "1.3.8";
-        sha256 = "sha256-ACdjiy+Rj2wmxvSojaJmtCwyryWWB+OA/9hBEMJi39g=";
       }
     ];
   };

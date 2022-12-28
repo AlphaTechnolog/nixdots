@@ -22,13 +22,6 @@
       url = "github:shaunsingh/SFMono-Nerd-Font-Ligaturized";
       flake = false;
     };
-    
-    luaFormatter = {
-      type = "git";
-      url = "https://github.com/Koihik/LuaFormatter.git";
-      submodules = true;
-      flake = false;
-    };
   };
 
   outputs = { self, nixpkgs, home-manager, nixpkgs-f2k, ... }@inputs:
@@ -54,18 +47,11 @@
             awesome = awesome-git;
             picom = picom-git;
           }) // {
-            luaFormatter-src = luaFormatter;
             sf-mono-liga-bin = pkgs.callPackage ./pkgs/sfmono-nf.nix {
               src = inputs.sf-mono-liga-src;
             };
           }
         )
-        (final: prev: {
-          luaFormatter = prev.callPackage ./pkgs/luaFormatter.nix {
-            src = prev.luaFormatter-src;
-            version = "999-master";
-          };
-        })
         neovim-nightly.overlay
         nixpkgs-f2k.overlays.default
         nur.overlay

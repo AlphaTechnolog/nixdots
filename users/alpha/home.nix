@@ -49,8 +49,9 @@ in
     (import ./programs/kitty { inherit pkgs; })
     (import ./programs/alacritty { inherit pkgs colors; })
     (import ./programs/firefox { inherit pkgs config nur colors; })
-    (import ./theme/nvim { inherit colors; })
     (import ./programs/vscode { inherit pkgs; })
+    (import ./programs/picom.nix {})
+    (import ./theme/nvim { inherit colors; })
   ];
 
   # Let Home Manager install and manage itself.
@@ -65,96 +66,6 @@ in
   # services
   services.playerctld.enable = true;
 
-  # picom
-  services.picom = {
-    enable = true;
-    backend = "glx";
-    vSync = true;
-
-    shadow = true;
-    shadowOffsets = [(-10) (-10)];
-    shadowOpacity = 0.35;
-    shadowExclude = [
-      "name = 'Notification'"
-      "class_g = 'Conky'"
-      "class_g ?= 'Notify-osd'"
-      "class_g = 'Cairo-clock'"
-      "_GTK_FRAME_EXTENTS@:c"
-    ];
-
-    fade = true;
-    fadeDelta = 4;
-    fadeSteps = [0.025 0.025];
-    fadeExclude = [];
-
-    activeOpacity = 1.0;
-    inactiveOpacity = 1.0;
-    menuOpacity = 1.0;
-    opacityRules = ["70:class_g = 'splash'"];
-
-    wintypes = {
-      tooltip = {
-        fade = true;
-        shadow = true;
-        focus = true;
-        full-shadow = true;
-      };
-      dock = {
-        shadow = true;
-        clip-shadow-above = false;
-        full-shadow = true;
-      };
-      dnd = {shadow = false;};
-      popup_menu = {opacity = 1;};
-      dropdown_menu = {opacity = 1;};
-      desktop = {full-shadow = false;};
-      normal = {full-shadow = false;};
-    };
-
-    settings = {
-      shadow-radius = 10;
-      shadow-color = "#000000";
-      shadow-ignore-shaped = false;
-
-      frame-opacity = 1.0;
-      inactive-opacity-override = false;
-      focus-exclude = [
-        "class_g = 'Peek'"
-        "class_g = 'Cairo-clock'"
-      ];
-
-      corner-radius = 12;
-      rounded-corners-exclude = [];
-
-      blur-method = "dual_kawase";
-      blur-kernel = "11x11gaussian";
-      blur-size = 12;
-      blur-deviation = 1.0;
-      blur-strength = 8;
-      blur-background = false;
-      blur-background-frame = true;
-      blur-background-fixed = true;
-      blur-background-exclude = [
-        "class_g = 'slop'"
-        "class_g = 'firefox'"
-        "_GTK_FRAME_EXTENTS@:c"
-        "window_type = 'desktop'"
-        "window_type = 'menu'"
-      ];
-
-      mark-wmwin-focused = true;
-      mark-ovredir-focused = true;
-      detect-rounded-corners = true;
-      detect-client-opacity = true;
-      detect-transient = true;
-      detect-client-leader = true;
-      glx-no-stencil = true;
-      use-damage = true;
-      transparent-clipping = false;
-      log-level = "warn";
-    };
-  };
-
   # gtk configuration
   gtk = {
     enable = true;
@@ -168,14 +79,6 @@ in
 
   # editor (nvim)
   systemd.user.sessionVariables.EDITOR = "nvim";
-
-  # make it nightly
-  nixpkgs.overlays = [
-    (import (builtins.fetchTarball {
-      url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
-      sha256 = "0j8wihp65cjv3ayvxff8513kkw4994s44niz7apihp05qkyqscw2";
-    }))
-  ];
 
   # bat (cat clone)
   programs.bat = {

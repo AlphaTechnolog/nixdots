@@ -72,6 +72,16 @@ in {
   services.xserver.displayManager.lightdm.enable = true;
   services.xserver.dpi = 76;
 
+  services.gnome = {
+    glib-networking.enable = true;
+    gnome-keyring.enable = true;
+  };
+
+  services.dbus = {
+    enable = true;
+    packages = with pkgs; [dconf gcr];
+  };
+
   services.xserver.windowManager.awesome = {
     enable = true;
     luaModules = lib.attrValues {
@@ -131,6 +141,7 @@ in {
     hilbish-new
     cargo
     rustc
+    protonvpn-cli
 
     # utils
     xorg.xwininfo
