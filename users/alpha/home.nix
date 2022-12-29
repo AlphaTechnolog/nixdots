@@ -2,7 +2,7 @@
 
 let
   run = import ./bin/run.nix { inherit pkgs; };
-  decayce-gtk = with pkgs; callPackage ../../pkgs/decayce-gtk.nix { };
+  dark-decay-gtk = with pkgs; callPackage ../../pkgs/dark-decay-gtk.nix { };
   monaco-nf = with pkgs; callPackage ../../pkgs/monaco-nf.nix { };
   nfonts = import ./fonts/nerdfonts.nix { inherit pkgs; };
 
@@ -70,7 +70,7 @@ in
   gtk = {
     enable = true;
     gtk3.extraConfig.gtk-decoration-layout = "menu:";
-    theme.name = "Decayce";
+    theme.name = "Dark-decay";
     iconTheme = with pkgs; {
       name = "Papirus-Dark";
       package = papirus-icon-theme;
@@ -114,6 +114,7 @@ in
     gimp
     xclip
     discord
+    pamixer
     spotify
     exa
     gcc
@@ -138,7 +139,7 @@ in
     tdesktop
     redshift
     wirelesstools
-    decayce-gtk # gtk theme :P
+    dark-decay-gtk # gtk theme :P
     run # my own script :)
   ];
 }

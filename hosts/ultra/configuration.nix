@@ -109,7 +109,24 @@ in {
 
   # Enable sound.
   sound.enable = true;
-  hardware.pulseaudio.enable = true;
+
+  hardware.pulseaudio.enable = false;
+  
+  services.pipewire = {
+    enable = true;
+    wireplumber.enable = true;
+    pulse.enable = true;
+    jack.enable = true;
+    alsa = {
+      enable = true;
+      support32Bit = true;
+    };
+  };
+
+  systemd.user.services = {
+    pipewire.wantedBy = ["default.target"];
+    pipewire-pulse.wantedBy = ["default.target"];
+  };
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
