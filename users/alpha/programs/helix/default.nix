@@ -35,7 +35,7 @@ in {
         idle-timeout = 1;
         line-number = "relative";
         scrolloff = 5;
-        bufferline = "always";
+        bufferline = "never";
         true-color = true;
         lsp.display-messages = true;
         indent-guides = {

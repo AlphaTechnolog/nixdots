@@ -154,10 +154,34 @@ in {
     winetricks
   ]);
 
-  fonts.fonts = with pkgs; [
-    sf-mono-liga-bin
-    material-symbols
-  ];
+  fonts = {
+    fonts = with pkgs; [
+      inter
+      sf-mono-liga-bin
+      material-symbols
+      noto-fonts
+      noto-fonts-cjk
+      noto-fonts-emoji
+    ];
+    fontconfig = {
+      enable = true;
+      antialias = true;
+      hinting = {
+        enable = true;
+        autohint = true;
+        style = "hintfull";
+      };
+
+      subpixel.lcdfilter = "default";
+
+      defaultFonts = {
+        emoji = ["Noto Color Emoji"];
+        monospace = ["Liga SFMono Nerd Font"];
+        sansSerif = ["Noto Sans" "Noto Color Emoji"];
+        serif = ["Noto Serif" "Noto Color Emoji"];
+      };
+    };
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

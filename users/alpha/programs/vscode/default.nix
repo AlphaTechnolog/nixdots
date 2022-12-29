@@ -11,7 +11,7 @@
       "editor.fontFamily" = "Liga SFMono Nerd Font";
       "editor.fontLigatures" = true;
       "editor.cursorStyle" = "line-thin";
-      "editor.fontSize" = 14;
+      "editor.fontSize" = 15;
       "editor.lineHeight" = 24;
       "window.menuBarVisibility" = "toggle";
     };
