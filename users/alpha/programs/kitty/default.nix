@@ -10,11 +10,11 @@
       cursor_shape = "underline";
       cursor_underline_thickness = "0.5";
       modify_font = "cell_height 4px";
-      background_opacity = "0.60";
+      background_opacity = "0.40";
     };
     font = {
       size = 11;
-      name = "Liga SFMono Nerd Font";
+      name = "monospace";
     };
   };
 }

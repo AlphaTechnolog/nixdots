@@ -8,10 +8,10 @@
       "workbench.colorTheme" = "Dark Decay Theme";
       "workbench.iconTheme" = "material-icon-theme";
       "editor.bracketPairColorization.enabled" = false;
-      "editor.fontFamily" = "Liga SFMono Nerd Font";
+      "editor.fontFamily" = "monospace";
       "editor.fontLigatures" = true;
       "editor.cursorStyle" = "line-thin";
-      "editor.fontSize" = 15;
+      "editor.fontSize" = 14.5;
       "editor.lineHeight" = 24;
       "window.menuBarVisibility" = "toggle";
     };
