@@ -1,6 +1,9 @@
-{ pkgs }:
+{ config, pkgs }:
 
 {
+  home.packages = with pkgs; [
+    luaFormatter
+  ];
 
   programs.vscode = {
     enable = true;
@@ -12,7 +15,9 @@
       "editor.fontLigatures" = true;
       "editor.cursorStyle" = "line-thin";
       "editor.fontSize" = 14.5;
-      "editor.lineHeight" = 24;
+      "editor.defaultFormatter" = "Koihik.vscode-lua-format";
+      "vscode-lua-format.binaryPath" = "${pkgs.luaFormatter}/bin/lua-format";
+      "vscode-lua-format.configPath" = "${config.xdg.configHome}/LuaFormatter.cfg";
       "window.menuBarVisibility" = "toggle";
     };
     extensions = with pkgs.vscode-extensions; [
@@ -20,6 +25,7 @@
       esbenp.prettier-vscode
       naumovs.color-highlight
       svelte.svelte-vscode
+      ms-vsliveshare.vsliveshare
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "volar";
@@ -45,6 +51,22 @@
         version = "4.22.0";
         sha256 = "sha256-U9P9BcuZi+SUcvTg/fC2SkjGRD4CvgJEc1i+Ft2OOUc=";
       }
+      {
+        name = "vscode-lua-format";
+        publisher = "koihik";
+        version = "1.3.8";
+        sha256 = "sha256-ACdjiy+Rj2wmxvSojaJmtCwyryWWB+OA/9hBEMJi39g=";
+      }
     ];
   };
+
+  xdg.configFile."LuaFormatter.cfg".text = ''
+    indent_width: 4
+    use_tab: false
+    keep_simple_control_block_one_line: false
+    keep_simple_function_one_line: false
+    single_quote_to_double_quote: true
+    chop_down_table: true
+    chop_down_kv_table: true
+  '';
 }

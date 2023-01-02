@@ -57,8 +57,8 @@
 
       blur-method = "dual_kawase";
       blur-kernel = "11x11gaussian";
-      blur-deviation = 1.0;
-      blur-strength = 10;
+      blur-deviation = 3.0;
+      blur-strength = 8;
       blur-background = false;
       blur-background-frame = true;
       blur-background-fixed = true;

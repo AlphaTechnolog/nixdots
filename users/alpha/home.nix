@@ -36,7 +36,6 @@ in
 
   # link some configuration files
   xdg.configFile.awesome.source = ./cfg/awesome;
-  xdg.configFile.rofi.source = ./cfg/rofi;
   xdg.configFile.hilbish.source = ./cfg/hilbish;
   xdg.configFile."BetterDiscord/themes".source = ./cfg/bd-themes;
 
@@ -49,8 +48,9 @@ in
     (import ./programs/kitty { inherit pkgs; })
     (import ./programs/alacritty { inherit pkgs colors; })
     (import ./programs/firefox { inherit pkgs config nur colors; })
-    (import ./programs/vscode { inherit pkgs; })
+    (import ./programs/vscode { inherit pkgs config; })
     (import ./programs/picom.nix {})
+    (import ./programs/rofi.nix { inherit pkgs config; })
     (import ./theme/nvim { inherit colors; })
   ];
 
@@ -59,9 +59,6 @@ in
 
   # font-config
   fonts.fontconfig.enable = true;
-
-  # rofi
-  programs.rofi.enable = true;
 
   # services
   services.playerctld.enable = true;
