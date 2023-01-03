@@ -14,7 +14,8 @@
       "editor.fontFamily" = "monospace";
       "editor.fontLigatures" = true;
       "editor.cursorStyle" = "line-thin";
-      "editor.fontSize" = 14.5;
+      "editor.fontSize" = 14;
+      "editor.lineHeight" = 19;
       "editor.defaultFormatter" = "Koihik.vscode-lua-format";
       "vscode-lua-format.binaryPath" = "${pkgs.luaFormatter}/bin/lua-format";
       "vscode-lua-format.configPath" = "${config.xdg.configHome}/LuaFormatter.cfg";
@@ -42,8 +43,8 @@
       {
         name = "decay";
         publisher = "decaycs";
-        version = "1.0.5";
-        sha256 = "sha256-UKPGopCNY0A4J+E9Egu1lhM7woDW+4lNOs3L1CfQq+0=";
+        version = "1.0.6";
+        sha256 = "sha256-Jtxj6LmHgF7UNaXtXxHkq881BbuPtIJGxR7kdhKr0Uo=";
       }
       {
         name = "material-icon-theme";

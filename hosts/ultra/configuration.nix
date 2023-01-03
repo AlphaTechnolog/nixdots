@@ -164,6 +164,7 @@ in {
     xorg.xwininfo
     xorg.xbacklight
     brightnessctl
+    pulseaudio
 
     # wine
     wineWowPackages.stable
