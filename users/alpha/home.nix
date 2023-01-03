@@ -135,6 +135,8 @@ in
     monaco-nf
     tdesktop
     redshift
+    cinnamon.nemo
+    inotify-tools
     wirelesstools
     dark-decay-gtk # gtk theme :P
     run # my own script :)
