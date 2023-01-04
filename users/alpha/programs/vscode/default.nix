@@ -20,6 +20,7 @@
       "vscode-lua-format.binaryPath" = "${pkgs.luaFormatter}/bin/lua-format";
       "vscode-lua-format.configPath" = "${config.xdg.configHome}/LuaFormatter.cfg";
       "window.menuBarVisibility" = "toggle";
+      "[lua]"."editor.tabSize" = 2;
     };
     extensions = with pkgs.vscode-extensions; [
       bbenoist.nix
@@ -62,7 +63,7 @@
   };
 
   xdg.configFile."LuaFormatter.cfg".text = ''
-    indent_width: 4
+    indent_width: 2
     use_tab: false
     keep_simple_control_block_one_line: false
     keep_simple_function_one_line: false

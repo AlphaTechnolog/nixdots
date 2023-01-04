@@ -35,10 +35,18 @@ in
   home.stateVersion = "22.05";
 
   # link some configuration files
-  xdg.configFile.awesome.source = ./cfg/awesome;
   xdg.configFile.hilbish.source = ./cfg/hilbish;
   xdg.configFile."BetterDiscord/themes".source = ./cfg/bd-themes;
 
+  # enable awesomewm
+  home.activation.installAwesomeWMConfig = ''
+    if [ ! -d "$HOME/.config/awesome" ]; then
+      ln -s "/etc/nixos/users/$USER/cfg/awesome" "$HOME/.config/awesome"
+      chmod -R +w "$HOME/.config/awesome"
+    fi
+  '';
+
+  # xresources
   xresources.extraConfig = ''
     Xcursor.size: 24
     Xft.dpi: 76
