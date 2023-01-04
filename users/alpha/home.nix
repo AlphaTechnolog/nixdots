@@ -39,7 +39,10 @@ in
   xdg.configFile.hilbish.source = ./cfg/hilbish;
   xdg.configFile."BetterDiscord/themes".source = ./cfg/bd-themes;
 
-  xresources.extraConfig = "Xft.dpi: 76";
+  xresources.extraConfig = ''
+    Xcursor.size: 24
+    Xft.dpi: 76
+  '';
 
   theme.base16.colors = base16-theme;
 
@@ -92,7 +95,7 @@ in
 
   # cursor, extra fonts, hilbish plugins, etc
   home.file = extra-fonts // {
-    # ".icons/default".source = "${pkgs.phinger-cursors}/share/icons/phinger-cursors";
+    ".icons/default".source = "${pkgs.phinger-cursors}/share/icons/phinger-cursors";
     ".local/share/hilbish/libs/promptua".source = pkgs.fetchFromGitHub {
       owner = "TorchedSammy";
       repo = "Promptua";
@@ -101,21 +104,19 @@ in
     };
   };
 
-  home.pointerCursor = {
-    name = "Phinger Cursors";
-    package = pkgs.phinger-cursors;
-    size = 24;
-    gtk.enable = false;
-  };
-
   # add support for .local/bin
   home.sessionPath = [
     "$HOME/.local/bin"
   ];
 
+  # cursor size (again) through sessionVariables
+  home.sessionVariables = {
+    GTK_THEME = "dark-decay";
+    XCURSOR_SIZE = "24";
+  };
+
   # import more packages to home-manager ones.
   home.packages = with pkgs; [
-    phinger-cursors
     gimp
     xclip
     discord

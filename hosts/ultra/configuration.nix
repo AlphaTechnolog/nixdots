@@ -81,7 +81,14 @@ in {
     packages = with pkgs; [dconf gcr];
   };
 
-  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.displayManager.lightdm = {
+    enable = true;
+    greeters.gtk.cursorTheme = {
+      name = "Phinger Cursors";
+      package = pkgs.phinger-cursors;
+      size = 24;
+    };
+  };
 
   services.xserver.windowManager.awesome = {
     enable = true;
@@ -107,6 +114,9 @@ in {
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+
+  # upower
+  services.upower.enable = true;
 
   # Enable sound.
   sound.enable = true;
@@ -165,7 +175,7 @@ in {
     xorg.xwininfo
     xorg.xbacklight
     brightnessctl
-    pulseaudio
+    pulseaudio # just its utils
 
     # wine
     wineWowPackages.stable
