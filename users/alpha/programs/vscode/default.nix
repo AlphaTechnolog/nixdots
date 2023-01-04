@@ -8,7 +8,7 @@
   programs.vscode = {
     enable = true;
     userSettings = {
-      "workbench.colorTheme" = "Dark Decay Theme";
+      "workbench.colorTheme" = "Decayce Theme";
       "workbench.iconTheme" = "material-icon-theme";
       "editor.bracketPairColorization.enabled" = false;
       "editor.fontFamily" = "monospace";

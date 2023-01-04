@@ -2,7 +2,7 @@
 
 let
   run = import ./bin/run.nix { inherit pkgs; };
-  dark-decay-gtk = with pkgs; callPackage ../../pkgs/dark-decay-gtk.nix { };
+  decayce-gtk = with pkgs; callPackage ../../pkgs/decayce-gtk.nix { };
   monaco-nf = with pkgs; callPackage ../../pkgs/monaco-nf.nix { };
   nfonts = import ./fonts/nerdfonts.nix { inherit pkgs; };
 
@@ -78,7 +78,7 @@ in
   gtk = {
     enable = true;
     gtk3.extraConfig.gtk-decoration-layout = "menu:";
-    theme.name = "Dark-decay";
+    theme.name = "Decayce";
     iconTheme = with pkgs; {
       name = "Papirus-Dark";
       package = papirus-icon-theme;
@@ -119,7 +119,7 @@ in
 
   # cursor size (again) through sessionVariables
   home.sessionVariables = {
-    GTK_THEME = "dark-decay";
+    GTK_THEME = "decayce";
     XCURSOR_SIZE = "24";
   };
 
@@ -155,7 +155,7 @@ in
     cinnamon.nemo
     inotify-tools
     wirelesstools
-    dark-decay-gtk # gtk theme :P
+    decayce-gtk # gtk theme :P
     run # my own script :)
   ];
 }
