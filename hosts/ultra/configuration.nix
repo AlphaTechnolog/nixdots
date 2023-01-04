@@ -28,8 +28,7 @@ in {
     };
   };
 
-  # use doas instead-of sudo
-  security.sudo.enable = false;
+  security.sudo.enable = true;
 
   security.doas = {
     enable = true;
@@ -69,7 +68,7 @@ in {
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.videoDrivers = [ "intel" ];
-  services.xserver.displayManager.lightdm.enable = true;
+  # services.xserver.displayManager.lightdm.enable = true;
   services.xserver.dpi = 76;
 
   services.gnome = {
@@ -81,6 +80,8 @@ in {
     enable = true;
     packages = with pkgs; [dconf gcr];
   };
+
+  services.xserver.displayManager.sddm.enable = true;
 
   services.xserver.windowManager.awesome = {
     enable = true;

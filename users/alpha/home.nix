@@ -92,13 +92,20 @@ in
 
   # cursor, extra fonts, hilbish plugins, etc
   home.file = extra-fonts // {
-    ".icons/default".source = "${pkgs.phinger-cursors}/share/icons/phinger-cursors";
+    # ".icons/default".source = "${pkgs.phinger-cursors}/share/icons/phinger-cursors";
     ".local/share/hilbish/libs/promptua".source = pkgs.fetchFromGitHub {
       owner = "TorchedSammy";
       repo = "Promptua";
       rev = "d0ab5202ed68a6dc1a959e7a69f8b45854a4dd40";
       sha256 = "gqfh7q8esp5S6hussOSKU1SmuDaoTdRK84ccM/Qzm/s=";
     };
+  };
+
+  home.pointerCursor = {
+    name = "Phinger Cursors";
+    package = pkgs.phinger-cursors;
+    size = 24;
+    gtk.enable = false;
   };
 
   # add support for .local/bin
@@ -108,6 +115,7 @@ in
 
   # import more packages to home-manager ones.
   home.packages = with pkgs; [
+    phinger-cursors
     gimp
     xclip
     discord
