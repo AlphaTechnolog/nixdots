@@ -88,6 +88,14 @@ in
   # editor (nvim)
   systemd.user.sessionVariables.EDITOR = "nvim";
 
+  # headset buttons
+  systemd.user.services.mpris-proxy = {
+    Unit.Description = "Mpris proxy";
+    Unit.After = [ "network.target" "sound.target" ];
+    Service.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
+    Install.WantedBy = [ "default.target" ];
+  };
+
   # bat (cat clone)
   programs.bat = {
     enable = true;

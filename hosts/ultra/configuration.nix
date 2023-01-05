@@ -71,6 +71,8 @@ in {
   # services.xserver.displayManager.lightdm.enable = true;
   services.xserver.dpi = 76;
 
+  services.blueman.enable = true;
+
   services.gnome = {
     glib-networking.enable = true;
     gnome-keyring.enable = true;
@@ -89,6 +91,8 @@ in {
       size = 24;
     };
   };
+
+  services.xserver.desktopManager.xfce.enable = true;
 
   services.xserver.windowManager.awesome = {
     enable = true;
@@ -120,9 +124,10 @@ in {
 
   # Enable sound.
   sound.enable = true;
-
+  hardware.bluetooth.enable = true;
   hardware.pulseaudio.enable = false;
-  
+
+  # pipewire
   services.pipewire = {
     enable = true;
     wireplumber.enable = true;
@@ -157,6 +162,18 @@ in {
 
   # light
   programs.light.enable = true;
+
+  # bluetooth pipewire
+  environment.etc = {
+    "wireplumber/bluetooth.lua.d/51-bluez-config.lua".text = ''
+      bluez_monitor.properties = {
+        ["bluez5.enable-sbc-xq"] = true,
+        ["bluez5.enable-msbc"] = true,
+        ["bluez5.enable-hw-volume"] = true,
+        ["bluez5.headset-roles"] = "[ hsp_hs hsp_ag hfp_hf hfp_ag ]"
+      }
+    '';
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

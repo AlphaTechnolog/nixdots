@@ -53,7 +53,11 @@
       ];
 
       corner-radius = 12;
-      rounded-corners-exclude = [];
+      rounded-corners-exclude = [
+        "window_type = 'dock'"
+        "_NET_WM_STATE@:32a *= '_NET_WM_STATE_MAXIMIZED_VERT'"
+        "_NET_WM_STATE@:32a *= '_NET_WM_STATE_MAXIMIZED_HORZ'"
+      ];
 
       blur-method = "dual_kawase";
       blur-kernel = "11x11gaussian";
