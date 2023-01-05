@@ -9,11 +9,10 @@
       confirm_os_window_close = 0;
       cursor_shape = "underline";
       cursor_underline_thickness = "0.5";
-      modify_font = "cell_height 4px";
       background_opacity = "0.40";
     };
     font = {
-      size = 11;
+      size = 12;
       name = "monospace";
     };
   };

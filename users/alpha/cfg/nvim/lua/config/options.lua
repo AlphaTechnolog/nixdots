@@ -10,7 +10,7 @@ opt.clipboard = 'unnamedplus'
 opt.laststatus = 3
 opt.cursorline = false
 opt.wrap = false
-opt.guifont = { "JetBrainsMono Nerd Font", ":h8" }
+opt.guifont = { "monospace", ":h13" }
 opt.cmdheight = 1
 opt.completeopt = "menu,menuone,noselect"
 

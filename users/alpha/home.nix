@@ -139,6 +139,7 @@ in
     ripgrep
     obs-studio
     vlc
+    neovide
     postman
     mongodb-compass
     notion-app-enhanced
