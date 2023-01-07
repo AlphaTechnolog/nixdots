@@ -15,6 +15,7 @@
       "editor.fontLigatures" = true;
       "editor.cursorStyle" = "line-thin";
       "editor.fontSize" = 16;
+      "terminal.integrated.fontSize" = 16;
       "editor.defaultFormatter" = "Koihik.vscode-lua-format";
       "vscode-lua-format.binaryPath" = "${pkgs.luaFormatter}/bin/lua-format";
       "vscode-lua-format.configPath" = "${config.xdg.configHome}/LuaFormatter.cfg";
