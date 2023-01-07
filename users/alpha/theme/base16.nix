@@ -1,21 +1,21 @@
 {}:
 
 {
-  base00 = { hex.r = "0d"; hex.g = "0f"; hex.b = "18"; };
-  base01 = { hex.r = "11"; hex.g = "13"; hex.b = "1c"; };
-  base02 = { hex.r = "15"; hex.g = "17"; hex.b = "20"; };
-  base03 = { hex.r = "1c"; hex.g = "1e"; hex.b = "27"; };
-  base04 = { hex.r = "11"; hex.g = "13"; hex.b = "1c"; };
-  base05 = { hex.r = "a5"; hex.g = "b6"; hex.b = "cf"; };
-  base06 = { hex.r = "cb"; hex.g = "ce"; hex.b = "d3"; };
-  base07 = { hex.r = "0d"; hex.g = "0f"; hex.b = "18"; };
-  base08 = { hex.r = "dd"; hex.g = "67"; hex.b = "77"; };
-  base09 = { hex.r = "dd"; hex.g = "67"; hex.b = "77"; };
-  base0A = { hex.r = "ec"; hex.g = "d3"; hex.b = "a0"; };
-  base0B = { hex.r = "90"; hex.g = "ce"; hex.b = "aa"; };
-  base0C = { hex.r = "dd"; hex.g = "67"; hex.b = "77"; };
-  base0D = { hex.r = "86"; hex.g = "aa"; hex.b = "ec"; };
-  base0E = { hex.r = "c2"; hex.g = "96"; hex.b = "eb"; };
-  base0F = { hex.r = "86"; hex.g = "aa"; hex.b = "ec"; };
+  base00 = { hex.r = "de"; hex.g = "e1"; hex.b = "e6"; };
+  base01 = { hex.r = "d4"; hex.g = "d7"; hex.b = "dc"; };
+  base02 = { hex.r = "c5"; hex.g = "c8"; hex.b = "cd"; };
+  base03 = { hex.r = "98"; hex.g = "9b"; hex.b = "a0"; };
+  base04 = { hex.r = "cf"; hex.g = "d2"; hex.b = "d7"; };
+  base05 = { hex.r = "10"; hex.g = "14"; hex.b = "19"; };
+  base06 = { hex.r = "10"; hex.g = "14"; hex.b = "19"; };
+  base07 = { hex.r = "de"; hex.g = "e1"; hex.b = "e6"; };
+  base08 = { hex.r = "bd"; hex.g = "3c"; hex.b = "42"; };
+  base09 = { hex.r = "bd"; hex.g = "3c"; hex.b = "42"; };
+  base0A = { hex.r = "ce"; hex.g = "ac"; hex.b = "67"; };
+  base0B = { hex.r = "69"; hex.g = "b3"; hex.b = "73"; };
+  base0C = { hex.r = "bd"; hex.g = "3c"; hex.b = "42"; };
+  base0D = { hex.r = "4d"; hex.g = "82"; hex.b = "c8"; };
+  base0E = { hex.r = "a3"; hex.g = "67"; hex.b = "cb"; };
+  base0F = { hex.r = "4d"; hex.g = "82"; hex.b = "c8"; };
 }
 

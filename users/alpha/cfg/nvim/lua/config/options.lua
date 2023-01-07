@@ -13,6 +13,7 @@ opt.wrap = false
 opt.guifont = { "monospace", ":h13" }
 opt.cmdheight = 1
 opt.completeopt = "menu,menuone,noselect"
+opt.background = 'light'
 
 opt.shortmess = opt.shortmess + {
   c = true, -- Do not show completion messages in command line
