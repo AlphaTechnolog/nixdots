@@ -2,6 +2,12 @@
 
 My personal dotfiles for a Nix-Managed Operative System (NixOS).
 
+> Maybe some things may not work as how should, or look different from the screenshots
+
+> since this dots are intended to be for my personal use and not stable :|
+
+> if you want stable dotfiles and others design ideas, check my official [dotfiles](https://github.com/AlphaTechnolog/dotfiles)
+
 > X11 (AwesomeWM)
 
 ![x11](./assets/x11.png)
