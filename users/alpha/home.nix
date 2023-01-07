@@ -136,6 +136,7 @@ in
     gimp
     xclip
     discord
+    libcanberra-gtk3
     pamixer
     spotify
     exa
