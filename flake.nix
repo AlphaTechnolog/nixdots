@@ -23,6 +23,11 @@
       flake = false;
     };
 
+    st = {
+      url = github:AlphaTechnolog/st;
+      flake = false;
+    };
+
     luaFormatter = {
       type = "git";
       url = "https://github.com/Koihik/LuaFormatter.git";
@@ -50,6 +55,10 @@
             inherit (final) system;
           in {
             neovim-nightly = neovim.packages."${system}".neovim;
+            st = pkgs.callPackage ./pkgs/st.nix {
+              src = st;
+              conf = import ./hosts/progs-conf/st.nix;
+            };
           } // (with nixpkgs-f2k.packages.${system}; {
             awesome = awesome-git;
             picom = picom-git;

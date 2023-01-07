@@ -9,7 +9,10 @@ let
   virtualisation-packages = import ./virtualisation/pkgs.nix { inherit pkgs; };
   material-symbols = pkgs.callPackage ../../pkgs/material-symbols.nix {};
 in {
-  imports = [./hardware-configuration.nix ./virtualisation];
+  imports = [
+    ./hardware-configuration.nix
+    ./virtualisation
+  ];
 
   # use grub with os-prober support
   boot.loader = {
@@ -182,11 +185,11 @@ in {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = virtualisation-packages ++ (with pkgs; [
+    st
     wget
     git
     playerctl
     docker-compose
-    mongodb
     cargo
     rustc
     protonvpn-cli

@@ -145,7 +145,6 @@ in
     vlc
     neovide
     postman
-    mongodb-compass
     notion-app-enhanced
     maim
     jq
