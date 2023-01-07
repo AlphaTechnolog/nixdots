@@ -35,7 +35,6 @@ in
   home.stateVersion = "22.05";
 
   # link some configuration files
-  xdg.configFile.hilbish.source = ./cfg/hilbish;
   xdg.configFile."BetterDiscord/themes".source = ./cfg/bd-themes;
 
   # enable awesomewm
@@ -62,6 +61,8 @@ in
     (import ./programs/vscode { inherit pkgs config; })
     (import ./programs/picom.nix {})
     (import ./programs/rofi.nix { inherit pkgs config; })
+    (import ./programs/starship.nix)
+    (import ./programs/fish.nix)
     (import ./theme/nvim { inherit colors; })
   ];
 
@@ -109,15 +110,9 @@ in
   # enable unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # cursor, extra fonts, hilbish plugins, etc
+  # cursor
   home.file = extra-fonts // {
     ".icons/default".source = "${pkgs.phinger-cursors}/share/icons/phinger-cursors";
-    ".local/share/hilbish/libs/promptua".source = pkgs.fetchFromGitHub {
-      owner = "TorchedSammy";
-      repo = "Promptua";
-      rev = "d0ab5202ed68a6dc1a959e7a69f8b45854a4dd40";
-      sha256 = "gqfh7q8esp5S6hussOSKU1SmuDaoTdRK84ccM/Qzm/s=";
-    };
   };
 
   # add support for .local/bin

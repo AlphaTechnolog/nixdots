@@ -7,7 +7,6 @@
 
 let
   virtualisation-packages = import ./virtualisation/pkgs.nix { inherit pkgs; };
-  hilbish-new = pkgs.callPackage ../../pkgs/hilbish.nix {};
   material-symbols = pkgs.callPackage ../../pkgs/material-symbols.nix {};
 in {
   imports = [./hardware-configuration.nix ./virtualisation];
@@ -43,6 +42,11 @@ in {
 
   # unstable kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  # bash
+  programs.bash = {
+    promptInit = ''eval "$(${pkgs.starship}/bin/starship init bash)"'';
+  };
 
   networking.hostName = "ultra"; # Define your hostname.
   # Pick only one of the below networking options.
@@ -157,8 +161,8 @@ in {
     initialPassword = "alpha123.";
   };
 
-  # shell (hilbish)
-  users.defaultUserShell = hilbish-new;
+  # shell (fish)
+  users.defaultUserShell = pkgs.fish;
 
   # light
   programs.light.enable = true;
@@ -183,7 +187,6 @@ in {
     playerctl
     docker-compose
     mongodb
-    hilbish-new
     cargo
     rustc
     protonvpn-cli
