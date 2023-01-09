@@ -20,7 +20,8 @@
       "vscode-lua-format.binaryPath" = "${pkgs.luaFormatter}/bin/lua-format";
       "vscode-lua-format.configPath" = "${config.xdg.configHome}/LuaFormatter.cfg";
       "window.menuBarVisibility" = "toggle";
-      "[lua]"."editor.tabSize" = 2;
+      "editor.tabSize" = 2;
+      "tabnine.experimentalAutoImports" = false;
     };
     extensions = with pkgs.vscode-extensions; [
       bbenoist.nix
@@ -58,6 +59,12 @@
         publisher = "koihik";
         version = "1.3.8";
         sha256 = "sha256-ACdjiy+Rj2wmxvSojaJmtCwyryWWB+OA/9hBEMJi39g=";
+      }
+      {
+        name = "tabnine-vscode";
+        publisher = "TabNine";
+        version = "3.6.35";
+        sha256 = "sha256-X7jTRTxOPSzqeaeO/N2CkvpXcrn10hFj3QDR3dlxPbQ=";
       }
     ];
   };
