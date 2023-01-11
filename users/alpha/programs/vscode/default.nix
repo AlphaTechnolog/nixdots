@@ -22,6 +22,7 @@
       "window.menuBarVisibility" = "toggle";
       "editor.tabSize" = 2;
       "tabnine.experimentalAutoImports" = false;
+      "[python]"."editor.tabSize" = 4;
     };
     extensions = with pkgs.vscode-extensions; [
       bbenoist.nix
