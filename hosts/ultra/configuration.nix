@@ -228,7 +228,7 @@ in {
 
       defaultFonts = {
         emoji = ["Noto Color Emoji"];
-        monospace = ["Liga SFMono Nerd Font"];
+        monospace = ["Monaco Nerd Font"];
         sansSerif = ["Noto Sans" "Noto Color Emoji"];
         serif = ["Noto Serif" "Noto Color Emoji"];
       };

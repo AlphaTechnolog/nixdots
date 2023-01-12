@@ -8,8 +8,8 @@ in with colors; ''
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liga SFMono Nerd Font :pixelsize=13:antialias=true:autohint=true";
-static char *font2[] = { "Liga SFMono Nerd Font :pixelsize=13:antialias=true:autohint=true" };
+static char *font = "monospace :pixelsize=13:antialias=true:autohint=true";
+static char *font2[] = { "monospace :pixelsize=13:antialias=true:autohint=true" };
 static int borderpx = 20;
 
 /*
@@ -117,7 +117,7 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 1.0;
+float alpha = 0.4;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
