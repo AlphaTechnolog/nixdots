@@ -21,7 +21,7 @@
       "vscode-lua-format.configPath" = "${config.xdg.configHome}/LuaFormatter.cfg";
       "window.menuBarVisibility" = "toggle";
       "editor.tabSize" = 2;
-      "tabnine.experimentalAutoImports" = false;
+      "editor.inlineSuggest.enabled" = true;
       "[python]"."editor.tabSize" = 4;
     };
     extensions = with pkgs.vscode-extensions; [
@@ -30,6 +30,7 @@
       naumovs.color-highlight
       svelte.svelte-vscode
       ms-vsliveshare.vsliveshare
+      github.copilot
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "volar";
@@ -60,12 +61,6 @@
         publisher = "koihik";
         version = "1.3.8";
         sha256 = "sha256-ACdjiy+Rj2wmxvSojaJmtCwyryWWB+OA/9hBEMJi39g=";
-      }
-      {
-        name = "tabnine-vscode";
-        publisher = "TabNine";
-        version = "3.6.35";
-        sha256 = "sha256-X7jTRTxOPSzqeaeO/N2CkvpXcrn10hFj3QDR3dlxPbQ=";
       }
     ];
   };
