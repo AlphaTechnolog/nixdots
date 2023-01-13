@@ -128,6 +128,7 @@ in
 
   # import more packages to home-manager ones.
   home.packages = with pkgs; [
+    google-chrome
     gimp
     xclip
     discord
@@ -145,7 +146,6 @@ in
     vlc
     neovide
     postman
-    mongodb-compass
     notion-app-enhanced
     maim
     jq

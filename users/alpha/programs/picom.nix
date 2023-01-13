@@ -52,7 +52,7 @@
         "class_g = 'Cairo-clock'"
       ];
 
-      corner-radius = 12;
+      corner-radius = 7;
       rounded-corners-exclude = [
         "window_type = 'dock'"
         "_NET_WM_STATE@:32a *= '_NET_WM_STATE_MAXIMIZED_VERT'"

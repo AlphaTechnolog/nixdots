@@ -8,18 +8,21 @@
   programs.vscode = {
     enable = true;
     userSettings = {
-      "workbench.colorTheme" = "Dark Decay Theme";
+      "workbench.colorTheme" = "Decayce Theme";
       "workbench.iconTheme" = "material-icon-theme";
       "editor.bracketPairColorization.enabled" = false;
       "editor.fontFamily" = "monospace";
       "editor.fontLigatures" = true;
       "editor.cursorStyle" = "line-thin";
       "editor.fontSize" = 16;
+      "terminal.integrated.fontSize" = 16;
       "editor.defaultFormatter" = "Koihik.vscode-lua-format";
       "vscode-lua-format.binaryPath" = "${pkgs.luaFormatter}/bin/lua-format";
       "vscode-lua-format.configPath" = "${config.xdg.configHome}/LuaFormatter.cfg";
       "window.menuBarVisibility" = "toggle";
-      "[lua]"."editor.tabSize" = 2;
+      "editor.tabSize" = 2;
+      "editor.inlineSuggest.enabled" = true;
+      "[python]"."editor.tabSize" = 4;
     };
     extensions = with pkgs.vscode-extensions; [
       bbenoist.nix
@@ -27,6 +30,7 @@
       naumovs.color-highlight
       svelte.svelte-vscode
       ms-vsliveshare.vsliveshare
+      github.copilot
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "volar";
