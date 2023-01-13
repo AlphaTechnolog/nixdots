@@ -121,7 +121,7 @@ float alpha = 0.4;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-  "${bg}", /* hard contrast: #1d2021 / soft contrast: #32302f */
+  "#000000", /* hard contrast: #1d2021 / soft contrast: #32302f */
   "${red}",
   "${green}",
   "${yellow}",
@@ -141,7 +141,7 @@ static const char *colorname[] = {
   /* more colors can be added after 255 to use with DefaultXX */
   "${fg}", /* 256 -> cursor */
   "${black}", /* 257 -> rev cursor*/
-  "${bg}", /* 258 -> bg */
+  "#000000", /* 258 -> bg */
   "${fg}", /* 259 -> fg */
 };
 

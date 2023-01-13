@@ -4,10 +4,6 @@ local colors = require("pkgs.theme.core").get_palette()
 
 local executed = false
 
-local load_mason = function ()
-  require("modules.masonc")
-end
-
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   executed = true
 
@@ -27,16 +23,11 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
   vim.api.nvim_create_autocmd("User", {
     pattern = "PackerComplete",
     callback = function ()
-      load_mason()
       vim.cmd "bw"
       -- vim.cmd "bw | silent! MasonInstallAll" -- close packer window and install mason.nvim things
       require("modules")
     end,
   })
-end
-
-if not executed then
-  load_mason()
 end
 
 return executed
