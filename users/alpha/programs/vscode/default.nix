@@ -8,7 +8,7 @@
   programs.vscode = {
     enable = true;
     userSettings = {
-      "workbench.colorTheme" = "Decayce Theme";
+      "workbench.colorTheme" = "Tokyo Night";
       "workbench.iconTheme" = "material-icon-theme";
       "editor.bracketPairColorization.enabled" = false;
       "editor.fontFamily" = "monospace";
@@ -17,6 +17,7 @@
       "editor.fontSize" = 16;
       "terminal.integrated.fontSize" = 16;
       "editor.defaultFormatter" = "Koihik.vscode-lua-format";
+      "php.validate.executablePath" = "${pkgs.php82}/bin/php";
       "vscode-lua-format.binaryPath" = "${pkgs.luaFormatter}/bin/lua-format";
       "vscode-lua-format.configPath" = "${config.xdg.configHome}/LuaFormatter.cfg";
       "window.menuBarVisibility" = "toggle";
@@ -61,6 +62,12 @@
         publisher = "koihik";
         version = "1.3.8";
         sha256 = "sha256-ACdjiy+Rj2wmxvSojaJmtCwyryWWB+OA/9hBEMJi39g=";
+      }
+      {
+        name = "tokyo-night";
+        publisher = "enkia";
+        version = "0.9.4";
+        sha256 = "sha256-pKokB6446SR6LsTHyJtQ+FEA07A0W9UAI+byqtGeMGw=";
       }
     ];
   };

@@ -138,9 +138,6 @@ in
     exa
     gcc
     gh
-    python3
-    nodejs
-    lua
     ripgrep
     obs-studio
     vlc

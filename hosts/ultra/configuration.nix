@@ -99,7 +99,7 @@ in {
     };
   };
 
-  services.xserver.desktopManager.xfce.enable = true;
+  services.xserver.windowManager.bspwm.enable = true;
 
   services.xserver.windowManager.awesome = {
     enable = true;
@@ -197,7 +197,10 @@ in {
     # utils
     xorg.xwininfo
     xorg.xbacklight
+    xorg.xinit
     brightnessctl
+    chromedriver
+    selenium-server-standalone
     pulseaudio # just its utils
 
     # wine
