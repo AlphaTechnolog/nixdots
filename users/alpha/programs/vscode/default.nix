@@ -8,7 +8,7 @@
   programs.vscode = {
     enable = true;
     userSettings = {
-      "workbench.colorTheme" = "Tokyo Night";
+      "workbench.colorTheme" = "Decayce Theme";
       "workbench.iconTheme" = "material-icon-theme";
       "editor.bracketPairColorization.enabled" = false;
       "editor.fontFamily" = "monospace";
@@ -24,6 +24,12 @@
       "editor.tabSize" = 2;
       "editor.inlineSuggest.enabled" = true;
       "[python]"."editor.tabSize" = 4;
+      # disable typescript and javascript validation because i don't need it since i use copilot :P
+      "javascript.validate.enable" = false;
+      "typescript.validate.enable" = false;
+      # disable javascript and typescript suggestions because i don't need it since i use copilot :P
+      "javascript.suggest.enabled" = false;
+      "typescript.suggest.enabled" = false;
     };
     extensions = with pkgs.vscode-extensions; [
       bbenoist.nix

@@ -14,6 +14,7 @@ local define_plugs = function (use)
   use "famiu/bufdelete.nvim"
   use "Pocco81/true-zen.nvim"
   use "github/copilot.vim"
+  use "xiyaowong/nvim-transparent"
 
   use {
     "nvim-tree/nvim-tree.lua",

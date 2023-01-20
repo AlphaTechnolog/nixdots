@@ -200,6 +200,7 @@ in {
     xorg.xinit
     brightnessctl
     chromedriver
+    geckodriver
     selenium-server-standalone
     pulseaudio # just its utils
 

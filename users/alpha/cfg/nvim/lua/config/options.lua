@@ -1,18 +1,20 @@
 local opt = vim.opt
 
-opt.number = true
+opt.number = false
 opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
 opt.termguicolors = true
 opt.showmode = false
 opt.clipboard = 'unnamedplus'
-opt.laststatus = 3
+opt.laststatus = 0
 opt.cursorline = false
 opt.wrap = false
 opt.guifont = { "monospace", ":h13" }
-opt.cmdheight = 1
+opt.cmdheight = 0
 opt.completeopt = "menu,menuone,noselect"
+opt.mouse = 'a'
+opt.guicursor = 'i:block' -- use block cursor for insert mode
 
 opt.shortmess = opt.shortmess + {
   c = true, -- Do not show completion messages in command line
