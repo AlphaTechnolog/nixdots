@@ -185,7 +185,6 @@ in {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = virtualisation-packages ++ (with pkgs; [
-    st
     wget
     git
     playerctl

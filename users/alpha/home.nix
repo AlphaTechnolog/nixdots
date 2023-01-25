@@ -61,6 +61,7 @@ in
     (import ./programs/vscode { inherit pkgs config; })
     (import ./programs/picom.nix {})
     (import ./programs/rofi.nix { inherit pkgs config; })
+    (import ./programs/st { inherit pkgs; })
     (import ./programs/starship.nix)
     (import ./programs/fish.nix)
     (import ./theme/nvim { inherit colors; })
@@ -129,6 +130,8 @@ in
   # import more packages to home-manager ones.
   home.packages = with pkgs; [
     google-chrome
+    pre-commit
+    stylua
     gimp
     xclip
     discord
@@ -136,6 +139,7 @@ in
     pamixer
     spotify
     exa
+    lite-xl
     gcc
     gh
     ripgrep

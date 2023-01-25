@@ -57,7 +57,7 @@
             neovim-nightly = neovim.packages."${system}".neovim;
             st = pkgs.callPackage ./pkgs/st.nix {
               src = st;
-              conf = import ./hosts/progs-conf/st.nix;
+              conf = import ./users/alpha/programs/st/config.nix;
             };
           } // (with nixpkgs-f2k.packages.${system}; {
             awesome = awesome-git;

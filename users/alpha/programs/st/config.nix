@@ -1,5 +1,5 @@
 let
-  colors = import ../../users/alpha/theme/colors.nix {};
+  colors = import ../../theme/colors.nix {};
 in with colors; ''
 /* See LICENSE file for copyright and license details. */
 

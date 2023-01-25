@@ -1,7 +1,7 @@
 require("modules.nvim-tree")
 require("modules.treesitter")
 require("modules.telescope")
--- require("modules.lualine")
+require("modules.lualine")
 require("modules.colorizer")
 require("modules.autopairs")
 -- require("modules.bufferline")

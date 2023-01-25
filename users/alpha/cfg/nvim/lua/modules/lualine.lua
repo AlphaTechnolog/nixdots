@@ -1,67 +1,42 @@
-local present, lualine = pcall(require, "lualine")
+local present, lualine = pcall(require, 'lualine')
 local theme = require("pkgs.theme.lualine")
-local colors = require("pkgs.theme.core").get_palette()
 
 if not present then
   return
 end
 
-local sections = {}
+local chars = {'a', 'b', 'c', 'x', 'y', 'z'}
 
-local secs = {'a', 'b', 'c', 'x', 'y', 'z'}
-
-for _, sec in ipairs(secs) do
-  sections['lualine_' .. sec] = {}
-end
-
-local function ins (sec, cmp)
-  table.insert(sections['lualine_' .. sec], cmp)
-end
-
-local function wtext (txt)
-  return function ()
-    return txt
+local function default ()
+  local ret = {}
+  for _, char in ipairs(chars) do
+    ret['lualine_' .. char] = {}
   end
+
+  return ret
 end
 
-local function simple(name)
-  return { name }
+local function sections ()
+  local base = default()
+
+  base.lualine_a = {
+    {
+      'mode',
+      fmt = function (str)
+        return str:sub(1, 1):upper()
+      end,
+      separator = { left = '', right = '' }
+    },
+  }
+
+  return base
 end
 
-ins('x', {
-  'mode',
-  fmt = function (s)
-    return s:sub(1, 1)
-  end
-})
-
-ins('y', {
-  'filetype',
-  icon_only = true,
-  padding = { right = 0, left = 1 }
-})
-
-ins('y', simple('filename'))
-
-ins('y', {
-  'branch',
-  padding = { left = 1 },
-  color = { bg = colors.statusline_bg, fg = colors.magenta }
-})
-
-lualine.setup {
+lualine.setup({
   options = {
     theme = theme.mklualinetheme(),
-    component_separators = { left = nil, right = nil },
-    section_separators = { left = nil, right = nil },
+    globalstatus = true
   },
-  sections = sections,
-  inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {},
-    lualine_x = {},
-    lualine_y = {},
-    lualine_z = {}
-  }
-}
+  inactive_sections = sections(),
+  sections = sections()
+})
