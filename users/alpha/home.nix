@@ -64,6 +64,7 @@ in
     (import ./programs/st { inherit pkgs; })
     (import ./programs/starship.nix)
     (import ./programs/fish.nix)
+    (import ./programs/lite-xl)
     (import ./theme/nvim { inherit colors; })
   ];
 
