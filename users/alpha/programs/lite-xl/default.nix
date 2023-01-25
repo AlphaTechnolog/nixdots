@@ -6,4 +6,6 @@
       chmod -R +w $HOME/.config/lite-xl
     fi
   '';
+
+  # TODO: Generate colorscheme dynamically by using the themes files.
 }
