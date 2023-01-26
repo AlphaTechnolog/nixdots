@@ -397,6 +397,7 @@
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-f2k": "nixpkgs-f2k",
         "nur": "nur",
+        "rxfetch": "rxfetch",
         "sf-mono-liga-src": "sf-mono-liga-src",
         "st": "st"
       }
@@ -442,6 +443,22 @@
       "original": {
         "owner": "oxalica",
         "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "rxfetch": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1673067281,
+        "narHash": "sha256-Jom9Sy88QGbr3UNccMQgA3eTbHzp8udSE4mrRjyrPDs=",
+        "owner": "Mangeshrex",
+        "repo": "rxfetch",
+        "rev": "fa70e5aa0eaa72914fc3b170b83a2b67c049cbef",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Mangeshrex",
+        "repo": "rxfetch",
         "type": "github"
       }
     },

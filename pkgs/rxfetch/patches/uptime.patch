@@ -1,0 +1,22 @@
+diff --git a/rxfetch b/rxfetch
+index b34c374..d8c8a54 100755
+--- a/rxfetch
++++ b/rxfetch
+@@ -206,11 +206,13 @@ get_mem() {
+ 
+ # Get uptime
+ get_uptime() {
+-	if [ "$kernel" = "Darwin" ]; then
+-		up=$(uptime | awk 'NR==1{print $3}')
+-		echo " ${up::-1}"
++	UPTIME=$(awk '{print $1}' /proc/uptime | awk -F. '{print $1}')
++	UP_MINUTES=$((UPTIME / 60 % 60))
++	UP_HOURS=$((UPTIME / 60 / 60 % 24))
++	if [ $UP_HOURS -gt 0 ]; then
++		echo " $UP_HOURS hour, $UP_MINUTES minutes"
+ 	else
+-		uptime -p | sed 's/up//'
++		echo " $UP_MINUTES minutes"
+ 	fi
+ }
+ 

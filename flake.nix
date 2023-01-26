@@ -34,6 +34,11 @@
       submodules = true;
       flake = false;
     };
+
+    rxfetch = {
+      url = "github:Mangeshrex/rxfetch";
+      flake = false;
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, nixpkgs-f2k, luaFormatter, ... }@inputs:
@@ -64,6 +69,7 @@
             picom = picom-git;
           }) // {
             luaFormatter-src = luaFormatter;
+            rxfetch-bin = pkgs.callPackage ./pkgs/rxfetch { src = inputs.rxfetch; };
             sf-mono-liga-bin = pkgs.callPackage ./pkgs/sfmono-nf.nix {
               src = inputs.sf-mono-liga-src;
             };

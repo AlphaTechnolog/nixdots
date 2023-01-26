@@ -1,0 +1,29 @@
+diff --git a/rxfetch b/rxfetch
+index b34c374..8ae6720 100755
+--- a/rxfetch
++++ b/rxfetch
+@@ -100,6 +100,16 @@ get_snap_count() {
+ 	echo 0
+ }
+ 
++# Get the song name
++get_song() {
++    song=$(playerctl metadata --format '{{title}}' 2>/dev/null)
++    if [ -z "$song" ]; then
++        echo "Unknown Song"
++    else
++        echo "$song"
++    fi
++}
++
+ # Get count of flatpaks installed
+ get_flatpak_count() {
+ 	if command -v flatpak 2>/dev/null >&2; then
+@@ -262,6 +272,7 @@ fi
+ 
+ echo -e "               ${c7}up${c3}    $(get_uptime)"
+ echo -e "               ${c6}disk${c3}   $(get_storage_info)"
++echo -e "               ${c1}song${c3}   $(get_song)"
+ echo -e "               "
+ 
+ if [ "$kernel" != Android ] && [ "$kernel" != Darwin ]; then

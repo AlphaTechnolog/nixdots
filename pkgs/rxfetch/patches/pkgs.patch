@@ -1,0 +1,17 @@
+diff --git a/rxfetch b/rxfetch
+index b34c374..a8a869b 100755
+--- a/rxfetch
++++ b/rxfetch
+@@ -71,7 +71,11 @@ get_pkg_count() {
+ 				 fi
+ 				 ;;
+ 			pacman) pacman -Q | wc -l ;;
+-			nix) nix-env -qa --installed '*' | wc -l ;;
++			nix)
++				system="$(nix-store -qR /run/current-system/sw | wc -l)"
++				home="$(nix-store -qR /etc/profiles/per-user/$USER | wc -l)"
++				echo "$(expr $system + $home)"
++			;;
+ 			dnf) dnf list installed | wc -l ;;
+ 			rpm) rpm -qa | wc -l ;;
+ 			emerge) qlist -I | wc -l ;;

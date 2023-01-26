@@ -131,6 +131,7 @@ in
   # import more packages to home-manager ones.
   home.packages = with pkgs; [
     google-chrome
+    rxfetch-bin
     pre-commit
     stylua
     gimp
