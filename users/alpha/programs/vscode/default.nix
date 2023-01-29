@@ -14,8 +14,8 @@
       "editor.fontFamily" = "monospace";
       "editor.fontLigatures" = true;
       "editor.cursorStyle" = "line-thin";
-      "editor.fontSize" = 16;
-      "terminal.integrated.fontSize" = 16;
+      "editor.fontSize" = 14;
+      "terminal.integrated.fontSize" = 14;
       "editor.defaultFormatter" = "Koihik.vscode-lua-format";
       "php.validate.executablePath" = "${pkgs.php82}/bin/php";
       "vscode-lua-format.binaryPath" = "${pkgs.luaFormatter}/bin/lua-format";

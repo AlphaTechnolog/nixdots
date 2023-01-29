@@ -75,8 +75,7 @@ in {
   # Enable the X11 windowing system.
   services.xserver.enable = true;
   services.xserver.videoDrivers = [ "intel" ];
-  # services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.dpi = 76;
+  services.xserver.dpi = 86;
 
   services.blueman.enable = true;
 
@@ -132,24 +131,7 @@ in {
   # Enable sound.
   sound.enable = true;
   hardware.bluetooth.enable = true;
-  hardware.pulseaudio.enable = false;
-
-  # pipewire
-  services.pipewire = {
-    enable = true;
-    wireplumber.enable = true;
-    pulse.enable = true;
-    jack.enable = true;
-    alsa = {
-      enable = true;
-      support32Bit = true;
-    };
-  };
-
-  systemd.user.services = {
-    pipewire.wantedBy = ["default.target"];
-    pipewire-pulse.wantedBy = ["default.target"];
-  };
+  hardware.pulseaudio.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.xserver.libinput.enable = true;
@@ -170,18 +152,6 @@ in {
   # light
   programs.light.enable = true;
 
-  # bluetooth pipewire
-  environment.etc = {
-    "wireplumber/bluetooth.lua.d/51-bluez-config.lua".text = ''
-      bluez_monitor.properties = {
-        ["bluez5.enable-sbc-xq"] = true,
-        ["bluez5.enable-msbc"] = true,
-        ["bluez5.enable-hw-volume"] = true,
-        ["bluez5.headset-roles"] = "[ hsp_hs hsp_ag hfp_hf hfp_ag ]"
-      }
-    '';
-  };
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = virtualisation-packages ++ (with pkgs; [
@@ -201,7 +171,6 @@ in {
     chromedriver
     geckodriver
     selenium-server-standalone
-    pulseaudio # just its utils
 
     # wine
     wineWowPackages.stable

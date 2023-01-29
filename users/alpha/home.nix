@@ -9,7 +9,7 @@ let
   # integrates nur within Home-Manager
   nur = import (builtins.fetchTarball {
     url = "https://github.com/nix-community/NUR/archive/master.tar.gz";
-    sha256 = "0waa5nq1d91bqbbc28k9v3mclrjhylbgqy1i9dl8bp4icfaidmkr";
+    sha256 = "11c3hz1ccfv6w9m4swrsn28fsjk88z8a4h825hz0wzgdmnzi08b9";
   }) { inherit pkgs; };
 
   colors = import ./theme/colors.nix {};
@@ -48,7 +48,7 @@ in
   # xresources
   xresources.extraConfig = ''
     Xcursor.size: 24
-    Xft.dpi: 76
+    Xft.dpi: 86
   '';
 
   theme.base16.colors = base16-theme;
