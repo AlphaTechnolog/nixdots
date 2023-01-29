@@ -89,14 +89,16 @@ in {
     packages = with pkgs; [dconf gcr];
   };
 
-  services.xserver.displayManager.lightdm = {
-    enable = true;
-    greeters.gtk.cursorTheme = {
-      name = "Phinger Cursors";
-      package = pkgs.phinger-cursors;
-      size = 24;
-    };
-  };
+  services.xserver.displayManager.gdm.enable = true;
+
+  # services.xserver.displayManager.lightdm = {
+  #   enable = true;
+  #   greeters.gtk.cursorTheme = {
+  #     name = "Phinger Cursors";
+  #     package = pkgs.phinger-cursors;
+  #     size = 24;
+  #   };
+  # };
 
   services.xserver.windowManager.bspwm.enable = true;
 

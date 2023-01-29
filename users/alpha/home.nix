@@ -65,6 +65,7 @@ in
     (import ./programs/starship.nix)
     (import ./programs/fish.nix)
     (import ./programs/lite-xl)
+    (import ./programs/chromium.nix { inherit pkgs; })
     (import ./theme/nvim { inherit colors; })
   ];
 
@@ -130,7 +131,6 @@ in
 
   # import more packages to home-manager ones.
   home.packages = with pkgs; [
-    google-chrome
     rxfetch-bin
     pre-commit
     stylua
