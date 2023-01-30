@@ -151,6 +151,7 @@ in
     postman
     notion-app-enhanced
     maim
+    mongodb-compass
     jq
     networkmanagerapplet
     xfce.thunar

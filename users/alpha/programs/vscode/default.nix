@@ -13,23 +13,17 @@
       "editor.bracketPairColorization.enabled" = false;
       "editor.fontFamily" = "monospace";
       "editor.fontLigatures" = true;
-      "editor.cursorStyle" = "line-thin";
       "editor.fontSize" = 14;
       "terminal.integrated.fontSize" = 14;
+      "editor.cursorWidth" = 3;
       "editor.defaultFormatter" = "Koihik.vscode-lua-format";
       "php.validate.executablePath" = "${pkgs.php82}/bin/php";
       "vscode-lua-format.binaryPath" = "${pkgs.luaFormatter}/bin/lua-format";
       "vscode-lua-format.configPath" = "${config.xdg.configHome}/LuaFormatter.cfg";
       "window.menuBarVisibility" = "toggle";
       "editor.tabSize" = 2;
-      "editor.inlineSuggest.enabled" = true;
       "[python]"."editor.tabSize" = 4;
-      # disable typescript and javascript validation because i don't need it since i use copilot :P
-      "javascript.validate.enable" = false;
-      "typescript.validate.enable" = false;
-      # disable javascript and typescript suggestions because i don't need it since i use copilot :P
-      "javascript.suggest.enabled" = false;
-      "typescript.suggest.enabled" = false;
+      "editor.inlineSuggest.enabled" = true;
     };
     extensions = with pkgs.vscode-extensions; [
       bbenoist.nix
