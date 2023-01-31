@@ -8,13 +8,13 @@
   programs.vscode = {
     enable = true;
     userSettings = {
-      "workbench.colorTheme" = "Decayce Theme";
+      "workbench.colorTheme" = "Tokyo Night";
       "workbench.iconTheme" = "material-icon-theme";
       "editor.bracketPairColorization.enabled" = false;
       "editor.fontFamily" = "monospace";
       "editor.fontLigatures" = true;
-      "editor.fontSize" = 14;
-      "terminal.integrated.fontSize" = 14;
+      "editor.fontSize" = 16;
+      "terminal.integrated.fontSize" = 16;
       "editor.cursorWidth" = 3;
       "editor.defaultFormatter" = "Koihik.vscode-lua-format";
       "php.validate.executablePath" = "${pkgs.php82}/bin/php";
@@ -24,6 +24,12 @@
       "editor.tabSize" = 2;
       "[python]"."editor.tabSize" = 4;
       "editor.inlineSuggest.enabled" = true;
+      "vim.insertModeKeyBindingsNonRecursive" = [
+        {
+          before = [ "j" "k" ];
+          after = [ "<esc>" ];
+        }
+      ];
     };
     extensions = with pkgs.vscode-extensions; [
       bbenoist.nix
@@ -32,7 +38,14 @@
       svelte.svelte-vscode
       ms-vsliveshare.vsliveshare
       github.copilot
+      vscodevim.vim
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+      {
+        name = "ayu";
+        publisher = "teabyii";
+        version = "1.0.5";   
+        sha256 = "sha256-+IFqgWliKr+qjBLmQlzF44XNbN7Br5a119v9WAnZOu4=";
+      }
       {
         name = "volar";
         publisher = "vue";

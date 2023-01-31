@@ -8,8 +8,8 @@ in with colors; ''
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "monospace :pixelsize=13:antialias=true:autohint=true";
-static char *font2[] = { "monospace :pixelsize=13:antialias=true:autohint=true" };
+static char *font = "monospace :pixelsize=14:antialias=true:autohint=true";
+static char *font2[] = { "monospace :pixelsize=14:antialias=true:autohint=true" };
 static int borderpx = 20;
 
 /*

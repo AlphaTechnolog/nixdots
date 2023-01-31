@@ -14,8 +14,6 @@ let
 
   colors = import ./theme/colors.nix {};
   base16-theme = import ./theme/base16.nix {};
-
-  extra-fonts = import ./fonts {};
 in
 
 {
@@ -66,6 +64,7 @@ in
     (import ./programs/fish.nix)
     (import ./programs/lite-xl)
     (import ./programs/chromium.nix { inherit pkgs; })
+    (import ./fonts { inherit pkgs; })
     (import ./theme/nvim { inherit colors; })
   ];
 
@@ -114,7 +113,7 @@ in
   nixpkgs.config.allowUnfree = true;
 
   # cursor
-  home.file = extra-fonts // {
+  home.file = {
     ".icons/default".source = "${pkgs.phinger-cursors}/share/icons/phinger-cursors";
   };
 
