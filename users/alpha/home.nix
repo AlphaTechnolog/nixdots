@@ -64,7 +64,7 @@ in
     (import ./programs/fish.nix)
     (import ./programs/lite-xl)
     (import ./programs/chromium.nix { inherit pkgs; })
-    (import ./fonts { inherit pkgs; })
+    (import ./fonts)
     (import ./theme/nvim { inherit colors; })
   ];
 

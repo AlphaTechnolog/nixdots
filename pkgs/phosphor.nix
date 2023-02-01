@@ -1,18 +1,28 @@
-{ lib, stdenv, fetchzip, pkgs }:
+{
+  lib,
+  stdenvNoCC,
+  fetchzip,
+  pkgs,
+  util-linux
+}:
 
-stdenv.mkDerivation rec {
+stdenvNoCC.mkDerivation rec {
   pname = "phosphor-icons";
-  version = "latest";
+  version = "dev";
 
   src = fetchzip {
     url = "https://github.com/phosphor-icons/homepage/releases/download/v1.4.0/phosphor-icons.zip";
-    sha256 = "Jhk5yiGHEygFF7oruVpwQXXLjlj1enpv9a9pK2ptZ6w=";
+    sha256 = "sha256-Jhk5yiGHEygFF7oruVpwQXXLjlj1enpv9a9pK2ptZ6w=";
     stripRoot = false;
   };
 
+  nativeBuildInputs = [util-linux];
+
   installPhase = ''
-    mkdir -p $out/share/fonts
-    cp -r $src/"Icon Font"/Font/Phosphor.ttf $out/share/fonts
+    runHook preInstall
+    mkdir -p $out/share/fonts/
+    install -Dm755 $src/"Icon Font"/Font/Phosphor.ttf $out/share/fonts
+    runHook postInstall
   '';
 
   meta = {
