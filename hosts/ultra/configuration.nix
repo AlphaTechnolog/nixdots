@@ -23,6 +23,12 @@ in {
       device = "nodev";
       efiSupport = true;
       useOSProber = true;
+      gfxmodeEfi = "1920x1080";
+      theme = pkgs.fetchzip {
+        url = "https://raw.githubusercontent.com/AdisonCavani/distro-grub-themes/master/themes/hp.tar";
+        hash = "sha256-dJcJWpZswYOVKoDB37GGMcZ43/FFc+gKZfDeN29tnBk=";
+        stripRoot = false;
+      };
     };
   };
 
