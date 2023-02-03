@@ -61,9 +61,10 @@ in
     (import ./programs/rofi.nix { inherit pkgs config; })
     (import ./programs/st { inherit pkgs; })
     (import ./programs/starship.nix)
-    (import ./programs/fish.nix)
+    (import ./programs/fish.nix { inherit pkgs; })
     (import ./programs/lite-xl)
     (import ./programs/chromium.nix { inherit pkgs; })
+    (import ./programs/nix-index.nix)
     (import ./fonts)
     (import ./theme/nvim { inherit colors; })
   ];

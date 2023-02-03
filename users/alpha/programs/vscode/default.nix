@@ -8,7 +8,7 @@
   programs.vscode = {
     enable = true;
     userSettings = {
-      "workbench.colorTheme" = "Tokyo Night";
+      "workbench.colorTheme" = "Ayu Mirage Bordered";
       "workbench.iconTheme" = "material-icon-theme";
       "editor.bracketPairColorization.enabled" = false;
       "editor.fontFamily" = "monospace";
@@ -24,6 +24,7 @@
       "editor.tabSize" = 2;
       "[python]"."editor.tabSize" = 4;
       "editor.inlineSuggest.enabled" = true;
+      "vim.useSystemClipboard" = true;
       "vim.insertModeKeyBindingsNonRecursive" = [
         {
           before = [ "j" "k" ];
@@ -39,6 +40,7 @@
       ms-vsliveshare.vsliveshare
       github.copilot
       vscodevim.vim
+      sumneko.lua
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "ayu";
