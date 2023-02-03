@@ -13,6 +13,7 @@
     set fish_color_command brgreen
     set fish_color_param brwhite
     set fish_color_quote bryellow
+    set PATH "$PATH:$HOME/.local/bin"
 
     function __fish_command_not_found_handler --on-event fish_command_not_found
       ${wrapper} $argv

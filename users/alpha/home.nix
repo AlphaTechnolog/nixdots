@@ -65,8 +65,9 @@ in
     (import ./programs/lite-xl)
     (import ./programs/chromium.nix { inherit pkgs; })
     (import ./programs/nix-index.nix)
+    (import ./programs/neovide.nix { inherit pkgs; })
+    (import ./programs/lunarvim { inherit pkgs; })
     (import ./fonts)
-    (import ./theme/nvim { inherit colors; })
   ];
 
   # Let Home Manager install and manage itself.
@@ -147,7 +148,6 @@ in
     ripgrep
     obs-studio
     vlc
-    neovide
     postman
     notion-app-enhanced
     maim

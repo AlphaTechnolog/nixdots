@@ -218,6 +218,22 @@
         "url": "https://github.com/Koihik/LuaFormatter.git"
       }
     },
+    "lunarvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1675453176,
+        "narHash": "sha256-ezfGaZpDof5fo2MxM8b+LlU9L0hPkni+fvIr5i6HFG8=",
+        "owner": "AlphaTechnolog",
+        "repo": "LunarVim",
+        "rev": "3359a188806fe0573ad7a183918c48dee578ad9b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AlphaTechnolog",
+        "repo": "LunarVim",
+        "type": "github"
+      }
+    },
     "neovim-flake": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -393,6 +409,7 @@
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "luaFormatter": "luaFormatter",
+        "lunarvim": "lunarvim",
         "neovim-nightly": "neovim-nightly",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-f2k": "nixpkgs-f2k",

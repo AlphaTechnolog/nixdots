@@ -39,6 +39,11 @@
       url = "github:Mangeshrex/rxfetch";
       flake = false;
     };
+
+    lunarvim = {
+      url = "github:AlphaTechnolog/LunarVim";
+      flake = false;
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, nixpkgs-f2k, luaFormatter, ... }@inputs:
@@ -70,6 +75,11 @@
           }) // {
             luaFormatter-src = luaFormatter;
             rxfetch-bin = pkgs.callPackage ./pkgs/rxfetch { src = inputs.rxfetch; };
+            lunarvim-src = inputs.lunarvim;
+            lunarvim-wrapper = pkgs.writeScriptBin "lvim" ''
+              #!${pkgs.bash}/bin/bash
+              exec -a lvim nvim -u "$HOME/.local/share/lunarvim/lvim/init.lua" "$@"
+            '';
             sf-mono-liga-bin = pkgs.callPackage ./pkgs/sfmono-nf.nix {
               src = inputs.sf-mono-liga-src;
             };
