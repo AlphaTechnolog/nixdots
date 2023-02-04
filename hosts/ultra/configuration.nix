@@ -10,24 +10,30 @@ in {
     ./virtualisation
   ];
 
-  # use grub with os-prober support
-  boot.loader = {
-    systemd-boot.enable = false;
-    efi = {
-      canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot";
-    };
-    grub = {
+  # configure grub with os-prober & plymouth
+  boot = {
+    plymouth = {
       enable = true;
-      version = 2;
-      device = "nodev";
-      efiSupport = true;
-      useOSProber = true;
-      gfxmodeEfi = "1920x1080";
-      theme = pkgs.fetchzip {
-        url = "https://raw.githubusercontent.com/AdisonCavani/distro-grub-themes/master/themes/hp.tar";
-        hash = "sha256-dJcJWpZswYOVKoDB37GGMcZ43/FFc+gKZfDeN29tnBk=";
-        stripRoot = false;
+      theme = "breeze";
+    };
+    loader = {
+      systemd-boot.enable = false;
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot";
+      };
+      grub = {
+        enable = true;
+        version = 2;
+        device = "nodev";
+        efiSupport = true;
+        useOSProber = true;
+        gfxmodeEfi = "1920x1080";
+        theme = pkgs.fetchzip {
+          url = "https://raw.githubusercontent.com/AdisonCavani/distro-grub-themes/master/themes/hp.tar";
+          hash = "sha256-dJcJWpZswYOVKoDB37GGMcZ43/FFc+gKZfDeN29tnBk=";
+          stripRoot = false;
+        };
       };
     };
   };
