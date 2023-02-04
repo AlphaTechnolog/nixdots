@@ -10,12 +10,20 @@ in {
     ./virtualisation
   ];
 
-  # configure grub with os-prober & plymouth
+  # enable starship inside bash interactive session (useful when using nix-shell).
+  programs.bash.promptInit = ''
+    eval "$(${pkgs.starship}/bin/starship init bash)"
+  '';
+
+  # boot configuration
   boot = {
+    kernelPackages = pkgs.linuxPackages_latest;  # latest kernel
+    # plymouth
     plymouth = {
       enable = true;
       theme = "breeze";
     };
+    # configure grub with os-prober
     loader = {
       systemd-boot.enable = false;
       efi = {
@@ -38,102 +46,98 @@ in {
     };
   };
 
-  security.sudo.enable = true;
-
-  security.doas = {
-    enable = true;
-    extraRules = [
-      {
+  # configure doas instead of sudo
+  security = {
+    sudo.enable = false;
+    doas = {
+      enable = true;
+      extraRules = [{
         users = ["alpha"];
         keepEnv = true;
         persist = true;
-      }
-    ];
-  };
-
-  # unstable kernel
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  # bash
-  programs.bash = {
-    promptInit = ''eval "$(${pkgs.starship}/bin/starship init bash)"'';
-  };
-
-  networking.hostName = "ultra";
-  networking.networkmanager.enable = true;
-  networking.nameservers = [ "8.8.8.8" ];
-
-  # Set your time zone.
-  time.timeZone = "America/Caracas";
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-  services.xserver.videoDrivers = [ "intel" ];
-  services.xserver.dpi = 86;
-
-  # enables blueman for bluetooth
-  services.blueman.enable = true;
-
-  # gnome keyring and glib-networking
-  services.gnome = {
-    glib-networking.enable = true;
-    gnome-keyring.enable = true;
-  };
-
-  # dbus
-  services.dbus = {
-    enable = true;
-    packages = with pkgs; [dconf gcr];
-  };
-
-  # gdm
-  services.xserver.displayManager.gdm.enable = true;
-
-  # AwesomeWM
-  services.xserver.windowManager.awesome = {
-    enable = true;
-    luaModules = lib.attrValues {
-      inherit (pkgs.luaPackages)
-        lgi
-        ldbus
-        luadbi-mysql
-        luaposix;
+      }];
     };
   };
 
-  # automount usb
-  services.devmon.enable = true;
-  services.udisks2.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.layout = "us";
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
-  # upower
-  services.upower.enable = true;
-
-  # Enable sound.
-  sound.enable = true;
-  hardware.bluetooth.enable = true;
-  hardware.pulseaudio.enable = true;
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
-
-  # docker
-  virtualisation.docker.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.alpha = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "networkmanager" "libvirtd" "video" "audio" "input" ];
-    initialPassword = "alpha123.";
+  # network configuration
+  networking = {
+    hostName = "ultra";
+    networkmanager.enable = true;
+    nameservers = ["8.8.8.8"];  # google dns works better in America/Caracas.
   };
 
-  # shell (fish)
-  users.defaultUserShell = pkgs.fish;
+  # Timezone.
+  time.timeZone = "America/Caracas";
+
+  # Services Configuration.
+  services = {
+    # X11 windowing system.
+    xserver = {
+      enable = true;
+      videoDrivers = ["intel"];
+      dpi = 86;
+      layout = "us";
+      libinput.enable = true;
+      displayManager.gdm.enable = true;
+      windowManager.awesome = {
+        enable = true;
+        luaModules = lib.attrValues {
+          inherit (pkgs.luaPackages)
+            lgi
+            ldbus
+            luadbi-mysql
+            luaposix;
+        };
+      };
+    };
+
+    # enables blueman for bluetooth
+    blueman.enable = true;
+
+    # gnome keyring and glib-networking
+    gnome = {
+      glib-networking.enable = true;
+      gnome-keyring.enable = true;
+    };
+
+    # automount usb
+    devmon.enable = true;
+    udisks2.enable = true;
+
+    # printing
+    printing.enable = true;
+
+    # upower
+    upower.enable = true;
+  };
+
+  # enables sound
+  sound.enable = true;
+
+  # hardware configuration + pulseaudio {i've got problems using pipewire}
+  hardware = {
+    bluetooth.enable = true;
+    pulseaudio.enable = true;
+    opengl.enable = true;
+  };
+
+  # enables docker cuz i wanna use it.
+  virtualisation.docker.enable = true;
+
+  # User account, i use alpha.
+  users = {
+    defaultUserShell = pkgs.fish;
+    users.alpha = {
+      isNormalUser = true;
+      initialPassword = "alpha123.";  # 123. LMAO
+      extraGroups = [
+        "wheel" "docker"
+        "networkmanager"
+        "libvirtd" "video"
+        "audio" "input"
+      ];
+    };
+  };
 
   # light
   programs.light.enable = true;
@@ -205,7 +209,4 @@ in {
 
   # allow unfree pkgs through configuration.nix
   nixpkgs.config.allowUnfree = true;
-
-  # enables opengl
-  hardware.opengl.enable = true;
 }

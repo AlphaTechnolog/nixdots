@@ -101,10 +101,6 @@
         ultra = import ./hosts/ultra {
           inherit config nixpkgs overlays inputs system home-manager;
         };
-        fancy = import ./hosts/fancy {
-          inherit config nixpkgs overlays inputs system home-manager;
-          hyprland = inputs.hyprland;
-        };
       };
     };
 }
