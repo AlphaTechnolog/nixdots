@@ -20,7 +20,6 @@ lib.nixosSystem rec {
       home-manager.users.alpha = {
         imports = [
           ../../users/alpha/home.nix
-          ../../users/alpha/programs/helix
         ];
       };
     }
