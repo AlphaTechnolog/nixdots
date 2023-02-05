@@ -142,6 +142,9 @@ in {
   # light
   programs.light.enable = true;
 
+  # dconf
+  programs.dconf.enable = true;
+
   # packages
   environment.systemPackages = virtualisation-packages ++ (with pkgs; [
     wget

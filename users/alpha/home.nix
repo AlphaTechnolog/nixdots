@@ -4,7 +4,6 @@ let
   run = import ./bin/run.nix { inherit pkgs; };
   decayce-gtk = with pkgs; callPackage ../../pkgs/decayce-gtk.nix { };
   monaco-nf = with pkgs; callPackage ../../pkgs/monaco-nf.nix { };
-  nfonts = import ./fonts/nerdfonts.nix { inherit pkgs; };
 
   # integrates nur within Home-Manager
   nur = import (builtins.fetchTarball {
@@ -67,7 +66,9 @@ in
     (import ./programs/nix-index.nix)
     (import ./programs/neovide.nix { inherit pkgs; })
     (import ./programs/lunarvim { inherit pkgs; })
-    (import ./fonts)
+
+    (import ./system/gtk.nix { inherit pkgs; })
+    (import ./system/fonts { inherit pkgs; })
   ];
 
   # Let Home Manager install and manage itself.
@@ -78,17 +79,6 @@ in
 
   # services
   services.playerctld.enable = true;
-
-  # gtk configuration
-  gtk = {
-    enable = true;
-    gtk3.extraConfig.gtk-decoration-layout = "menu:";
-    theme.name = "Decayce";
-    iconTheme = with pkgs; {
-      name = "Papirus-Dark";
-      package = papirus-icon-theme;
-    };
-  };
 
   # editor (nvim)
   systemd.user.sessionVariables.EDITOR = "nvim";
@@ -114,21 +104,10 @@ in
   # enable unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # cursor
-  home.file = {
-    ".icons/default".source = "${pkgs.phinger-cursors}/share/icons/phinger-cursors";
-  };
-
   # add support for .local/bin
   home.sessionPath = [
     "$HOME/.local/bin"
   ];
-
-  # cursor size (again) through sessionVariables
-  home.sessionVariables = {
-    GTK_THEME = "decayce";
-    XCURSOR_SIZE = "24";
-  };
 
   # import more packages to home-manager ones.
   home.packages = with pkgs; [
@@ -157,7 +136,6 @@ in
     xfce.thunar
     neovim-nightly
     dconf
-    nfonts
     monaco-nf
     tdesktop
     redshift
