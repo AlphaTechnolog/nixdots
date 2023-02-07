@@ -4,7 +4,7 @@ in with colors; ''
 # Eye Friendly Colors
 # Created by https://github.com/decaycs
 # Special
-background #000000
+background ${bg}
 foreground ${fg}
 # Black
 color0 ${black}

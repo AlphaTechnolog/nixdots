@@ -174,6 +174,9 @@ in {
   fonts = {
     fonts = with pkgs; [
       inter
+      lato
+      maple-mono
+      maple-mono-NF
       sf-mono-liga-bin
       phosphor-icons
       material-symbols
@@ -194,7 +197,7 @@ in {
 
       defaultFonts = {
         emoji = ["Noto Color Emoji"];
-        monospace = ["Liga SFMono Nerd Font"];
+        monospace = ["Maple Mono NF"];
         sansSerif = ["Noto Sans" "Noto Color Emoji"];
         serif = ["Noto Serif" "Noto Color Emoji"];
       };

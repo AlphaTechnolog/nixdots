@@ -8,7 +8,7 @@
   programs.vscode = {
     enable = true;
     userSettings = {
-      "workbench.colorTheme" = "Tokyo Night";
+      "workbench.colorTheme" = "Catppuccin Mocha";
       "workbench.iconTheme" = "material-icon-theme";
       "editor.bracketPairColorization.enabled" = false;
       "editor.fontFamily" = "monospace";
@@ -21,6 +21,7 @@
       "vscode-lua-format.binaryPath" = "${pkgs.luaFormatter}/bin/lua-format";
       "vscode-lua-format.configPath" = "${config.xdg.configHome}/LuaFormatter.cfg";
       "window.menuBarVisibility" = "toggle";
+      "editor.minimap.enabled" = false;
       "editor.tabSize" = 2;
       "[python]"."editor.tabSize" = 4;
       "editor.inlineSuggest.enabled" = true;
@@ -41,6 +42,7 @@
       github.copilot
       vscodevim.vim
       sumneko.lua
+      catppuccin.catppuccin-vsc
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
         name = "ayu";
