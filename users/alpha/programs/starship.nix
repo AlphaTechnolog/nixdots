@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       add_newline = false;
-      format = "[](fg:white)$username[](fg:white) [in](fg:purple) $directory$nix_shell$git_branch\n$battery$character";
+      format = "[](fg:white)$username[](fg:white) [in](fg:purple) $directory$nix_shell$git_branch$git_state$git_status\n$battery$character";
 
       username = {
         style_user = "bg:white fg:black";

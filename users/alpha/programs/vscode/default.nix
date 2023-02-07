@@ -12,10 +12,13 @@
       "workbench.iconTheme" = "material-icon-theme";
       "editor.bracketPairColorization.enabled" = false;
       "editor.fontFamily" = "monospace";
+      "editor.lineHeight" = 30;
+      "editor.cursorSmoothCaretAnimation" = true;
+      "editor.smoothScrolling" = true;
       "editor.fontLigatures" = true;
       "editor.fontSize" = 16;
       "terminal.integrated.fontSize" = 16;
-      "editor.cursorWidth" = 3;
+      "editor.cursorWidth" = 1;
       "editor.defaultFormatter" = "Koihik.vscode-lua-format";
       "php.validate.executablePath" = "${pkgs.php82}/bin/php";
       "vscode-lua-format.binaryPath" = "${pkgs.luaFormatter}/bin/lua-format";
