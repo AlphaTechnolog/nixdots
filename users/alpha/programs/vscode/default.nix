@@ -1,104 +1,182 @@
-{ config, pkgs }:
-
 {
-  home.packages = with pkgs; [
-    luaFormatter
-  ];
-
+  config,
+  pkgs,
+  ...
+}: {
   programs.vscode = {
     enable = true;
-    userSettings = {
-      "workbench.colorTheme" = "Tokyo Night";
-      "workbench.iconTheme" = "material-icon-theme";
-      "editor.bracketPairColorization.enabled" = false;
-      "editor.fontFamily" = "monospace";
-      "editor.lineHeight" = 30;
-      "editor.cursorSmoothCaretAnimation" = true;
-      "editor.smoothScrolling" = true;
-      "editor.fontLigatures" = true;
-      "editor.fontSize" = 16;
-      "terminal.integrated.fontSize" = 16;
-      "editor.cursorWidth" = 1;
-      "editor.defaultFormatter" = "Koihik.vscode-lua-format";
-      "php.validate.executablePath" = "${pkgs.php82}/bin/php";
-      "vscode-lua-format.binaryPath" = "${pkgs.luaFormatter}/bin/lua-format";
-      "vscode-lua-format.configPath" = "${config.xdg.configHome}/LuaFormatter.cfg";
-      "window.menuBarVisibility" = "toggle";
-      "editor.minimap.enabled" = false;
-      "editor.tabSize" = 2;
-      "[python]"."editor.tabSize" = 4;
-      "editor.inlineSuggest.enabled" = true;
-      "vim.useSystemClipboard" = true;
-      "vim.insertModeKeyBindingsNonRecursive" = [
+    mutableExtensionsDir = true;
+    extensions = with pkgs.vscode-extensions;
+      [
+        adpyke.codesnap
+        bbenoist.nix
+        christian-kohler.path-intellisense
+        dbaeumer.vscode-eslint
+        eamodio.gitlens
+        esbenp.prettier-vscode
+        formulahendry.code-runner
+        github.copilot
+        golang.go
+        ibm.output-colorizer
+        kamadorueda.alejandra
+        matklad.rust-analyzer
+        ms-azuretools.vscode-docker
+        ms-python.python
+        ms-python.vscode-pylance
+        ms-vscode.cpptools
+        ms-vscode-remote.remote-ssh
+        naumovs.color-highlight
+        pkief.material-product-icons
+        pkief.material-icon-theme
+        streetsidesoftware.code-spell-checker
+        sumneko.lua
+        usernamehw.errorlens
+        vadimcn.vscode-lldb
+        oderwat.indent-rainbow
+        xaver.clang-format
+        yzhang.markdown-all-in-one
+      ]
+      ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         {
-          before = [ "j" "k" ];
-          after = [ "<esc>" ];
+          name = "stylua";
+          publisher = "johnnymorganz";
+          version = "1.4.0";
+          sha256 = "sha256-0hdjyQbBbo4NblG6VH339sN/oPQEGDtGjJSyHdM4JCM=";
+        }
+        {
+          name = "tokyo-night";
+          publisher = "enkia";
+          version = "0.9.4";
+          sha256 = "sha256-pKokB6446SR6LsTHyJtQ+FEA07A0W9UAI+byqtGeMGw=";
+        }
+        {
+          name = "vs-code-prettier-eslint";
+          publisher = "rvest";
+          version = "5.0.4";
+          sha256 = "sha256-aLEAuFQQTxyFSfr7dXaYpm11UyBuDwBNa0SBCMJAVRI=";
         }
       ];
+
+    userSettings = {
+      breadcrumbs.enabled = false;
+      emmet.useInlineCompletions = true;
+      github.copilot.enable."*" = true;
+      security.workspace.trust.enabled = false;
+      security.workspace.trust.untrustedFiles = "open";
+
+      "[c]".editor.defaultFormatter = "xaver.clang-format";
+      "[cpp]".editor.defaultFormatter = "xaver.clang-format";
+      "[css]".editor.defaultFormatter = "esbenp.prettier-vscode";
+      "[html]".editor.defaultFormatter = "esbenp.prettier-vscode";
+      "[javascript]".editor.defaultFormatter = "rvest.vs-code-prettier-eslint";
+      "[json]".editor.defaultFormatter = "esbenp.prettier-vscode";
+      "[jsonc]".editor.defaultFormatter = "rvest.vs-code-prettier-eslint";
+      "[lua]".editor.defaultFormatter = "johnnymorganz.stylua";
+      stylua.styluaPath = "${pkgs.stylua}/bin/stylua";
+      "[nix]".editor.defaultFormatter = "kamadorueda.alejandra";
+      "[rust]".editor.defaultFormatter = "rust-lang.rust-analyzer";
+      "[scss]".editor.defaultFormatter = "sibiraj-s.vscode-scss-formatter";
+      "[typescript]".editor.defaultFormatter = "rvest.vs-code-prettier-eslint";
+
+      editor = {
+        cursorSmoothCaretAnimation = "on";
+        cursorWidth = 2;
+        find.addExtraSpaceOnTop = false;
+        fontFamily = "'monospace', monospace";
+        fontSize = 16;
+        formatOnSave = true;
+        inlayHints.enabled = "off";
+        inlineSuggest.enabled = true;
+        largeFileOptimizations = false;
+        lineNumbers = "on";
+        linkedEditing = true;
+        maxTokenizationLineLength = 60000;
+        minimap.enabled = false;
+        overviewRulerBorder = false;
+        quickSuggestions.strings = true;
+        renderWhitespace = "none";
+        renderLineHighlight = "all";
+        smoothScrolling = true;
+        suggest.showStatusBar = true;
+        suggestSelection = "first";
+
+        bracketPairColorization = {
+          enabled = false;
+          independentColorPoolPerBracketType = true;
+        };
+
+        codeActionsOnSave.source = {
+          organizeImports = true;
+          fixAll.eslint = true;
+        };
+
+        guides = {
+          bracketPairs = true;
+          indentation = true;
+        };
+      };
+
+      explorer = {
+        confirmDragAndDrop = false;
+        confirmDelete = true;
+      };
+
+      files = {
+        autoSave = "afterDelay";
+        eol = "\n";
+        insertFinalNewline = true;
+        trimTrailingWhitespace = true;
+
+        exclude = {
+          "**/.classpath" = true;
+          "**/.direnv" = true;
+          "**/.factorypath" = true;
+          "**/.git" = true;
+          "**/.project" = true;
+          "**/.settings" = true;
+        };
+      };
+
+      git = {
+        autofetch = true;
+        confirmSync = false;
+        enableSmartCommit = true;
+      };
+
+      terminal.integrated = {
+        cursorBlinking = true;
+        cursorStyle = "line";
+        cursorWidth = 2;
+        fontFamily = "'monospace'";
+        fontSize = 16;
+        smoothScrolling = true;
+      };
+
+      window = {
+        menuBarVisibility = "toggle";
+        nativeTabs = true;
+        titleBarStyle = "native";
+        zoomLevel = 0;
+      };
+
+      workbench = {
+        colorTheme = "Tokyo Night";
+        iconTheme = "material-icon-theme";
+        list.smoothScrolling = true;
+        panel.defaultLocation = "right";
+        productIconTheme = "material-product-icons";
+        smoothScrolling = true;
+      };
     };
-    extensions = with pkgs.vscode-extensions; [
-      bbenoist.nix
-      esbenp.prettier-vscode
-      naumovs.color-highlight
-      svelte.svelte-vscode
-      ms-vsliveshare.vsliveshare
-      github.copilot
-      vscodevim.vim
-      sumneko.lua
-      catppuccin.catppuccin-vsc
-    ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
-      {
-        name = "ayu";
-        publisher = "teabyii";
-        version = "1.0.5";   
-        sha256 = "sha256-+IFqgWliKr+qjBLmQlzF44XNbN7Br5a119v9WAnZOu4=";
-      }
-      {
-        name = "volar";
-        publisher = "vue";
-        version = "1.0.12";
-        sha256 = "sha256-D9E3KRUOlNVXH4oMv1W0+/mbqO8Se7+6E2F5P/KvCro=";
-      }
-      {
-        name = "vscode-typescript-vue-plugin";
-        publisher = "vue";
-        version = "1.0.12";
-        sha256 = "sha256-WiL+gc9+U861ubLlY/acR+ZcrFT7TdIDR0K1XNNidX8=";
-      }
-      {
-        name = "decay";
-        publisher = "decaycs";
-        version = "1.0.6";
-        sha256 = "sha256-Jtxj6LmHgF7UNaXtXxHkq881BbuPtIJGxR7kdhKr0Uo=";
-      }
-      {
-        name = "material-icon-theme";
-        publisher = "pkief";
-        version = "4.22.0";
-        sha256 = "sha256-U9P9BcuZi+SUcvTg/fC2SkjGRD4CvgJEc1i+Ft2OOUc=";
-      }
-      {
-        name = "vscode-lua-format";
-        publisher = "koihik";
-        version = "1.3.8";
-        sha256 = "sha256-ACdjiy+Rj2wmxvSojaJmtCwyryWWB+OA/9hBEMJi39g=";
-      }
-      {
-        name = "tokyo-night";
-        publisher = "enkia";
-        version = "0.9.4";
-        sha256 = "sha256-pKokB6446SR6LsTHyJtQ+FEA07A0W9UAI+byqtGeMGw=";
-      }
-    ];
   };
 
-  xdg.configFile."LuaFormatter.cfg".text = ''
-    indent_width: 2
-    use_tab: false
-    keep_simple_control_block_one_line: false
-    keep_simple_function_one_line: false
-    single_quote_to_double_quote: true
-    chop_down_table: true
-    chop_down_kv_table: true
+  xdg.configFile.".stylua.toml".text = ''
+    column_width = 120
+    line_endings = "Unix"
+    indent_type = "Spaces"
+    indent_width = 2
+    quote_style = "AutoPreferDouble"
+    call_parentheses = "Always"
+    collapse_simple_statement = "Always"
   '';
 }

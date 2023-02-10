@@ -1,24 +1,27 @@
-{ config, pkgs, nur, colors, ... }:
-
 {
+  config,
+  pkgs,
+  nur,
+  colors,
+  ...
+}: {
   programs.firefox = {
     enable = true;
-
-    extensions = with nur.repos.rycee.firefox-addons; [
-      enhanced-github
-      enhancer-for-youtube
-      refined-github
-      stylus
-      vue-js-devtools
-      react-devtools
-      reduxdevtools
-    ];
 
     profiles.alpha = {
       id = 0;
       settings."general.smoothScroll" = true;
-      userChrome = import ./userChrome-css.nix { inherit colors; };
+      userChrome = import ./userChrome-css.nix {inherit colors;};
       userContent = import ./userContent-css.nix {};
+      extensions = with nur.repos.rycee.firefox-addons; [
+        enhanced-github
+        enhancer-for-youtube
+        refined-github
+        stylus
+        vue-js-devtools
+        react-devtools
+        reduxdevtools
+      ];
       extraConfig = ''
         user_pref("browser.startup.homepage", "https://alphatechnolog.github.io/startpage");
         user_pref("browser.urlbar.autoFill", false);

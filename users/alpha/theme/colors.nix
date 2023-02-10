@@ -1,20 +1,20 @@
 {}:
 
 rec {
-  bg-darker = "#11111b";
-  bg = "#1e1e2e";
-  bg-contrast = "#313244";
-  bg-lighter = "#45475a";
-  black = "#585b70";
-  dimblack = "#6c7086";
-  light-black = "#7f849c";
-  fg = "#cdd6f4";
-  white = "#bac2de";
-  grey = "#9399b2";
-  red = "#f38ba8";
-  yellow = "#f9e2af";
-  magenta = "#cba6f7";
-  green = "#a6e3a1";
-  blue = "#89b4fa";
-  cyan = "#89dceb";
+  bg-darker = "#161722";
+  bg = "#1a1b26";
+  bg-contrast = "#1f202b";
+  bg-lighter = "#242530";
+  black = "#292a35";
+  dimblack = "#2e2f3a";
+  light-black = "#33343f";
+  fg = "#c0caf5";
+  white = "#a9b1d6";
+  grey = "#414868";
+  red = "#f7768e";
+  yellow = "#e0af68";
+  magenta = "#bb9af7";
+  green = "#9ece6a";
+  blue = "#7aa2f7";
+  cyan = "#7dcfff";
 }

@@ -1,21 +1,22 @@
-{ config, pkgs, lib, ... }:
-
-let
-  run = import ./bin/run.nix { inherit pkgs; };
-  decayce-gtk = with pkgs; callPackage ../../pkgs/decayce-gtk.nix { };
-  monaco-nf = with pkgs; callPackage ../../pkgs/monaco-nf.nix { };
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
+  run = import ./bin/run.nix {inherit pkgs;};
+  decayce-gtk = with pkgs; callPackage ../../pkgs/decayce-gtk.nix {};
+  monaco-nf = with pkgs; callPackage ../../pkgs/monaco-nf.nix {};
 
   # integrates nur within Home-Manager
   nur = import (builtins.fetchTarball {
     url = "https://github.com/nix-community/NUR/archive/master.tar.gz";
-    sha256 = "11c3hz1ccfv6w9m4swrsn28fsjk88z8a4h825hz0wzgdmnzi08b9";
-  }) { inherit pkgs; };
+    sha256 = "0r4vaggivi56hgxa2ypgxm3vlp4akp8c8pr1h94abfw4zcndyiln";
+  }) {inherit pkgs;};
 
   colors = import ./theme/colors.nix {};
   base16-theme = import ./theme/base16.nix {};
-in
-
-{
+in {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "alpha";
@@ -50,26 +51,21 @@ in
 
   theme.base16.colors = base16-theme;
 
-  imports = lib.attrValues nur.repos.rycee.hmModules ++ [
-    (import ./programs/wezterm { inherit builtins; })
-    (import ./programs/kitty { inherit pkgs; })
-    (import ./programs/alacritty { inherit pkgs colors; })
-    (import ./programs/firefox { inherit pkgs config nur colors; })
-    (import ./programs/vscode { inherit pkgs config; })
-    (import ./programs/picom.nix {})
-    (import ./programs/rofi.nix { inherit pkgs config; })
-    (import ./programs/st { inherit pkgs; })
-    (import ./programs/starship.nix)
-    (import ./programs/fish.nix { inherit pkgs; })
-    (import ./programs/lite-xl)
-    (import ./programs/chromium.nix { inherit pkgs; })
-    (import ./programs/nix-index.nix)
-    (import ./programs/neovide.nix { inherit pkgs; })
-    (import ./programs/lunarvim { inherit pkgs; })
-
-    (import ./system/gtk.nix { inherit pkgs; })
-    (import ./system/fonts { inherit pkgs; })
-  ];
+  imports =
+    lib.attrValues nur.repos.rycee.hmModules
+    ++ [
+      (import ./programs/wezterm)
+      (import ./programs/firefox {inherit pkgs config nur colors;})
+      (import ./programs/vscode {inherit pkgs config;})
+      (import ./programs/picom.nix {})
+      (import ./programs/rofi.nix {inherit pkgs config;})
+      (import ./programs/starship.nix)
+      (import ./programs/fish.nix {inherit pkgs;})
+      (import ./programs/chromium.nix {inherit pkgs;})
+      (import ./programs/nix-index.nix)
+      (import ./system/gtk.nix {inherit pkgs;})
+      (import ./system/fonts {inherit pkgs;})
+    ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -86,9 +82,9 @@ in
   # headset buttons
   systemd.user.services.mpris-proxy = {
     Unit.Description = "Mpris proxy";
-    Unit.After = [ "network.target" "sound.target" ];
+    Unit.After = ["network.target" "sound.target"];
     Service.ExecStart = "${pkgs.bluez}/bin/mpris-proxy";
-    Install.WantedBy = [ "default.target" ];
+    Install.WantedBy = ["default.target"];
   };
 
   # bat (cat clone)
@@ -121,7 +117,6 @@ in
     pamixer
     spotify
     exa
-    lite-xl
     gcc
     gh
     ripgrep
@@ -134,7 +129,6 @@ in
     jq
     networkmanagerapplet
     xfce.thunar
-    neovim-nightly
     dconf
     monaco-nf
     tdesktop
