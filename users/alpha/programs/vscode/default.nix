@@ -3,6 +3,11 @@
   pkgs,
   ...
 }: {
+  home.packages = with pkgs; [
+    stylua
+    sumneko-lua-language-server
+  ];
+
   programs.vscode = {
     enable = true;
     mutableExtensionsDir = true;
@@ -152,6 +157,8 @@
         smoothScrolling = true;
       };
 
+      Lua.misc.executablePath = "${pkgs.sumneko-lua-language-server}/bin/lua-language-server";
+
       window = {
         menuBarVisibility = "toggle";
         nativeTabs = true;
@@ -163,7 +170,6 @@
         colorTheme = "Tokyo Night";
         iconTheme = "material-icon-theme";
         list.smoothScrolling = true;
-        panel.defaultLocation = "right";
         productIconTheme = "material-product-icons";
         smoothScrolling = true;
       };

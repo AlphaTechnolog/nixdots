@@ -1,7 +1,10 @@
-{ config, pkgs, lib, ... }:
-
-let
-  virtualisation-packages = import ./virtualisation/pkgs.nix { inherit pkgs; };
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
+  virtualisation-packages = import ./virtualisation/pkgs.nix {inherit pkgs;};
   material-symbols = pkgs.callPackage ../../pkgs/material-symbols.nix {};
 in {
   # imports some modules.
@@ -17,7 +20,7 @@ in {
 
   # boot configuration
   boot = {
-    kernelPackages = pkgs.linuxPackages_latest;  # latest kernel
+    kernelPackages = pkgs.linuxPackages_xanmod_latest; # latest xanmod kernel
     # plymouth
     plymouth = {
       enable = true;
@@ -51,11 +54,13 @@ in {
     sudo.enable = false;
     doas = {
       enable = true;
-      extraRules = [{
-        users = ["alpha"];
-        keepEnv = true;
-        persist = true;
-      }];
+      extraRules = [
+        {
+          users = ["alpha"];
+          keepEnv = true;
+          persist = true;
+        }
+      ];
     };
   };
 
@@ -63,7 +68,7 @@ in {
   networking = {
     hostName = "ultra";
     networkmanager.enable = true;
-    nameservers = ["8.8.8.8"];  # google dns works better in America/Caracas.
+    nameservers = ["8.8.8.8"]; # google dns works better in America/Caracas.
   };
 
   # Timezone.
@@ -82,11 +87,13 @@ in {
       windowManager.awesome = {
         enable = true;
         luaModules = lib.attrValues {
-          inherit (pkgs.luaPackages)
+          inherit
+            (pkgs.luaPackages)
             lgi
             ldbus
             luadbi-mysql
-            luaposix;
+            luaposix
+            ;
         };
       };
     };
@@ -129,12 +136,15 @@ in {
     defaultUserShell = pkgs.fish;
     users.alpha = {
       isNormalUser = true;
-      initialPassword = "alpha123.";  # 123. LMAO
+      initialPassword = "alpha123."; # 123. LMAO
       extraGroups = [
-        "wheel" "docker"
+        "wheel"
+        "docker"
         "networkmanager"
-        "libvirtd" "video"
-        "audio" "input"
+        "libvirtd"
+        "video"
+        "audio"
+        "input"
       ];
     };
   };
@@ -146,29 +156,31 @@ in {
   programs.dconf.enable = true;
 
   # packages
-  environment.systemPackages = virtualisation-packages ++ (with pkgs; [
-    wget
-    git
-    playerctl
-    docker-compose
-    cargo
-    rustc
-    protonvpn-cli
+  environment.systemPackages =
+    virtualisation-packages
+    ++ (with pkgs; [
+      wget
+      git
+      playerctl
+      docker-compose
+      cargo
+      rustc
+      protonvpn-cli
 
-    # utils
-    xorg.xwininfo
-    xorg.xbacklight
-    xorg.xinit
-    brightnessctl
-    chromedriver
-    geckodriver
-    selenium-server-standalone
+      # utils
+      xorg.xwininfo
+      xorg.xbacklight
+      xorg.xinit
+      brightnessctl
+      chromedriver
+      geckodriver
+      selenium-server-standalone
 
-    # wine
-    wineWowPackages.stable
-    (wine.override { wineBuild = "wine64"; })
-    winetricks
-  ]);
+      # wine
+      wineWowPackages.stable
+      (wine.override {wineBuild = "wine64";})
+      winetricks
+    ]);
 
   # fontconfig configuration
   fonts = {
