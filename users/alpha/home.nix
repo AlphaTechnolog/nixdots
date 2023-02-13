@@ -62,6 +62,7 @@ in {
       (import ./programs/starship.nix)
       (import ./programs/fish.nix {inherit pkgs;})
       (import ./programs/chromium.nix {inherit pkgs;})
+      (import ./programs/brave.nix {inherit pkgs;})
       (import ./programs/nix-index.nix)
       (import ./system/gtk.nix {inherit pkgs;})
       (import ./system/fonts {inherit pkgs;})
