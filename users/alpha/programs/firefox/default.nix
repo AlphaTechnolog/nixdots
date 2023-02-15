@@ -23,7 +23,6 @@
         reduxdevtools
       ];
       extraConfig = ''
-        user_pref("browser.startup.homepage", "https://alphatechnolog.github.io/startpage");
         user_pref("browser.urlbar.autoFill", false);
         user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
         user_pref("layers.acceleration.force-enabled", true);
