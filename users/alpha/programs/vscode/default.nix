@@ -31,6 +31,7 @@
         ms-vscode.cpptools
         ms-vscode-remote.remote-ssh
         naumovs.color-highlight
+        vscodevim.vim
         pkief.material-product-icons
         pkief.material-icon-theme
         streetsidesoftware.code-spell-checker
@@ -88,7 +89,7 @@
         cursorWidth = 3;
         find.addExtraSpaceOnTop = false;
         fontFamily = "'monospace', monospace";
-        fontSize = 16;
+        fontSize = 14;
         formatOnSave = true;
         inlayHints.enabled = "off";
         inlineSuggest.enabled = true;
@@ -154,7 +155,7 @@
         cursorStyle = "line";
         cursorWidth = 2;
         fontFamily = "'monospace'";
-        fontSize = 16;
+        fontSize = 12;
         smoothScrolling = true;
       };
 
@@ -174,6 +175,25 @@
         productIconTheme = "material-product-icons";
         smoothScrolling = true;
       };
+
+      vim.insertModeKeyBindingsNonRecursive = [
+        {
+          before = ["j" "k"];
+          after = ["<esc>"];
+        }
+        {
+          before = ["k" "j"];
+          after = ["<esc>"];
+        }
+        {
+          before = ["j" "j"];
+          after = ["<esc>"];
+        }
+        {
+          before = ["k" "k"];
+          after = ["<esc>"];
+        }
+      ];
     };
   };
 

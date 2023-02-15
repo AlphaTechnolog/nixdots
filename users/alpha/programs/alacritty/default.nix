@@ -19,7 +19,7 @@ in {
       font =
         setfont "monospace"
         // {
-          size = 12;
+          size = 11;
         };
       cursor = {
         thickness = 0.2;
