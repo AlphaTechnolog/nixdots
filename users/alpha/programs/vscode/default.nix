@@ -85,7 +85,7 @@
 
       editor = {
         cursorSmoothCaretAnimation = "on";
-        cursorWidth = 2;
+        cursorWidth = 3;
         find.addExtraSpaceOnTop = false;
         fontFamily = "'monospace', monospace";
         fontSize = 16;
@@ -104,6 +104,7 @@
         smoothScrolling = true;
         suggest.showStatusBar = true;
         suggestSelection = "first";
+        cursorBlinking = "expand";
 
         bracketPairColorization = {
           enabled = false;

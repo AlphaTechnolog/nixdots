@@ -54,7 +54,7 @@ in {
   imports =
     lib.attrValues nur.repos.rycee.hmModules
     ++ [
-      (import ./programs/wezterm)
+      (import ./programs/alacritty {inherit pkgs colors;})
       (import ./programs/firefox {inherit pkgs config nur colors;})
       (import ./programs/vscode {inherit pkgs config;})
       (import ./programs/picom.nix {})

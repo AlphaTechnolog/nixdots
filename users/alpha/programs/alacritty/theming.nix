@@ -1,5 +1,4 @@
-{ colors }:
-
+{colors}:
 with colors; rec {
   primary = {
     background = bg;
@@ -8,7 +7,7 @@ with colors; rec {
 
   cursor = {
     text = bg;
-    cursor = light-black;
+    cursor = blue;
   };
 
   selection = {

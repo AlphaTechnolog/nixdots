@@ -3,19 +3,19 @@
     enable = true;
     settings = {
       add_newline = false;
-      format = "[](fg:white)$username[](fg:white) [in](fg:purple) $directory$nix_shell$git_branch$git_state$git_status\n$battery$character";
+      format = "$username [in](fg:purple) $directory$nix_shell$git_branch$git_state$git_status\n$battery$character";
 
       username = {
-        style_user = "bg:white fg:black";
-        style_root = "bg:white fg:black bold";
-        format = "[$user]($style)";
+        style_user = "bg:cyan fg:black";
+        style_root = "bg:cyan fg:black bold";
+        format = "[  ](bg:blue fg:black)[ $user ]($style)";
         disabled = false;
         show_always = true;
       };
 
       nix_shell = {
         format = "[via](fg:purple) [$symbol$state( \\($name\\))]($style) ";
-        symbol = "❄️";
+        symbol = "❄️ ";
       };
 
       git_branch = {
