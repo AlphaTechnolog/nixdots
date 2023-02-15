@@ -89,7 +89,7 @@
         cursorWidth = 3;
         find.addExtraSpaceOnTop = false;
         fontFamily = "'monospace', monospace";
-        fontSize = 14;
+        fontSize = 16;
         formatOnSave = true;
         inlayHints.enabled = "off";
         inlineSuggest.enabled = true;
@@ -155,7 +155,7 @@
         cursorStyle = "line";
         cursorWidth = 2;
         fontFamily = "'monospace'";
-        fontSize = 12;
+        fontSize = 14;
         smoothScrolling = true;
       };
 
