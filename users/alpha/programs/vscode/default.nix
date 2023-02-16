@@ -38,7 +38,6 @@
         sumneko.lua
         usernamehw.errorlens
         vadimcn.vscode-lldb
-        oderwat.indent-rainbow
         xaver.clang-format
         yzhang.markdown-all-in-one
       ]
@@ -60,6 +59,12 @@
           publisher = "rvest";
           version = "5.0.4";
           sha256 = "sha256-aLEAuFQQTxyFSfr7dXaYpm11UyBuDwBNa0SBCMJAVRI=";
+        }
+        {
+          name = "decay";
+          publisher = "decaycs";
+          version = "1.0.6";
+          sha256 = "sha256-Jtxj6LmHgF7UNaXtXxHkq881BbuPtIJGxR7kdhKr0Uo=";
         }
       ];
 
@@ -109,7 +114,7 @@
 
         bracketPairColorization = {
           enabled = false;
-          independentColorPoolPerBracketType = true;
+          independentColorPoolPerBracketType = false;
         };
 
         codeActionsOnSave.source = {
@@ -118,7 +123,7 @@
         };
 
         guides = {
-          bracketPairs = true;
+          bracketPairs = false;
           indentation = true;
         };
       };
@@ -129,7 +134,6 @@
       };
 
       files = {
-        autoSave = "afterDelay";
         eol = "\n";
         insertFinalNewline = true;
         trimTrailingWhitespace = true;
@@ -169,31 +173,34 @@
       };
 
       workbench = {
-        colorTheme = "Tokyo Night";
+        colorTheme = "Dark Decay Theme";
         iconTheme = "material-icon-theme";
         list.smoothScrolling = true;
         productIconTheme = "material-product-icons";
         smoothScrolling = true;
       };
 
-      vim.insertModeKeyBindingsNonRecursive = [
-        {
-          before = ["j" "k"];
-          after = ["<esc>"];
-        }
-        {
-          before = ["k" "j"];
-          after = ["<esc>"];
-        }
-        {
-          before = ["j" "j"];
-          after = ["<esc>"];
-        }
-        {
-          before = ["k" "k"];
-          after = ["<esc>"];
-        }
-      ];
+      vim = {
+        useSystemClipboard = true;
+        insertModeKeyBindingsNonRecursive = [
+          {
+            before = ["j" "k"];
+            after = ["<esc>"];
+          }
+          {
+            before = ["k" "j"];
+            after = ["<esc>"];
+          }
+          {
+            before = ["j" "j"];
+            after = ["<esc>"];
+          }
+          {
+            before = ["k" "k"];
+            after = ["<esc>"];
+          }
+        ];
+      };
     };
   };
 
