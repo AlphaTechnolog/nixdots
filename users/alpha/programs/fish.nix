@@ -1,6 +1,4 @@
-{ pkgs }:
-
-{
+{pkgs}: {
   xdg.configFile."fish/config.fish".text = let
     wrapper = pkgs.writeScript "command-not-found" ''
       #!${pkgs.bash}/bin/bash
@@ -10,7 +8,7 @@
   in ''
     starship init fish | source
     set fish_greeting
-    set fish_color_command brcyan
+    set fish_color_command brgreen
     set fish_color_param brwhite
     set fish_color_quote bryellow
     set PATH "$PATH:$HOME/.local/bin"
