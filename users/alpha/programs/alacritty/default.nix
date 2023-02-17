@@ -22,7 +22,6 @@ in {
           size = 12;
         };
       cursor = {
-        thickness = 0.2;
         style = {
           shape = "Beam";
           blinking = "on";

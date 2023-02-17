@@ -91,7 +91,6 @@
 
       editor = {
         cursorSmoothCaretAnimation = "on";
-        cursorWidth = 3;
         find.addExtraSpaceOnTop = false;
         fontFamily = "'monospace', monospace";
         fontSize = 16;
