@@ -18,33 +18,33 @@ with colors; rec {
   normal = {
     black = black;
     red = red;
-    green = accent;
+    green = green;
     yellow = yellow;
-    blue = blue;
+    blue = accent;
     magenta = magenta;
-    cyan = cyan;
+    cyan = blue;
     white = white;
   };
 
   bright = {
     black = black;
     red = red;
-    green = accent;
+    green = green;
     yellow = yellow;
-    blue = blue;
+    blue = accent;
     magenta = magenta;
-    cyan = cyan;
+    cyan = blue;
     white = white;
   };
 
   dim = {
     black = black;
     red = red;
-    green = accent;
+    green = green;
     yellow = yellow;
-    blue = blue;
+    blue = accent;
     magenta = magenta;
-    cyan = cyan;
+    cyan = blue;
     white = white;
   };
 }

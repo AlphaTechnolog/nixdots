@@ -57,6 +57,7 @@ in {
       (import ./programs/alacritty {inherit pkgs colors;})
       (import ./programs/firefox {inherit pkgs config nur colors;})
       (import ./programs/vscode {inherit pkgs config;})
+      (import ./programs/neovim.nix {inherit pkgs;})
       (import ./programs/picom.nix {})
       (import ./programs/rofi.nix {inherit pkgs config;})
       (import ./programs/starship.nix)

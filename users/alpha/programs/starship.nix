@@ -12,8 +12,8 @@
         disabled = false;
         format = "[ $user ]($style)";
         show_always = true;
-        style_root = "bg:green fg:black bold";
-        style_user = "bg:green fg:black";
+        style_root = "bg:blue fg:black bold";
+        style_user = "bg:blue fg:black";
       };
     };
   };
