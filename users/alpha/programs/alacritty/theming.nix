@@ -18,7 +18,7 @@ with colors; rec {
   normal = {
     black = black;
     red = red;
-    green = green;
+    green = accent;
     yellow = yellow;
     blue = blue;
     magenta = magenta;
@@ -29,7 +29,7 @@ with colors; rec {
   bright = {
     black = black;
     red = red;
-    green = green;
+    green = accent;
     yellow = yellow;
     blue = blue;
     magenta = magenta;
@@ -40,7 +40,7 @@ with colors; rec {
   dim = {
     black = black;
     red = red;
-    green = green;
+    green = accent;
     yellow = yellow;
     blue = blue;
     magenta = magenta;

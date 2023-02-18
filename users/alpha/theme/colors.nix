@@ -1,14 +1,15 @@
 {}: rec {
-  bg-darker = "#0e1217";
-  bg = "#101419";
-  bg-contrast = "#13171c";
-  bg-lighter = "#1a1e23";
-  black = "#242931";
-  dimblack = "#485263";
-  light-black = "#4d5768";
-  fg = "#b6beca";
-  white = "#b6beca";
-  grey = "#4d5768";
+  bg-darker = "#161919";
+  bg = "#191C1C";
+  bg-contrast = "#2f3434";
+  bg-lighter = "#444c4c";
+  black = "#2D3130";
+  dimblack = "#3F4947";
+  light-black = "#3F4947";
+  fg = "#B1CCC9";
+  white = "#B1CCC9";
+  grey = "#3F4947";
+  accent = "#4FDAD1";
   red = "#e05f65";
   yellow = "#f1cf8a";
   magenta = "#c68aee";
