@@ -66,6 +66,18 @@
           version = "1.0.6";
           sha256 = "sha256-Jtxj6LmHgF7UNaXtXxHkq881BbuPtIJGxR7kdhKr0Uo=";
         }
+        {
+          name = "one-monokai";
+          publisher = "azemoh";
+          version = "0.5.0";
+          sha256 = "sha256-ardM7u9lXkkTTPsDVqTl4yniycERYdwTzTQxaa4dD+c=";
+        }
+        {
+          name = "symbols";
+          publisher = "miguelsolorio";
+          version = "0.0.9";
+          sha256 = "sha256-Sk+rhBDR4/3g63Db62FIjFICGVY3sI60VxZXOKDc4zM=";
+        }
       ];
 
     userSettings = {
@@ -90,7 +102,6 @@
       "[typescript]".editor.defaultFormatter = "rvest.vs-code-prettier-eslint";
 
       editor = {
-        cursorSmoothCaretAnimation = "on";
         find.addExtraSpaceOnTop = false;
         fontFamily = "'monospace', monospace";
         fontSize = 16;
@@ -106,7 +117,6 @@
         quickSuggestions.strings = true;
         renderWhitespace = "none";
         renderLineHighlight = "all";
-        smoothScrolling = true;
         suggest.showStatusBar = true;
         suggestSelection = "first";
         cursorBlinking = "expand";
@@ -159,7 +169,6 @@
         cursorWidth = 2;
         fontFamily = "'monospace'";
         fontSize = 14;
-        smoothScrolling = true;
       };
 
       Lua.misc.executablePath = "${pkgs.sumneko-lua-language-server}/bin/lua-language-server";
@@ -172,11 +181,9 @@
       };
 
       workbench = {
-        colorTheme = "Dark Decay Theme";
-        iconTheme = "material-icon-theme";
-        list.smoothScrolling = true;
+        colorTheme = "One Monokai";
+        iconTheme = "symbols";
         productIconTheme = "material-product-icons";
-        smoothScrolling = true;
       };
 
       vim = {
