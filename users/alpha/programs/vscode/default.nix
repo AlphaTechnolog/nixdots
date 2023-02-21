@@ -72,12 +72,6 @@
           version = "0.5.0";
           sha256 = "sha256-ardM7u9lXkkTTPsDVqTl4yniycERYdwTzTQxaa4dD+c=";
         }
-        {
-          name = "symbols";
-          publisher = "miguelsolorio";
-          version = "0.0.9";
-          sha256 = "sha256-Sk+rhBDR4/3g63Db62FIjFICGVY3sI60VxZXOKDc4zM=";
-        }
       ];
 
     userSettings = {
@@ -182,7 +176,7 @@
 
       workbench = {
         colorTheme = "One Monokai";
-        iconTheme = "symbols";
+        iconTheme = "material-icon-theme";
         productIconTheme = "material-product-icons";
       };
 

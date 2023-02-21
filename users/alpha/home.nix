@@ -11,7 +11,7 @@
   # integrates nur within Home-Manager
   nur = import (builtins.fetchTarball {
     url = "https://github.com/nix-community/NUR/archive/master.tar.gz";
-    sha256 = "0r4vaggivi56hgxa2ypgxm3vlp4akp8c8pr1h94abfw4zcndyiln";
+    sha256 = "18dsgiyc8qcpaak8sx1ksmwgk8yhb4xx7fjbxnq4hblv7322xvza";
   }) {inherit pkgs;};
 
   colors = import ./theme/colors.nix {};
@@ -130,6 +130,7 @@ in {
     mongodb-compass
     jq
     networkmanagerapplet
+    lm_sensors
     xfce.thunar
     dconf
     monaco-nf

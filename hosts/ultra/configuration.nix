@@ -99,6 +99,11 @@ in {
       };
     };
 
+    # max journald space
+    journald.extraConfig = ''
+      SystemMaxUse=2G
+    '';
+
     # enables blueman for bluetooth
     blueman.enable = true;
 
