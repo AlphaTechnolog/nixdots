@@ -6,6 +6,7 @@
   home.packages = with pkgs; [
     stylua
     sumneko-lua-language-server
+    gopls
   ];
 
   programs.vscode = {
@@ -63,14 +64,14 @@
         {
           name = "decay";
           publisher = "decaycs";
-          version = "1.0.6";
-          sha256 = "sha256-Jtxj6LmHgF7UNaXtXxHkq881BbuPtIJGxR7kdhKr0Uo=";
+          version = "1.0.8";
+          sha256 = "sha256-VowhClGGRL81/VrGE9NgGU1uzYMnRoLx+eqpFss3pUk=";
         }
         {
-          name = "one-monokai";
-          publisher = "azemoh";
-          version = "0.5.0";
-          sha256 = "sha256-ardM7u9lXkkTTPsDVqTl4yniycERYdwTzTQxaa4dD+c=";
+          name = "Material-theme";
+          publisher = "zhuangtongfa";
+          version = "3.15.6";
+          sha256 = "sha256-LViiHGDJjtQwz5O6ZZrAApi2F1rISZvcggCl8Y3nzTA=";
         }
       ];
 
@@ -98,7 +99,9 @@
       editor = {
         find.addExtraSpaceOnTop = false;
         fontFamily = "'monospace', monospace";
-        fontSize = 16;
+        fontLigatures = true;
+        fontSize = 18;
+        lineHeight = 30;
         formatOnSave = true;
         inlayHints.enabled = "off";
         inlineSuggest.enabled = true;
@@ -114,6 +117,7 @@
         suggest.showStatusBar = true;
         suggestSelection = "first";
         cursorBlinking = "expand";
+        cursorSmoothCaretAnimation = "on";
 
         bracketPairColorization = {
           enabled = false;
@@ -162,7 +166,7 @@
         cursorStyle = "line";
         cursorWidth = 2;
         fontFamily = "'monospace'";
-        fontSize = 14;
+        fontSize = 16;
       };
 
       Lua.misc.executablePath = "${pkgs.sumneko-lua-language-server}/bin/lua-language-server";
@@ -175,9 +179,14 @@
       };
 
       workbench = {
-        colorTheme = "One Monokai";
+        colorTheme = "Decayce Theme";
         iconTheme = "material-icon-theme";
         productIconTheme = "material-product-icons";
+      };
+
+      oneDarkPro = {
+        vivid = true;
+        italic = true;
       };
 
       vim = {

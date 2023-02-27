@@ -11,7 +11,7 @@
   # integrates nur within Home-Manager
   nur = import (builtins.fetchTarball {
     url = "https://github.com/nix-community/NUR/archive/master.tar.gz";
-    sha256 = "18dsgiyc8qcpaak8sx1ksmwgk8yhb4xx7fjbxnq4hblv7322xvza";
+    sha256 = "14kb8fmqcqfxaj021f6fg754khcv11a47yih130swj2fv75kkqjp";
   }) {inherit pkgs;};
 
   colors = import ./theme/colors.nix {};
@@ -65,6 +65,7 @@ in {
       (import ./programs/chromium.nix {inherit pkgs;})
       (import ./programs/brave.nix {inherit pkgs;})
       (import ./programs/nix-index.nix)
+      (import ./programs/go.nix)
       (import ./system/gtk.nix {inherit pkgs;})
       (import ./system/fonts {inherit pkgs;})
     ];
