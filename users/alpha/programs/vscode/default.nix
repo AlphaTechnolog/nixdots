@@ -100,8 +100,8 @@
         find.addExtraSpaceOnTop = false;
         fontFamily = "'monospace', monospace";
         fontLigatures = true;
-        fontSize = 18;
-        lineHeight = 30;
+        fontSize = 16;
+        lineHeight = 18;
         formatOnSave = true;
         inlayHints.enabled = "off";
         inlineSuggest.enabled = true;
@@ -166,7 +166,7 @@
         cursorStyle = "line";
         cursorWidth = 2;
         fontFamily = "'monospace'";
-        fontSize = 16;
+        fontSize = 14;
       };
 
       Lua.misc.executablePath = "${pkgs.sumneko-lua-language-server}/bin/lua-language-server";

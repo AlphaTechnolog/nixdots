@@ -1,9 +1,7 @@
-{ pkgs }:
-
-let
+{pkgs}: let
   decayce-gtk = pkgs.callPackage ../../../pkgs/decayce-gtk.nix {};
 in {
-  home.file.".icons/default".source = "${pkgs.phinger-cursors}/share/icons/phinger-cursors";
+  home.file.".icons/default".source = "${pkgs.apple-cursor}/share/icons/macOS-Monterey";
   home.packages = [decayce-gtk];
 
   home.sessionVariables = {
@@ -20,8 +18,8 @@ in {
     };
 
     cursorTheme = with pkgs; {
-      name = "phinger-cursors";
-      package = phinger-cursors;
+      name = "macOS-Monterey";
+      package = apple-cursor;
     };
 
     theme.name = "Decayce";

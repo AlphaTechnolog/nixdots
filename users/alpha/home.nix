@@ -35,17 +35,9 @@ in {
   # link some configuration files
   xdg.configFile."BetterDiscord/themes".source = ./cfg/bd-themes;
 
-  # enable awesomewm
-  home.activation.installAwesomeWMConfig = ''
-    if [ ! -d "$HOME/.config/awesome" ]; then
-      ln -s "/etc/nixos/users/$USER/cfg/awesome" "$HOME/.config/awesome"
-      chmod -R +w "$HOME/.config/awesome"
-    fi
-  '';
-
   # xresources
   xresources.extraConfig = ''
-    Xcursor.size: 24
+    Xcursor.size: 22
     Xft.dpi: 86
   '';
 
@@ -58,16 +50,21 @@ in {
       (import ./programs/firefox {inherit pkgs config nur colors;})
       (import ./programs/vscode {inherit pkgs config;})
       (import ./programs/neovim.nix {inherit pkgs;})
-      (import ./programs/picom.nix {})
       (import ./programs/rofi.nix {inherit pkgs config;})
       (import ./programs/starship.nix)
       (import ./programs/fish.nix {inherit pkgs;})
       (import ./programs/chromium.nix {inherit pkgs;})
       (import ./programs/brave.nix {inherit pkgs;})
+      (import ./programs/avim.nix {inherit pkgs;})
+      (import ./programs/picom.nix {})
       (import ./programs/nix-index.nix)
       (import ./programs/go.nix)
+
       (import ./system/gtk.nix {inherit pkgs;})
       (import ./system/fonts {inherit pkgs;})
+
+      (import ./setup/awesomewm.nix)
+      (import ./setup/i3.nix {inherit pkgs lib;})
     ];
 
   # Let Home Manager install and manage itself.

@@ -11,6 +11,7 @@ in {
   imports = [
     ./hardware-configuration.nix
     ./virtualisation
+    ./window-manager
   ];
 
   # enable starship inside bash interactive session (useful when using nix-shell).
@@ -85,18 +86,6 @@ in {
       libinput.enable = true;
       displayManager.gdm.enable = true;
       desktopManager.gnome.enable = true;
-      windowManager.awesome = {
-        enable = true;
-        luaModules = lib.attrValues {
-          inherit
-            (pkgs.luaPackages)
-            lgi
-            ldbus
-            luadbi-mysql
-            luaposix
-            ;
-        };
-      };
     };
 
     # max journald space

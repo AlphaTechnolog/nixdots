@@ -1,8 +1,0 @@
-# this file is here instead of using home manager module
-# to let neovim change these values, that will allow me to get
-# neovim without paddings on alacritty
-
-window:
-  padding:
-    x: 28
-    y: 28
