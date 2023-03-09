@@ -7,7 +7,7 @@ with colors; rec {
 
   cursor = {
     text = bg;
-    cursor = black;
+    cursor = accent;
   };
 
   selection = {

@@ -7,5 +7,7 @@ with pkgs; nerdfonts.override {
     "IBMPlexMono"
     "Mononoki"
     "Monofur"
+    "CascadiaCode"
+    "Hack"
   ];
 }

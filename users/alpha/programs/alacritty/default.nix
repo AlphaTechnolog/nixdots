@@ -12,15 +12,25 @@ in {
       colors = theme;
       mouse.hide_when_typing = true;
       window = {
-        padding.x = 32;
-        padding.y = 32;
+        opacity = 1;
+        padding = let
+          value = 32;
+        in {
+          x = value;
+          y = value;
+        };
       };
       font =
         setfont "monospace"
         // {
-          size = 12;
+          size = 13;
+        }
+        // {
+          offset.y = 4;
+          glyph_offset.y = 2;
         };
       cursor = {
+        thickness = 0.1;
         style = {
           shape = "Beam";
           blinking = "on";

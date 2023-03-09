@@ -19,8 +19,8 @@
         christian-kohler.path-intellisense
         dbaeumer.vscode-eslint
         eamodio.gitlens
+        catppuccin.catppuccin-vsc
         esbenp.prettier-vscode
-        formulahendry.code-runner
         github.copilot
         golang.go
         ibm.output-colorizer
@@ -100,8 +100,8 @@
         find.addExtraSpaceOnTop = false;
         fontFamily = "'monospace', monospace";
         fontLigatures = true;
-        fontSize = 16;
-        lineHeight = 18;
+        fontSize = 18;
+        lineHeight = 26;
         formatOnSave = true;
         inlayHints.enabled = "off";
         inlineSuggest.enabled = true;
@@ -117,16 +117,10 @@
         suggest.showStatusBar = true;
         suggestSelection = "first";
         cursorBlinking = "expand";
-        cursorSmoothCaretAnimation = "on";
 
         bracketPairColorization = {
           enabled = false;
           independentColorPoolPerBracketType = false;
-        };
-
-        codeActionsOnSave.source = {
-          organizeImports = true;
-          fixAll.eslint = true;
         };
 
         guides = {
@@ -179,7 +173,7 @@
       };
 
       workbench = {
-        colorTheme = "Decayce Theme";
+        colorTheme = "Catppuccin Macchiato";
         iconTheme = "material-icon-theme";
         productIconTheme = "material-product-icons";
       };
