@@ -97,11 +97,12 @@
       "[typescript]".editor.defaultFormatter = "rvest.vs-code-prettier-eslint";
 
       editor = {
+        cursorSmoothCaretAnimation = "on";
         find.addExtraSpaceOnTop = false;
         fontFamily = "'monospace', monospace";
         fontLigatures = true;
-        fontSize = 18;
-        lineHeight = 26;
+        fontSize = 17;
+        lineHeight = 25;
         formatOnSave = true;
         inlayHints.enabled = "off";
         inlineSuggest.enabled = true;
@@ -160,7 +161,7 @@
         cursorStyle = "line";
         cursorWidth = 2;
         fontFamily = "'monospace'";
-        fontSize = 14;
+        fontSize = 16;
       };
 
       Lua.misc.executablePath = "${pkgs.sumneko-lua-language-server}/bin/lua-language-server";
@@ -168,7 +169,7 @@
       window = {
         menuBarVisibility = "toggle";
         nativeTabs = true;
-        titleBarStyle = "native";
+        titleBarStyle = "custom";
         zoomLevel = 0;
       };
 
