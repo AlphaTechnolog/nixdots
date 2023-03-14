@@ -13,6 +13,7 @@ in {
       mouse.hide_when_typing = true;
       window = {
         opacity = 1;
+        decorations = "None";
         padding = let
           value = 32;
         in {

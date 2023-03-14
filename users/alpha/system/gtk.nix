@@ -1,11 +1,9 @@
-{pkgs}: let
-  decayce-gtk = pkgs.callPackage ../../../pkgs/decayce-gtk.nix {};
-in {
+{pkgs}: {
   home.file.".icons/default".source = "${pkgs.apple-cursor}/share/icons/macOS-Monterey";
-  home.packages = [decayce-gtk];
+  home.packages = with pkgs; [catppuccin-gtk];
 
   home.sessionVariables = {
-    GTK_THEME = "Decayce";
+    GTK_THEME = "Catppuccin-Frappe-Standard-Blue-Dark";
     XCURSOR_SIZE = "24";
   };
 
@@ -22,7 +20,7 @@ in {
       package = apple-cursor;
     };
 
-    theme.name = "Decayce";
+    theme.name = "Catppuccin-Frappe-Standard-Blue-Dark";
 
     gtk4.extraConfig.gtk-application-prefer-dark-theme = true;
 

@@ -5,7 +5,6 @@
   ...
 }: let
   run = import ./bin/run.nix {inherit pkgs;};
-  decayce-gtk = with pkgs; callPackage ../../pkgs/decayce-gtk.nix {};
   monaco-nf = with pkgs; callPackage ../../pkgs/monaco-nf.nix {};
 
   # integrates nur within Home-Manager
@@ -64,6 +63,7 @@ in {
       (import ./system/gtk.nix {inherit pkgs;})
       (import ./system/fonts {inherit pkgs;})
 
+      (import ./setup/hyprland {inherit pkgs;})
       (import ./setup/awesomewm.nix)
       (import ./setup/i3.nix {inherit pkgs lib;})
     ];
@@ -138,7 +138,6 @@ in {
     cinnamon.nemo
     inotify-tools
     wirelesstools
-    decayce-gtk # gtk theme :P
     run # my own script :)
   ];
 }

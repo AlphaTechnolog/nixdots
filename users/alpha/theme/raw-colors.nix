@@ -12,8 +12,11 @@
   red = "ed8796";
   yellow = "eed49f";
   magenta = "c6a0f6";
+  pink = "f5bde6";
   green = "a6da95";
   blue = "8aadf4";
+  sapphire = "7dc4e4";
   cyan = "91d7e3";
+  teal = "8bd5ca";
   accent = "b7bdf8";
 }

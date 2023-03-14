@@ -3,14 +3,13 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
+    nur.url = github:nix-community/NUR;
 
     home-manager = {
       url = github:nix-community/home-manager;
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
-    nur.url = github:nix-community/NUR;
 
     hyprland = {
       url = github:hyprwm/Hyprland;
@@ -41,6 +40,7 @@
     home-manager,
     nixpkgs-f2k,
     luaFormatter,
+    hyprland,
     ...
   } @ inputs: let
     system = "x86_64-linux";
@@ -95,6 +95,7 @@
         overlays
         inputs
         system
+        hyprland
         home-manager
         ;
     };

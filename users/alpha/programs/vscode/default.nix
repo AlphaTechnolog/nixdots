@@ -159,7 +159,7 @@
       terminal.integrated = {
         cursorBlinking = true;
         cursorStyle = "line";
-        cursorWidth = 2;
+        cursorWidth = 1;
         fontFamily = "'monospace'";
         fontSize = 16;
       };
