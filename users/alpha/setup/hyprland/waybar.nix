@@ -11,7 +11,7 @@ in {
       }
 
       window#waybar {
-        background-color: ${bg-darker};
+        background-color: ${bg};
         color: ${fg};
         font-family: Inter;
         padding: 20px;
@@ -23,7 +23,7 @@ in {
 
       #workspaces button {
         font-family: Inter;
-        background-color: ${bg};
+        background-color: ${bg-contrast};
         min-height: 0;
         margin: 6px 4px;
         padding: 5px 14px;
@@ -44,7 +44,7 @@ in {
       #custom-track-icon {
         font-family: Material Symbols Rounded;
         background-color: ${teal};
-        color: ${bg};
+        color: ${bg-contrast};
         margin: 8px 0px 8px 4px;
         padding-left: 8px;
         border-top-left-radius: 7px;
@@ -53,7 +53,7 @@ in {
 
       #custom-track-name {
         background-color: ${teal};
-        color: ${bg};
+        color: ${bg-contrast};
         margin: 8px 0px;
         padding: 0px 4px 0px 8px;
       }
@@ -63,7 +63,7 @@ in {
       #custom-track-next {
         font-family: Material Symbols Rounded;
         background-color: ${teal};
-        color: ${bg};
+        color: ${bg-contrast};
         margin: 8px 0px;
         padding: 0px 2px;
       }
@@ -78,13 +78,13 @@ in {
         font-family: Material Symbols Rounded;
         margin: 9px 0px 9px 8px;
         padding: 0px 8px;
-        background-color: ${bg};
+        background-color: ${bg-contrast};
         border-top-left-radius: 7px;
         border-bottom-left-radius: 7px;
       }
 
       #network.label {
-        background: ${bg};
+        background: ${bg-contrast};
         margin: 9px 0px;
         padding: 0px 8px 0px 0px;
         border-top-right-radius: 7px;
@@ -92,7 +92,7 @@ in {
       }
 
       #language {
-        background-color: ${bg};
+        background-color: ${bg-contrast};
         padding: 0px 8px;
         margin: 8px;
         border-radius: 7px;
@@ -100,7 +100,7 @@ in {
 
       #clock {
         background: ${sapphire};
-        color: ${bg};
+        color: ${bg-contrast};
         margin: 9px 0px;
         padding: 0px 8px;
         border-radius: 7px;
@@ -110,7 +110,7 @@ in {
       #pulseaudio,
       #backlight {
         background: ${pink};
-        color: ${bg};
+        color: ${bg-contrast};
         margin: 8px 0px;
         font-family: Material Symbols Rounded;
         font-size: 20px;
@@ -133,7 +133,7 @@ in {
         font-family: Material Symbols Rounded;
         font-size: 28px;
         color: ${teal};
-        background: ${bg};
+        background: ${bg-contrast};
         margin-left: 8px;
         padding: 0px 10px;
         margin: 8px 0px 8px 8px;
@@ -150,7 +150,7 @@ in {
       }
 
       #battery.label {
-        background: ${bg};
+        background: ${bg-contrast};
         padding: 0px 10px 0px 0px;
         margin: 8px 0px;
         border-top-right-radius: 7px;
@@ -160,7 +160,7 @@ in {
       #custom-poweroff {
         font-family: Material Symbols Rounded;
         background-color: ${red};
-        color: ${bg};
+        color: ${bg-contrast};
         margin: 8px 10px 8px 8px;
         padding: 0px 9px;
         border-radius: 7px;

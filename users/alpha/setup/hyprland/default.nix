@@ -60,8 +60,8 @@
         exec-once = waybar
 
         general {
-          gaps_in = 5
-          gaps_out = 7
+          gaps_in = 8
+          gaps_out = 12
           border_size = 1
           col.active_border = rgb(${bg-lighter})
           col.inactive_border = rgb(${bg-contrast})
@@ -75,8 +75,8 @@
           blur_passes = 2
           blur_new_optimizations = true
           drop_shadow = true
-          shadow_range = 14
-          shadow_render_power = 8
+          shadow_range = 18
+          shadow_render_power = 12
           col.shadow = rgb(${bg-darker})
         }
 

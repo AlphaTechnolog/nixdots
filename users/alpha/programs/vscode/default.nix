@@ -117,6 +117,7 @@
         renderLineHighlight = "all";
         suggest.showStatusBar = true;
         suggestSelection = "first";
+        cursorStyle = "line-thin";
         cursorBlinking = "expand";
 
         bracketPairColorization = {
@@ -158,7 +159,7 @@
 
       terminal.integrated = {
         cursorBlinking = true;
-        cursorStyle = "line";
+        cursorStyle = "line-thin";
         cursorWidth = 1;
         fontFamily = "'monospace'";
         fontSize = 16;
