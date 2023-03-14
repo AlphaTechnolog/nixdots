@@ -57,6 +57,7 @@
 
         exec-once = ${xkblayouttoggler}/bin/xkblayouttoggler restore
         exec-once = sh -c "swww init ; swww img ~/.config/hypr/wallpaper.png"
+        exec-once = waybar
 
         general {
           gaps_in = 5
