@@ -12,6 +12,9 @@
           dpi-aware = "no";
           pad = "20x20";
         };
+        csd = {
+          preferred = "none";
+        };
         cursor = {
           style = "Beam";
           blink = "yes";

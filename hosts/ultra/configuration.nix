@@ -204,7 +204,7 @@ in {
 
       defaultFonts = {
         emoji = ["Noto Color Emoji"];
-        monospace = ["CaskaydiaCove Nerd Font"];
+        monospace = ["Maple Mono NF"];
         sansSerif = ["Noto Sans" "Noto Color Emoji"];
         serif = ["Noto Serif" "Noto Color Emoji"];
       };
