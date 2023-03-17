@@ -8,7 +8,7 @@
       with colors; {
         mouse.hide-when-typing = "yes";
         main = {
-          font = "monospace:size=13";
+          font = "monospace:size=11";
           dpi-aware = "no";
           pad = "20x20";
         };

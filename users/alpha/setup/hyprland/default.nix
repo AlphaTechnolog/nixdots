@@ -101,7 +101,8 @@
         bind = $mainMod, Return, exec, foot
         bind = $mainMod, W, killactive,
         bind = $mainMod SHIFT, Q, exit,
-        bind = $mainMod, F, togglefloating,
+        bind = $mainMod SHIFT, F, togglefloating,
+        bind = $mainMod, F, fullscreen,
         bind = $mainMod SHIFT, Return, exec, rofi -show drun
         bind = $mainMod, J, togglesplit,
 

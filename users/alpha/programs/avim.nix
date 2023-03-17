@@ -1,7 +1,7 @@
 {pkgs}: let
   avim = pkgs.writeScriptBin "avim" ''
     #!${pkgs.bash}/bin/bash
-    ${pkgs.neovide}/bin/neovide ''${@}
+    env -u WAYLAND_DISPLAY ${pkgs.neovide}/bin/neovide ''${@}
   '';
 
   avim-desktop = pkgs.makeDesktopItem {

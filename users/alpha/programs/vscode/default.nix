@@ -64,8 +64,8 @@
         {
           name = "decay";
           publisher = "decaycs";
-          version = "1.0.8";
-          sha256 = "sha256-VowhClGGRL81/VrGE9NgGU1uzYMnRoLx+eqpFss3pUk=";
+          version = "1.0.9";
+          sha256 = "sha256-TwDq8K757CTFEBBBGbP5eOC5nMrQzgf/XYIHi9UCAkU=";
         }
         {
           name = "Material-theme";
@@ -175,7 +175,7 @@
       };
 
       workbench = {
-        colorTheme = "Catppuccin Macchiato";
+        colorTheme = "Cosmic Decay";
         iconTheme = "material-icon-theme";
         productIconTheme = "material-product-icons";
       };
