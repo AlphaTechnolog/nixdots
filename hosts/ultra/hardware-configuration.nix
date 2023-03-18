@@ -8,23 +8,49 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "vmd" "xhci_pci" "nvme" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
+
+  boot.initrd.luks.devices.luksroot = {
+    device = "/dev/disk/by-label/cryptroot";
+    preLVM = true;
+    allowDiscards = true;
+  };
+
+  boot.initrd.availableKernelModules = [ "vmd" "xhci_pci" "nvme" "usb_storage" "sd_mod" ] ++ config.boot.initrd.luks.cryptoModules;
+  boot.initrd.kernelModules = [ "dm-snapshot" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/48113c25-1f91-474f-a20a-610a56c70646";
-      fsType = "ext4";
+    { device = "/dev/disk/by-label/root";
+      fsType = "btrfs";
+      options = [ "subvol=root" "compress=zstd" "noatime" "ssd" "space_cache=v2" ];
     };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/5E8D-D91A";
+  fileSystems."/home" =
+    { device = "/dev/disk/by-label/root";
+      fsType = "btrfs";
+      options = [ "subvol=home" "compress=zstd" "noatime" "ssd" "space_cache=v2" ];
+    };
+
+  fileSystems."/nix" =
+    { device = "/dev/disk/by-label/root";
+      fsType = "btrfs";
+      options = [ "subvol=nix" "compress=zstd" "noatime" "ssd" "space_cache=v2" ];
+    };
+
+  fileSystems."/var/log" =
+    { device = "/dev/disk/by-label/root";
+      fsType = "btrfs";
+      options = [ "subvol=log" "compress=zstd" "noatime" "ssd" "space_cache=v2" ];
+    };
+
+  fileSystems."${config.boot.loader.efi.efiSysMountPoint}" =
+    { device = "/dev/disk/by-label/boot";
       fsType = "vfat";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/0dd9631e-b5be-4ad7-acc5-395c90455745"; }
+    [ { device = "/dev/disk/by-label/swap"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
