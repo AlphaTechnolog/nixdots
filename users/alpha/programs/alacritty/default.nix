@@ -12,7 +12,7 @@ in {
       colors = theme;
       mouse.hide_when_typing = true;
       window = {
-        opacity = 1;
+        opacity = 0.45;
         padding = let
           value = 32;
         in {
@@ -23,7 +23,7 @@ in {
       font =
         setfont "monospace"
         // {
-          size = 13;
+          size = 14;
         }
         // {
           offset.y = 4;

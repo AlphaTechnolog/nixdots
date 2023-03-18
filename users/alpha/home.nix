@@ -56,6 +56,7 @@ in {
       (import ./programs/brave.nix {inherit pkgs;})
       (import ./programs/avim.nix {inherit pkgs;})
       (import ./programs/office.nix {inherit pkgs;})
+      (import ./programs/wallset.nix {inherit pkgs;})
       (import ./programs/picom.nix {})
       (import ./programs/nix-index.nix)
       (import ./programs/go.nix)

@@ -32,6 +32,11 @@
       url = "github:Mangeshrex/rxfetch";
       flake = false;
     };
+
+    wallset = {
+      url = "github:terroo/wallset";
+      flake = false;
+    };
   };
 
   outputs = {
@@ -72,6 +77,7 @@
           // {
             luaFormatter-src = luaFormatter;
             rxfetch-bin = pkgs.callPackage ./pkgs/rxfetch {src = inputs.rxfetch;};
+            wallset = pkgs.callPackage ./pkgs/wallset {src = inputs.wallset;};
             sf-mono-liga-bin = pkgs.callPackage ./pkgs/sfmono-nf.nix {
               src = inputs.sf-mono-liga-src;
             };

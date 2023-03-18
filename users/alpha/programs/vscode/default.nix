@@ -27,8 +27,6 @@
         kamadorueda.alejandra
         matklad.rust-analyzer
         ms-azuretools.vscode-docker
-        ms-python.python
-        ms-python.vscode-pylance
         ms-vscode.cpptools
         ms-vscode-remote.remote-ssh
         naumovs.color-highlight
@@ -175,7 +173,7 @@
       };
 
       workbench = {
-        colorTheme = "Cosmic Decay";
+        colorTheme = "Tokyo Night";
         iconTheme = "material-icon-theme";
         productIconTheme = "material-product-icons";
       };

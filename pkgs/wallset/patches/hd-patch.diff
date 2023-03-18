@@ -1,0 +1,21 @@
+diff --git a/wallset b/wallset
+index afcf28a..49974b3 100755
+--- a/wallset
++++ b/wallset
+@@ -96,7 +96,6 @@ _new_number(){
+ _resize_img(){
+     _n=$(_new_number)
+     _w=$(_get_resolution_screen)
+-    convert -resize "${_w}" "${1}" "${_dir_img}/wallpaper-${_n}.jpg"
+     if [[ "${add}" == 1 ]]; then
+         feh --bg-scale "${_dir_img}/wallpaper-${_n}.jpg"
+         [[ $(which gsettings >&- 2>&-) ]] && \
+@@ -167,7 +166,7 @@ _video(){
+     mkdir -p "$_dir_vid/$a"
+ 
+     echo -e "${_lang[27]}...\r"
+-    ffmpeg -y -ss 00:00 -i ${1} -t 10 "${_dir_vid}/${a}/filename%05d.jpg" > ${_dir_vid}/${a}/video.info 2>&1
++    ffmpeg -y -ss 00:00 -i ${1} -qscale:v 2 -t 10 "${_dir_vid}/${a}/filename%05d.jpg" > ${_dir_vid}/${a}/video.info 2>&1
+     t=$(ls ${_dir_vid}/${a}/* | wc -l)
+     let t=t-1
+     echo ${1} > ${_dir_vid}/${a}/video.info

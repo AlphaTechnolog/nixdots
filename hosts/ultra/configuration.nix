@@ -7,9 +7,10 @@
   virtualisation-packages = import ./virtualisation/pkgs.nix {inherit pkgs;};
   material-symbols = pkgs.callPackage ../../pkgs/material-symbols.nix {};
 in {
-  # imports some modules.
+  # import some modules
   imports = [
     ./hardware-configuration.nix
+    ./cache.nix
     ./virtualisation
     ./window-manager
   ];
@@ -204,7 +205,7 @@ in {
 
       defaultFonts = {
         emoji = ["Noto Color Emoji"];
-        monospace = ["CaskaydiaCove Nerd Font"];
+        monospace = ["Maple Mono NF"];
         sansSerif = ["Noto Sans" "Noto Color Emoji"];
         serif = ["Noto Serif" "Noto Color Emoji"];
       };

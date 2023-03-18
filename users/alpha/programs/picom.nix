@@ -4,7 +4,7 @@
     backend = "glx";
     vSync = true;
 
-    shadow = true;
+    shadow = false;
     shadowOffsets = [(-10) (-10)];
     shadowOpacity = 0.35;
     shadowExclude = [
