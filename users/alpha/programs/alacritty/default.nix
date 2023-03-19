@@ -24,10 +24,6 @@ in {
         setfont "monospace"
         // {
           size = 14;
-        }
-        // {
-          offset.y = 4;
-          glyph_offset.y = 2;
         };
       cursor = {
         thickness = 0.1;
