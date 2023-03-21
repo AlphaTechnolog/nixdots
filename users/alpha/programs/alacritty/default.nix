@@ -12,7 +12,7 @@ in {
       colors = theme;
       mouse.hide_when_typing = true;
       window = {
-        opacity = 0.45;
+        opacity = 0.65;
         padding = let
           value = 32;
         in {

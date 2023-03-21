@@ -14,7 +14,6 @@
     mutableExtensionsDir = true;
     extensions = with pkgs.vscode-extensions;
       [
-        adpyke.codesnap
         bbenoist.nix
         christian-kohler.path-intellisense
         dbaeumer.vscode-eslint
@@ -30,7 +29,6 @@
         ms-vscode.cpptools
         ms-vscode-remote.remote-ssh
         naumovs.color-highlight
-        vscodevim.vim
         pkief.material-product-icons
         pkief.material-icon-theme
         streetsidesoftware.code-spell-checker
@@ -71,6 +69,12 @@
           version = "3.15.6";
           sha256 = "sha256-LViiHGDJjtQwz5O6ZZrAApi2F1rISZvcggCl8Y3nzTA=";
         }
+        {
+          name = "ayu";
+          publisher = "teabyii";
+          version = "1.0.5";
+          sha256 = "sha256-+IFqgWliKr+qjBLmQlzF44XNbN7Br5a119v9WAnZOu4=";
+        }
       ];
 
     userSettings = {
@@ -99,8 +103,8 @@
         find.addExtraSpaceOnTop = false;
         fontFamily = "'monospace', monospace";
         fontLigatures = true;
-        fontSize = 17;
-        lineHeight = 25;
+        fontSize = 19;
+        lineHeight = 24;
         formatOnSave = true;
         inlayHints.enabled = "off";
         inlineSuggest.enabled = true;
@@ -173,7 +177,7 @@
       };
 
       workbench = {
-        colorTheme = "Tokyo Night";
+        colorTheme = "Ayu Dark Bordered";
         iconTheme = "material-icon-theme";
         productIconTheme = "material-product-icons";
       };
@@ -181,28 +185,6 @@
       oneDarkPro = {
         vivid = true;
         italic = true;
-      };
-
-      vim = {
-        useSystemClipboard = true;
-        insertModeKeyBindingsNonRecursive = [
-          {
-            before = ["j" "k"];
-            after = ["<esc>"];
-          }
-          {
-            before = ["k" "j"];
-            after = ["<esc>"];
-          }
-          {
-            before = ["j" "j"];
-            after = ["<esc>"];
-          }
-          {
-            before = ["k" "k"];
-            after = ["<esc>"];
-          }
-        ];
       };
     };
   };

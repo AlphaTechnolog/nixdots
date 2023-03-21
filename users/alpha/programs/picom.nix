@@ -4,7 +4,7 @@
     backend = "glx";
     vSync = true;
 
-    shadow = false;
+    shadow = true;
     shadowOffsets = [(-10) (-10)];
     shadowOpacity = 0.35;
     shadowExclude = [
@@ -52,7 +52,7 @@
         "class_g = 'Cairo-clock'"
       ];
 
-      corner-radius = 7;
+      corner-radius = 12;
       rounded-corners-exclude = [
         "window_type = 'dock'"
         "_NET_WM_STATE@:32a *= '_NET_WM_STATE_MAXIMIZED_VERT'"
