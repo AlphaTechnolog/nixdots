@@ -177,7 +177,7 @@
       };
 
       workbench = {
-        colorTheme = "Ayu Dark Bordered";
+        colorTheme = "Catppuccin Macchiato";
         iconTheme = "material-icon-theme";
         productIconTheme = "material-product-icons";
       };
