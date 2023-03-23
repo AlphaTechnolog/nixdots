@@ -13,6 +13,7 @@ in {
     ./cache.nix
     ./virtualisation
     ./window-manager
+    ./python
   ];
 
   # enable starship inside bash interactive session (useful when using nix-shell).
@@ -167,10 +168,18 @@ in {
       xorg.xwininfo
       xorg.xbacklight
       xorg.xinit
+      xorg.xdpyinfo
       brightnessctl
       chromedriver
       geckodriver
       selenium-server-standalone
+
+      (ffmpeg.override {
+        withXcb = true;
+        withXcbShape = true;
+        withXcbShm = true;
+        withXcbxfixes = true;
+      })
 
       # wine
       wineWowPackages.stable

@@ -1,11 +1,16 @@
-{ stdenv, src, pkgs, ... }: stdenv.mkDerivation rec {
+{
+  stdenv,
+  src,
+  pkgs,
+  ...
+}:
+stdenv.mkDerivation rec {
   pname = "wallset";
   version = "latest";
 
   inherit src;
 
   propagatedUserEnvPkgs = with pkgs; [
-    ffmpeg
     feh
     file
     imagemagick
@@ -15,7 +20,7 @@
   ];
 
   patches = [
-    ./patches/hd-patch.diff  # makes video look hd instead of blurry and ugly as how default it's
+    ./patches/hd-patch.diff # makes video look hd instead of blurry and ugly as how default it's
   ];
 
   installPhase = ''

@@ -2,7 +2,7 @@
   services.picom = {
     enable = true;
     backend = "glx";
-    vSync = true;
+    vSync = false;
 
     shadow = true;
     shadowOffsets = [(-10) (-10)];
