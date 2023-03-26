@@ -61,6 +61,8 @@ in {
       (import ./programs/nix-index.nix)
       (import ./programs/go.nix)
 
+      (import ./cfg/nvim {inherit pkgs;})
+
       (import ./system/gtk.nix {inherit pkgs;})
       (import ./system/fonts {inherit pkgs;})
 

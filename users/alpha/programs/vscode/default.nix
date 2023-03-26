@@ -177,7 +177,7 @@
       };
 
       workbench = {
-        colorTheme = "Catppuccin Macchiato";
+        colorTheme = "One Dark Pro Darker";
         iconTheme = "material-icon-theme";
         productIconTheme = "material-product-icons";
       };

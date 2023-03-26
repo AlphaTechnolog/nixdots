@@ -12,7 +12,6 @@ in {
       colors = theme;
       mouse.hide_when_typing = true;
       window = {
-        opacity = 0.65;
         padding = let
           value = 32;
         in {
@@ -25,13 +24,6 @@ in {
         // {
           size = 14;
         };
-      cursor = {
-        thickness = 0.1;
-        style = {
-          shape = "Beam";
-          blinking = "on";
-        };
-      };
     };
   };
 }

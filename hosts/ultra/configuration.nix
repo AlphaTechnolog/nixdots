@@ -10,6 +10,7 @@ in {
   # import some modules
   imports = [
     ./hardware-configuration.nix
+    ./hardware-acceleration.nix
     ./cache.nix
     ./virtualisation
     ./window-manager
@@ -71,6 +72,7 @@ in {
   networking = {
     hostName = "ultra";
     networkmanager.enable = true;
+    firewall.enable = false;
     nameservers = ["8.8.8.8"]; # google dns works better in America/Caracas.
   };
 
@@ -173,6 +175,7 @@ in {
       chromedriver
       geckodriver
       selenium-server-standalone
+      weylus
 
       (ffmpeg.override {
         withXcb = true;
