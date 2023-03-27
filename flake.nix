@@ -69,13 +69,7 @@
         final: _: let
           inherit (final) system;
         in
-          {
-            st = pkgs.callPackage ./pkgs/st.nix {
-              src = st;
-              conf = import ./users/alpha/programs/st/config.nix;
-            };
-          }
-          // (with nixpkgs-f2k.packages.${system}; {
+          (with nixpkgs-f2k.packages.${system}; {
             awesome = awesome-git;
             picom = picom-git;
           })
