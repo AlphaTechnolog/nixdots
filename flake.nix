@@ -75,15 +75,15 @@
           })
           // {
             luaFormatter-src = luaFormatter;
-            rxfetch-bin = pkgs.callPackage ./pkgs/rxfetch {src = inputs.rxfetch;};
-            wallset = pkgs.callPackage ./pkgs/wallset {src = inputs.wallset;};
+            rxfetch-bin = pkgs.callPackage ./pkgs/rxfetch {src = rxfetch;};
+            wallset = pkgs.callPackage ./pkgs/wallset {src = wallset;};
 
             patched-fonts = pkgs.callPackage ./pkgs/patched-fonts.nix {
-              src = inputs.patched-fonts;
+              src = patched-fonts;
             };
 
             sf-mono-liga-bin = pkgs.callPackage ./pkgs/sfmono-nf.nix {
-              src = inputs.sf-mono-liga-src;
+              src = sf-mono-liga-src;
             };
           }
       )
