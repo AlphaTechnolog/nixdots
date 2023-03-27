@@ -11,6 +11,7 @@ in {
     settings = {
       colors = theme;
       mouse.hide_when_typing = true;
+      cursor.thickness = 0.1;
       window = {
         padding = let
           value = 32;
