@@ -268,6 +268,22 @@
         "type": "github"
       }
     },
+    "patched-fonts": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1552286645,
+        "narHash": "sha256-d9PqLpUqY2FtlvgfrrIdtX8jpu33xYKRg2TstrMbIms=",
+        "owner": "40huo",
+        "repo": "Patched-Fonts",
+        "rev": "ee5617d6690f2d8443e53865df785086e9e7c1d3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "40huo",
+        "repo": "Patched-Fonts",
+        "type": "github"
+      }
+    },
     "river-src": {
       "flake": false,
       "locked": {
@@ -294,6 +310,7 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs-f2k": "nixpkgs-f2k",
         "nur": "nur",
+        "patched-fonts": "patched-fonts",
         "rxfetch": "rxfetch",
         "sf-mono-liga-src": "sf-mono-liga-src",
         "wallset": "wallset"

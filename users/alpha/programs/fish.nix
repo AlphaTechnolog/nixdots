@@ -13,6 +13,10 @@
     set fish_color_quote brgreen
     set PATH "$PATH:$HOME/.local/bin"
 
+    alias cat="bat"
+    alias ls="exa --icons"
+    alias tree="ls --tree"
+
     function __fish_command_not_found_handler --on-event fish_command_not_found
       ${wrapper} $argv
     end

@@ -37,6 +37,11 @@
       url = "github:terroo/wallset";
       flake = false;
     };
+
+    patched-fonts = {
+      url = github:40huo/Patched-Fonts;
+      flake = false;
+    };
   };
 
   outputs = {
@@ -78,6 +83,11 @@
             luaFormatter-src = luaFormatter;
             rxfetch-bin = pkgs.callPackage ./pkgs/rxfetch {src = inputs.rxfetch;};
             wallset = pkgs.callPackage ./pkgs/wallset {src = inputs.wallset;};
+
+            patched-fonts = pkgs.callPackage ./pkgs/patched-fonts.nix {
+              src = inputs.patched-fonts;
+            };
+
             sf-mono-liga-bin = pkgs.callPackage ./pkgs/sfmono-nf.nix {
               src = inputs.sf-mono-liga-src;
             };

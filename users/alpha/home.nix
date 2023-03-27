@@ -136,6 +136,7 @@ in {
     xfce.thunar
     dconf
     monaco-nf
+    patched-fonts
     tdesktop
     redshift
     cinnamon.nemo
