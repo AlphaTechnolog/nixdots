@@ -3,17 +3,24 @@
     enable = true;
     settings = {
       add_newline = false;
-      format = "$username$directory ";
+      format = ''
+        [](blue)[  ](bg:blue fg:black)[](bg:black fg:blue)$directory[](black) $git_branch$nix_shell
+        $character
+      '';
       directory = {
         format = "[ $path ]($style)";
         style = "bg:black";
+        truncate_to_repo = false;
       };
-      username = {
-        disabled = false;
-        format = "[ $user ]($style)";
-        show_always = true;
-        style_root = "bg:blue fg:black bold";
-        style_user = "bg:blue fg:black";
+      git_branch = {
+        style = "bold yellow";
+      };
+      character = {
+        success_symbol = "[](bold green)";
+        error_symbol = "[](bold red)";
+      };
+      nix_shell = {
+        symbol = "[](bold blue) ";
       };
     };
   };

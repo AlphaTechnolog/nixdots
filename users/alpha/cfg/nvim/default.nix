@@ -3,8 +3,8 @@
     ".config/nvim".source = pkgs.fetchFromGitHub {
       owner = "AlphaTechnolog";
       repo = "nvim";
-      rev = "0b3219f1925540977496e197ef7c812067c9d009";
-      sha256 = "MpVAJYoAVS1DYGXd79v0BSIoMTJ1qq7NZ91IJO20qfQ=";
+      rev = "6f78d5071359a00430e8b42c7440d6c2f43f1ec5";
+      sha256 = "/aYVr4aE6s+aAzCkCGqxhJLSPHbOalsXlACrJd2dO74=";
     };
   };
 }

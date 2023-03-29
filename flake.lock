@@ -24,6 +24,23 @@
         "type": "github"
       }
     },
+    "decay-gtk": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1680110602,
+        "narHash": "sha256-r3AsBCGHgcYcmMG4/gxmmtJVR5mmmXjgQG3NgyxdIkk=",
+        "owner": "decaycs",
+        "repo": "decay-gtk",
+        "rev": "43ee44bbec972f1092c62b834f02aa58a32a734e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "decaycs",
+        "ref": "dev",
+        "repo": "decay-gtk",
+        "type": "github"
+      }
+    },
     "fenix": {
       "inputs": {
         "nixpkgs": [
@@ -304,6 +321,7 @@
     },
     "root": {
       "inputs": {
+        "decay-gtk": "decay-gtk",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "luaFormatter": "luaFormatter",

@@ -98,7 +98,7 @@
 
         $mainMod = SUPER
 
-        bind = $mainMod, Return, exec, foot
+        bind = $mainMod, Return, exec, kitty
         bind = $mainMod, W, killactive,
         bind = $mainMod SHIFT, Q, exit,
         bind = $mainMod SHIFT, F, togglefloating,

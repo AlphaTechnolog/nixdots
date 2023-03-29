@@ -42,6 +42,11 @@
       url = github:40huo/Patched-Fonts;
       flake = false;
     };
+
+    decay-gtk = {
+      url = github:decaycs/decay-gtk/dev;
+      flake = false;
+    };
   };
 
   outputs = {
@@ -84,6 +89,10 @@
 
             sf-mono-liga-bin = pkgs.callPackage ./pkgs/sfmono-nf.nix {
               src = sf-mono-liga-src;
+            };
+
+            decay-gtk = pkgs.callPackage ./pkgs/decayce-gtk.nix {
+              src = decay-gtk;
             };
           }
       )

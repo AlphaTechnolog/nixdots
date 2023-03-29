@@ -1,19 +1,15 @@
 {
   lib,
   stdenv,
-  fetchzip,
   pkgs,
+  src,
   ...
 }:
 stdenv.mkDerivation rec {
   pname = "decayce-gtk";
-  version = "0.1.0";
+  version = "dev";
 
-  src = fetchzip {
-    url = "https://github.com/decaycs/decay-gtk/releases/download/v0.1.0/decayce.zip";
-    sha256 = "LMh3bMvH3r5cxUvklXdDj3tIHbnDHqdWMfnSihcvkwk=";
-    stripRoot = false;
-  };
+  inherit src;
 
   propagatedUserEnvPkgs = with pkgs; [
     gnome.gnome-themes-extra
@@ -22,7 +18,7 @@ stdenv.mkDerivation rec {
 
   installPhase = ''
     mkdir -p $out/share/themes/
-    cp -r Decayce $out/share/themes
+    cp -r ./Themes/Decayce $out/share/themes
   '';
 
   meta = {

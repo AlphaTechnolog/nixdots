@@ -46,6 +46,7 @@ in {
     lib.attrValues nur.repos.rycee.hmModules
     ++ [
       (import ./programs/alacritty {inherit pkgs colors;})
+      (import ./programs/kitty {inherit pkgs colors;})
       (import ./programs/firefox {inherit pkgs config nur colors;})
       (import ./programs/vscode {inherit pkgs config;})
       (import ./programs/neovim.nix {inherit pkgs;})
@@ -57,6 +58,7 @@ in {
       (import ./programs/avim.nix {inherit pkgs;})
       (import ./programs/office.nix {inherit pkgs;})
       (import ./programs/wallset.nix {inherit pkgs;})
+      (import ./programs/tmux {inherit pkgs;})
       (import ./programs/picom.nix {})
       (import ./programs/nix-index.nix)
       (import ./programs/go.nix)

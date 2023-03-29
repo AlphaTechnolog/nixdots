@@ -11,10 +11,14 @@ in {
     settings = {
       colors = theme;
       mouse.hide_when_typing = true;
-      cursor.thickness = 0.1;
+      cursor = {
+        style = "Underline";
+        thickness = 0.1;
+      };
       window = {
+        opacity = 1;
         padding = let
-          value = 32;
+          value = 24;
         in {
           x = value;
           y = value;
@@ -23,7 +27,7 @@ in {
       font =
         setfont "monospace"
         // {
-          size = 14;
+          size = 12;
         };
     };
   };

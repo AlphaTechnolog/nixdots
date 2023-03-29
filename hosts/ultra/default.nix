@@ -8,32 +8,32 @@
   hyprland,
   ...
 }:
-with nixpkgs;
-  lib.nixosSystem rec {
-    inherit system;
 
-    modules = [
-      hyprland.nixosModules.default
+nixpkgs.lib.nixosSystem rec {
+  inherit system;
+  modules = [
+    hyprland.nixosModules.default
 
-      ./hyprland.nix
-      ./configuration.nix
+    ./hyprland.nix
+    ./configuration.nix
 
-      {
-        nixpkgs = {
-          inherit overlays config;
-        };
-      }
+    {
+      nixpkgs = {
+        inherit overlays config;
+      };
+    }
 
-      home-manager.nixosModules.home-manager
-      {
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.users.alpha = {
-          imports = [
-            hyprland.homeManagerModules.default
-            ../../users/alpha/home.nix
-          ];
-        };
-      }
-    ];
-  }
+    home-manager.nixosModules.home-manager
+
+    {
+      home-manager.useGlobalPkgs = true;
+      home-manager.useUserPackages = true;
+      home-manager.users.alpha = {
+        imports = [
+          hyprland.homeManagerModules.default
+          ../../users/alpha/home.nix
+        ];
+      };
+    }
+  ];
+}
