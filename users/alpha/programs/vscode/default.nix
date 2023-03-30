@@ -177,7 +177,7 @@
       };
 
       workbench = {
-        colorTheme = "One Dark Pro Darker";
+        colorTheme = "Tokyo Night";
         iconTheme = "material-icon-theme";
         productIconTheme = "material-product-icons";
       };
