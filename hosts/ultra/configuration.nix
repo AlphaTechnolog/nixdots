@@ -5,7 +5,6 @@
   ...
 }: let
   virtualisation-packages = import ./virtualisation/pkgs.nix {inherit pkgs;};
-  material-symbols = pkgs.callPackage ../../pkgs/material-symbols.nix {};
 in {
   # import some modules
   imports = [
@@ -55,7 +54,6 @@ in {
 
   # configure doas instead of sudo
   security = {
-    sudo.enable = false;
     doas = {
       enable = true;
       extraRules = [
@@ -89,7 +87,6 @@ in {
       layout = "us";
       libinput.enable = true;
       displayManager.gdm.enable = true;
-      desktopManager.gnome.enable = true;
     };
 
     # max journald space
@@ -148,11 +145,20 @@ in {
     };
   };
 
+  # fish
+  programs.fish.enable = true;
+
   # light
   programs.light.enable = true;
 
   # dconf
   programs.dconf.enable = true;
+
+  # java
+  programs.java = {
+    enable = true;
+    package = pkgs.jre;
+  };
 
   # packages
   environment.systemPackages =
@@ -164,6 +170,9 @@ in {
       docker-compose
       cargo
       rustc
+      rustfmt
+      maven
+      openjdk
       protonvpn-cli
 
       # utils
@@ -176,6 +185,8 @@ in {
       geckodriver
       selenium-server-standalone
       weylus
+      ncurses
+      stdenv
 
       (ffmpeg.override {
         withXcb = true;

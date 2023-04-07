@@ -9,9 +9,9 @@
     starship init fish | source
 
     set fish_greeting
-    set fish_color_command brblue
+    set fish_color_command brgreen
     set fish_color_param brwhite
-    set fish_color_quote brgreen
+    set fish_color_quote bryellow
     set PATH "$PATH:$HOME/.local/bin"
     set TERM "tmux-256color"
 

@@ -11,11 +11,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1678152261,
-        "narHash": "sha256-cPRDxwygVMleiSEGELrvAiq9vYAN4c3KK/K4UEO13vU=",
+        "lastModified": 1680479184,
+        "narHash": "sha256-FXWFQlK8SL2m/7zgN3ovQfXpnK/QRkZNEiGARguAujc=",
         "owner": "ipetkov",
         "repo": "crane",
-        "rev": "5291dd0aa7a52d607fc952763ef60714e4c881d4",
+        "rev": "aab6d4f865f2cb2a6d61168be5a6e8205daa7e26",
         "type": "github"
       },
       "original": {
@@ -118,11 +118,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1679067095,
-        "narHash": "sha256-G2dJQURL/CCi+8RP6jNJG8VqgtzEMCA+6mNodd3VR6E=",
+        "lastModified": 1680562426,
+        "narHash": "sha256-ts0WBpkoB/vdi4FzGQfYfeluDk+tCQ+ujggJ+vFM9kk=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "3239e0b40f242f47bf6c0c37b2fd35ab3e76e370",
+        "rev": "eefb37938639739251acd4bb68ecdaf7de2a13b5",
         "type": "github"
       },
       "original": {
@@ -141,11 +141,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1679103246,
-        "narHash": "sha256-WoOMsVfm0Cofjvewm6lBjNWVaYhR2jV1cVxwYuJcR3U=",
+        "lastModified": 1680566310,
+        "narHash": "sha256-5+JUgqE/9w7QxZmEWESr1RXsuG/aYz2DzfThJF9N1lM=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "6e6971606d9613f6b5aa1df9ecf68327d079c2cc",
+        "rev": "882be7765b820d075bbeecde12695f1696f577cf",
         "type": "github"
       },
       "original": {
@@ -193,13 +193,29 @@
         "url": "https://github.com/Koihik/LuaFormatter.git"
       }
     },
+    "material-design-icons": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1679543649,
+        "narHash": "sha256-ydCiNy81nXieVdnGWHUsbantC7XFqTrtaP6zswJI3o4=",
+        "owner": "google",
+        "repo": "material-design-icons",
+        "rev": "3912baecc97388955ce39f5e26bfb786a70cbe48",
+        "type": "github"
+      },
+      "original": {
+        "owner": "google",
+        "repo": "material-design-icons",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1678898370,
-        "narHash": "sha256-xTICr1j+uat5hk9FyuPOFGxpWHdJRibwZC+ATi0RbtE=",
+        "lastModified": 1680398059,
+        "narHash": "sha256-qtbKRe+pWuf5nNINdiCgn6EwOIQZxj0Ig/wybBpFNkQ=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "ac718d02867a84b42522a0ece52d841188208f2c",
+        "rev": "7c656856e9eb863c4d21c83e2601dd77f95f6941",
         "type": "github"
       },
       "original": {
@@ -218,11 +234,11 @@
         "wezterm-src": "wezterm-src"
       },
       "locked": {
-        "lastModified": 1679107298,
-        "narHash": "sha256-MzclZcDFXPU8iQYUePbvFtFNzD3f5ajTB9Qmzwn4rqA=",
+        "lastModified": 1680575783,
+        "narHash": "sha256-k0MNfQagJEL73G+JL3aA9un8TPjR0HSjnmOGi+9nWgA=",
         "owner": "fortuneteller2k",
         "repo": "nixpkgs-f2k",
-        "rev": "a883582da6264ffe550d3303885fdbf0a4b5066e",
+        "rev": "bb3d8adfd75449276df4fdb266ab3dfe17cd9489",
         "type": "github"
       },
       "original": {
@@ -256,11 +272,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1679105836,
-        "narHash": "sha256-VqWNbewPjGCi7Ecs23WdYoBE0qhm6jK0SzNry+dMksY=",
+        "lastModified": 1680572440,
+        "narHash": "sha256-MlIkJeMJHo33TSXk7BjqNwZA/T1RBlIQdt9Yg667UiQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "29b574db13810b54f84fcb60220798fe0e4351ce",
+        "rev": "8bdead55075dbfe3403d5aa71113e11885c98dff",
         "type": "github"
       },
       "original": {
@@ -272,11 +288,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1679121953,
-        "narHash": "sha256-UzGX36C5iHGHPaSuJxWL2ezmfc4NNwcnO6/bMoNEk9w=",
+        "lastModified": 1680581325,
+        "narHash": "sha256-JSCqrFqPbHXLo5HCT+2Oj48WEPoy8eN0stL6r7vi/Bg=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "a98f30134c75cd570c2f14f1333e1b7e090bd1dc",
+        "rev": "79e4e6a0a5540de5831d8c15f44f90f26e89ff39",
         "type": "github"
       },
       "original": {
@@ -304,11 +320,11 @@
     "river-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1678975852,
-        "narHash": "sha256-ejmPyatlZEwWJWt30bDjL90mRJuMBFBpxeCxiW9B444=",
+        "lastModified": 1679751151,
+        "narHash": "sha256-l4YiqoPYQWLg7tdnHDwQKFMLDY4ib0YihPdlHvBFgEU=",
         "ref": "refs/heads/master",
-        "rev": "eaa2f6d37ea050104e1111cb4c98d761888124d4",
-        "revCount": 1027,
+        "rev": "b3698150708bec276454c0ff7c707d9dab446b1e",
+        "revCount": 1030,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/riverwm/river.git"
@@ -325,6 +341,7 @@
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "luaFormatter": "luaFormatter",
+        "material-design-icons": "material-design-icons",
         "nixpkgs": "nixpkgs",
         "nixpkgs-f2k": "nixpkgs-f2k",
         "nur": "nur",
@@ -412,11 +429,11 @@
     },
     "utils": {
       "locked": {
-        "lastModified": 1676283394,
-        "narHash": "sha256-XX2f9c3iySLCw54rJ/CZs+ZK6IQy7GXNY4nSOyu2QG4=",
+        "lastModified": 1678901627,
+        "narHash": "sha256-U02riOqrKKzwjsxc/400XnElV+UtPUQWpANPlyazjH0=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "3db36a8b464d0c4532ba1c7dda728f4576d6d073",
+        "rev": "93a2b84fc4b70d9e089d029deacc3583435c2ed6",
         "type": "github"
       },
       "original": {
@@ -444,11 +461,11 @@
     "wezterm-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1679092741,
-        "narHash": "sha256-Cwc5ke9C9s7mTthI1k1PG63iC0zTIZusW81/ZJMUIwk=",
+        "lastModified": 1680566693,
+        "narHash": "sha256-lfcPHK+MJQ9TCo/NqeDG7cBGCLBQ1K8CRTQlTxtPFPo=",
         "ref": "main",
-        "rev": "2d255c2d758f8f6f7e17d0204d402599d01640de",
-        "revCount": 6788,
+        "rev": "c3472cc969d7e28aa63c4ad7d0d792f7ea40292e",
+        "revCount": 7033,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/wez/wezterm.git"

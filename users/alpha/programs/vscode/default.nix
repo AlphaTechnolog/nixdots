@@ -186,6 +186,24 @@
         vivid = true;
         italic = true;
       };
+
+      "java.configuration.runtimes" = [
+        {
+          "name" = "JavaSE-17";
+          "path" = "${pkgs.openjdk17}";
+          "default" = true;
+        }
+        {
+          "name" = "JavaSE-11";
+          "path" = "${pkgs.openjdk11}";
+          "default" = false;
+        }
+        {
+          "name" = "JavaSE-1.8";
+          "path" = "${pkgs.openjdk8}";
+          "default" = false;
+        }
+      ];
     };
   };
 

@@ -1,4 +1,7 @@
-{ colors, pkgs }: {
+{
+  colors,
+  pkgs,
+}: {
   programs.kitty = {
     enable = true;
     font = {
@@ -9,7 +12,7 @@
       # settings
       window_padding_width = 18;
       cursor_shape = "underline";
-      hide_window_decorations = true;
+      background_opacity = "0.65";
 
       # tabs
       tab_bar_style = "powerline";

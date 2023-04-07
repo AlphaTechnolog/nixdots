@@ -10,7 +10,7 @@
   # integrates nur within Home-Manager
   nur = import (builtins.fetchTarball {
     url = "https://github.com/nix-community/NUR/archive/master.tar.gz";
-    sha256 = "0jcclca3n8nrmpiwhrdhynlndcywrx2k1q7k4qlj236mqw60g88a";
+    sha256 = "0dx8ssyljpd1z1nk419qb4qa1hrfhqlafbhxssyknpf7a5vzqyns";
   }) {inherit pkgs;};
 
   colors = import ./theme/colors.nix {};
@@ -46,6 +46,7 @@ in {
     lib.attrValues nur.repos.rycee.hmModules
     ++ [
       (import ./programs/alacritty {inherit pkgs colors;})
+      (import ./programs/wezterm)
       (import ./programs/kitty {inherit pkgs colors;})
       (import ./programs/firefox {inherit pkgs config nur colors;})
       (import ./programs/vscode {inherit pkgs config;})
@@ -62,8 +63,6 @@ in {
       (import ./programs/picom.nix {})
       (import ./programs/nix-index.nix)
       (import ./programs/go.nix)
-
-      (import ./cfg/nvim {inherit pkgs;})
 
       (import ./system/gtk.nix {inherit pkgs;})
       (import ./system/fonts {inherit pkgs;})

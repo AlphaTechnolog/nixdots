@@ -97,14 +97,14 @@ in
       }
     }
 
-    C.font_size = 12.0
-    C.line_height = 1.2
+    C.font_size = 14.0
+    C.line_height = 1.0
 
     -- cursor
     C.default_cursor_style = "BlinkingBar"
 
     -- Window background opacity
-    C.window_background_opacity = 0.4
+    C.window_background_opacity = 0.85
 
     -- X is good!
     C.enable_wayland = false
@@ -135,7 +135,7 @@ in
       },
       {
         key = "w",
-        mods = "CTRL",
+        mods = "CTRL|SHIFT",
         action = wezterm.action {CloseCurrentTab = {confirm = false}}
       },
       {
@@ -174,7 +174,7 @@ in
       split = "${bg-contrast}",
 
       tab_bar = {
-        background = "#000000",
+        background = "${bg}",
         active_tab = {
           bg_color = "${blue}",
           fg_color = "${fg}"
@@ -188,7 +188,7 @@ in
           fg_color = "${fg}"
         },
         new_tab = {
-          bg_color = "#000000",
+          bg_color = "${bg-contrast}",
           fg_color = "${fg}"
         },
         new_tab_hover = {
@@ -198,17 +198,17 @@ in
         },
       },
 
-      visual_bell = "#000000",
+      visual_bell = "${bg-lighter}",
 
       -- nightbuild only
       compose_cursor = "${yellow}",
 
       -- Theme Colors (Inherited by Nix)
       foreground = "${fg}",
-      background = "#000000",
-      cursor_bg = "${blue}",
-      cursor_border = "${blue}",
-      cursor_fg = "#000000",
+      background = "${bg}",
+      cursor_bg = "${dimblack}",
+      cursor_border = "${dimblack}",
+      cursor_fg = "${bg}",
       selection_bg = "${black}",
       selection_fg = "${fg}",
 

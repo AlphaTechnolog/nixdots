@@ -1,5 +1,6 @@
 {
   lib,
+  src,
   stdenvNoCC,
   fetchFromGitHub,
   util-linux,
@@ -8,13 +9,7 @@ stdenvNoCC.mkDerivation {
   pname = "material-symbols";
   version = "unstable-2022-12-05";
 
-  src = fetchFromGitHub {
-    owner = "google";
-    repo = "material-design-icons";
-    rev = "c764ca99a5f24cfca7f97d98a92b259b92f903da";
-    sha256 = "sha256-J45TND4CowFCaEcybFNSI3AgyqdgvzMuTKCozh+gDe0=";
-    sparseCheckout = ["variablefont"];
-  };
+  inherit src;
 
   nativeBuildInputs = [util-linux];
 

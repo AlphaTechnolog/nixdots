@@ -47,6 +47,11 @@
       url = github:decaycs/decay-gtk/dev;
       flake = false;
     };
+
+    material-design-icons = {
+      url = github:google/material-design-icons;
+      flake = false;
+    };
   };
 
   outputs = {
@@ -82,6 +87,10 @@
             luaFormatter-src = luaFormatter;
             rxfetch-bin = pkgs.callPackage ./pkgs/rxfetch {src = rxfetch;};
             wallset = pkgs.callPackage ./pkgs/wallset {src = wallset;};
+
+            material-symbols = pkgs.callPackage ./pkgs/material-symbols.nix {
+              src = material-design-icons;
+            };
 
             patched-fonts = pkgs.callPackage ./pkgs/patched-fonts.nix {
               src = patched-fonts;

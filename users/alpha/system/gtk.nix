@@ -1,5 +1,7 @@
-{pkgs}: {
-  home.file.".icons/default".source = "${pkgs.apple-cursor}/share/icons/macOS-Monterey";
+{pkgs}: let
+  google-dot-cursor = pkgs.callPackage ../../../pkgs/google-dot-cursor.nix {};
+in {
+  home.file.".icons/default".source = "${google-dot-cursor}/share/icons/GoogleDot-White";
   home.packages = [pkgs.decay-gtk];
 
   home.sessionVariables = {
@@ -15,9 +17,9 @@
       package = papirus-icon-theme;
     };
 
-    cursorTheme = with pkgs; {
-      name = "macOS-Monterey";
-      package = apple-cursor;
+    cursorTheme = {
+      name = "GoogleDot-White";
+      package = google-dot-cursor;
     };
 
     theme.name = "Decayce";
