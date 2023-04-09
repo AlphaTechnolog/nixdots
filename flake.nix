@@ -87,6 +87,7 @@
             luaFormatter-src = luaFormatter;
             rxfetch-bin = pkgs.callPackage ./pkgs/rxfetch {src = rxfetch;};
             wallset = pkgs.callPackage ./pkgs/wallset {src = wallset;};
+            firefox-gnome-theme = pkgs.callPackage ./pkgs/firefox-gnome-theme.nix {};
 
             material-symbols = pkgs.callPackage ./pkgs/material-symbols.nix {
               src = material-design-icons;

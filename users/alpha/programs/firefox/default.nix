@@ -10,9 +10,9 @@
 
     profiles.alpha = {
       id = 0;
+
       settings."general.smoothScroll" = true;
-      userChrome = import ./userChrome-css.nix {inherit colors;};
-      userContent = import ./userContent-css.nix {};
+
       extensions = with nur.repos.rycee.firefox-addons; [
         enhanced-github
         enhancer-for-youtube
@@ -22,16 +22,16 @@
         react-devtools
         reduxdevtools
       ];
-      extraConfig = ''
-        user_pref("browser.urlbar.autoFill", false);
-        user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
-        user_pref("layers.acceleration.force-enabled", true);
-        user_pref("gfx.webrender.all", true);
-        user_pref("svg.context-properties.content.enabled", true);
-        user_pref("full-screen-api.ignore-widgets", true);
-        user_pref("media.ffmpeg.vaapi.enabled", true);
-        user_pref("media.rdd-vpx.enabled", true);
+
+      userChrome = ''
+        @import "${pkgs.firefox-gnome-theme}/share/firefox-gnome-theme/userChrome.css";
       '';
+
+      userContent = ''
+        @import "${pkgs.firefox-gnome-theme}/share/firefox-gnome-theme/userContent.css";
+      '';
+
+      extraConfig = builtins.readFile "${pkgs.firefox-gnome-theme}/share/firefox-gnome-theme/configuration/user.js";
     };
   };
 }

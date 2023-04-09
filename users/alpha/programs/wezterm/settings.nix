@@ -104,7 +104,7 @@ in
     C.default_cursor_style = "BlinkingBar"
 
     -- Window background opacity
-    C.window_background_opacity = 0.85
+    C.window_background_opacity = 1
 
     -- X is good!
     C.enable_wayland = false
@@ -206,8 +206,8 @@ in
       -- Theme Colors (Inherited by Nix)
       foreground = "${fg}",
       background = "${bg}",
-      cursor_bg = "${dimblack}",
-      cursor_border = "${dimblack}",
+      cursor_bg = "${blue}",
+      cursor_border = "${blue}",
       cursor_fg = "${bg}",
       selection_bg = "${black}",
       selection_fg = "${fg}",

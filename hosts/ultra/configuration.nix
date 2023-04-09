@@ -71,7 +71,6 @@ in {
     hostName = "ultra";
     networkmanager.enable = true;
     firewall.enable = false;
-    nameservers = ["8.8.8.8"]; # google dns works better in America/Caracas.
   };
 
   # Timezone.
