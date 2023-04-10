@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "bubbly": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1679903611,
+        "narHash": "sha256-2yJYG36mpAeMh3b9oYLuor9muJ80VpObdRzWsGDULqM=",
+        "owner": "siduck",
+        "repo": "bubbly",
+        "rev": "bfea653e78e8d0fa8099f229d905fe63b99083de",
+        "type": "github"
+      },
+      "original": {
+        "owner": "siduck",
+        "repo": "bubbly",
+        "type": "github"
+      }
+    },
     "crane": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -337,6 +353,7 @@
     },
     "root": {
       "inputs": {
+        "bubbly": "bubbly",
         "decay-gtk": "decay-gtk",
         "home-manager": "home-manager",
         "hyprland": "hyprland",

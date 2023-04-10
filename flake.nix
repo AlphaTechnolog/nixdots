@@ -52,6 +52,11 @@
       url = github:google/material-design-icons;
       flake = false;
     };
+
+    bubbly = {
+      url = github:siduck/bubbly;
+      flake = false;
+    };
   };
 
   outputs = {
@@ -103,6 +108,10 @@
 
             decay-gtk = pkgs.callPackage ./pkgs/decayce-gtk.nix {
               src = decay-gtk;
+            };
+
+            bubbly = pkgs.callPackage ./pkgs/bubbly {
+              src = bubbly;
             };
           }
       )

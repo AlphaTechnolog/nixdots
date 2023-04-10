@@ -1,0 +1,60 @@
+diff --git a/bubbles/scripts/bubbles.sh b/bubbles/scripts/bubbles.sh
+index 9b295a1..ebfdeca 100755
+--- a/bubbles/scripts/bubbles.sh
++++ b/bubbles/scripts/bubbles.sh
+@@ -1,4 +1,4 @@
+-#!/bin/dash
++#!/usr/bin/env dash
+ 
+ . /tmp/bubble_count
+ 
+diff --git a/bubbles/scripts/getkeys.sh b/bubbles/scripts/getkeys.sh
+index 2cc287c..45f206a 100755
+--- a/bubbles/scripts/getkeys.sh
++++ b/bubbles/scripts/getkeys.sh
+@@ -1,4 +1,4 @@
+-#!/bin/dash
++#!/usr/bin/env dash
+ 
+ basedir="$HOME/.local/share/bubbly"
+ 
+diff --git a/keystrokes/scripts/gen_gradient.sh b/keystrokes/scripts/gen_gradient.sh
+index 125ec55..c9adb66 100755
+--- a/keystrokes/scripts/gen_gradient.sh
++++ b/keystrokes/scripts/gen_gradient.sh
+@@ -1,4 +1,4 @@
+-#!/bin/dash
++#!/usr/bin/env dash
+ 
+ red() {
+ 	echo "background-image: radial-gradient( circle farthest-corner at 0.1% 53.8%,  rgba(255,182,172,1) 0%, rgba(255,123,172,1) 100.2% );"
+diff --git a/keystrokes/scripts/getkeys.sh b/keystrokes/scripts/getkeys.sh
+index 766667c..011c79a 100755
+--- a/keystrokes/scripts/getkeys.sh
++++ b/keystrokes/scripts/getkeys.sh
+@@ -1,4 +1,4 @@
+-#!/bin/dash
++#!/usr/bin/env dash
+ 
+ basedir="$HOME/.local/share/bubbly"
+ 
+diff --git a/selector/scripts/switchMode.sh b/selector/scripts/switchMode.sh
+index b1f539e..d7e94e4 100755
+--- a/selector/scripts/switchMode.sh
++++ b/selector/scripts/switchMode.sh
+@@ -1,4 +1,4 @@
+-#!/bin/dash
++#!/usr/bin/env dash
+ 
+ basedir="$HOME/.local/share/bubbly"
+ 
+diff --git a/start.sh b/start.sh
+index d11fbc2..3da9e53 100755
+--- a/start.sh
++++ b/start.sh
+@@ -1,4 +1,4 @@
+-#!/bin/dash
++#!/usr/bin/env dash
+ 
+ basedir="$HOME/.local/share/bubbly"
+ 

@@ -69,6 +69,8 @@
       blur-background-exclude = [
         "class_g = 'slop'"
         "class_g = 'firefox'"
+        "class_g = 'eww-bubbly'"
+        "class_g = 'eww-keystrokes'"
         "_GTK_FRAME_EXTENTS@:c"
         "window_type = 'desktop'"
         "window_type = 'menu'"

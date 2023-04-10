@@ -67,6 +67,8 @@ in {
       (import ./system/gtk.nix {inherit pkgs;})
       (import ./system/fonts {inherit pkgs;})
 
+      (import ./util/bubbly.nix {inherit pkgs;})
+
       (import ./setup/hyprland {inherit pkgs;})
       (import ./setup/awesomewm.nix)
       (import ./setup/i3.nix {inherit pkgs lib;})

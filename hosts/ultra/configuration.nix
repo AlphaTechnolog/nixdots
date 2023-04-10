@@ -85,7 +85,8 @@ in {
       dpi = 86;
       layout = "us";
       libinput.enable = true;
-      displayManager.gdm.enable = true;
+      displayManager.sddm.enable = true;
+      desktopManager.plasma5.enable = true;
     };
 
     # max journald space
