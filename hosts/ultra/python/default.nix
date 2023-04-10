@@ -8,6 +8,7 @@
         pandas
         scipy
         pygobject3
+        pkgs.material-color-utilities
       ]);
   in [
     python

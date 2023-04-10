@@ -93,6 +93,7 @@
             rxfetch-bin = pkgs.callPackage ./pkgs/rxfetch {src = rxfetch;};
             wallset = pkgs.callPackage ./pkgs/wallset {src = wallset;};
             firefox-gnome-theme = pkgs.callPackage ./pkgs/firefox-gnome-theme.nix {};
+            material-color-utilities = pkgs.callPackage ./pkgs/material-color-utilities-python.nix {};
 
             material-symbols = pkgs.callPackage ./pkgs/material-symbols.nix {
               src = material-design-icons;
