@@ -69,8 +69,11 @@ in {
   # network configuration
   networking = {
     hostName = "ultra";
-    networkmanager.enable = true;
     firewall.enable = false;
+    networkmanager = {
+      enable = true;
+      insertNameservers = ["8.8.8.8"];
+    };
   };
 
   # Timezone.

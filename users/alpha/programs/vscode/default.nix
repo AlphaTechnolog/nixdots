@@ -177,7 +177,7 @@
       };
 
       workbench = {
-        colorTheme = "Tokyo Night";
+        colorTheme = "Decay";
         iconTheme = "material-icon-theme";
         productIconTheme = "material-product-icons";
       };

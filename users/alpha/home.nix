@@ -124,6 +124,7 @@ in {
     pamixer
     spotify
     exa
+    gnome.zenity
     gcc
     gh
     ripgrep
