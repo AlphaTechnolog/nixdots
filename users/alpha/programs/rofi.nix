@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: {
   programs.rofi = {
@@ -15,7 +16,7 @@
 
     theme = let
       inherit (config.lib.formats.rasi) mkLiteral;
-    in {
+    in lib.mkForce {
       "*" = {
         font = "Inter 10";
         foreground = mkLiteral "#FFFFFFFF";

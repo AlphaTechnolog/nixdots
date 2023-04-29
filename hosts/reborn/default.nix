@@ -19,6 +19,7 @@
         config.allowUnfree = true;
       };
     }
+    inputs.nur.nixosModules.nur
     (import ../shared { inherit hostname home-manager inputs pkgs; })
     (import ./configuration.nix { inherit pkgs; })
     (import ./fonts.nix { inherit pkgs; })

@@ -1,5 +1,6 @@
-{
+{nur}: {
   imports = [
+    (import ./firefox.nix { inherit nur; })
     ./global.nix
     ./vscode.nix
     ./rofi.nix

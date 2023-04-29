@@ -1,4 +1,10 @@
-{ hostname, home-manager, inputs, pkgs, ... }: {
+{
+  hostname,
+  home-manager,
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [
     (import ./configuration.nix { inherit pkgs hostname; })
     (import ./pkgs.nix { inherit pkgs; })

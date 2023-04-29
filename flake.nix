@@ -3,6 +3,7 @@
     nixpkgs.url = github:nixos/nixpkgs;
     nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
     nix-colors.url = github:misterio77/nix-colors;
+    nur.url = github:nix-community/NUR;
 
     nvchad = {
       url = "github:NvChad/NvChad";

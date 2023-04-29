@@ -1,4 +1,5 @@
 { inputs, pkgs, system }: with inputs; [
+  nur.overlay
   (
     final: _: let
       inherit (final) system;
