@@ -5,6 +5,10 @@
     nodejs
     mongodb-compass
     postman
-    xfce.thunar
+    brightnessctl
+    light
+    xclip
+    inotify-tools
+    cinnamon.nemo
   ];
 }
