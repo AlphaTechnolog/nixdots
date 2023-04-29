@@ -70,6 +70,9 @@
     devmon.enable = true;
     udisks2.enable = true;
 
+    # blueman
+    blueman.enable = true;
+
     # printing
     printing.enable = true;
 
