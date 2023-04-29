@@ -1,6 +1,7 @@
 {nur, pkgs}: {
   imports = [
     (import ./firefox.nix { inherit nur pkgs; })
+    ./discord
     ./global.nix
     ./vscode.nix
     ./rofi.nix
