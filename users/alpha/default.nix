@@ -39,7 +39,7 @@ in {
   in lib.attrValues nur-no-packages.repos.rycee.hmModules ++ [
     nix-colors.homeManagerModules.default
     (import ./gtk.nix { inherit gtk-package pkgs scheme; })
-    (import ./programs { inherit nur; })
+    (import ./programs { inherit nur pkgs; })
     ./settings.nix
     ./xresources.nix
     ./shell.nix
