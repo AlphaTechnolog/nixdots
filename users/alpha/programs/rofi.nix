@@ -5,7 +5,6 @@
 }: {
   programs.rofi = {
     enable = true;
-    enableBase16Theme = false;
 
     extraConfig = {
       modi = "drun";

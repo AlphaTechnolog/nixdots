@@ -1,1 +1,0 @@
-uptime | sed -E 's/^[^,]*up *//; s/, *[[:digit:]]* users.*//; s/min/minutes/; s/([[:digit:]]+):0?([[:digit:]]+)/\1 hours, \2 minutes/' | sed 's/  / /g' | sed 's/, load average.*//g' | sed 's/, 1 user//g'
