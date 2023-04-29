@@ -40,6 +40,7 @@ in {
     nix-colors.homeManagerModules.default
     (import ./gtk.nix { inherit gtk-package pkgs scheme; })
     (import ./programs { inherit nur pkgs; })
+    ./xfce.nix
     ./settings.nix
     ./xresources.nix
     ./shell.nix
