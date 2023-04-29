@@ -6,6 +6,7 @@
     ./kitty.nix
     ./picom.nix
     ./neovim.nix
+    ./starship.nix
     ./xdg.nix
   ];
 }

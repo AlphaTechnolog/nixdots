@@ -25,6 +25,7 @@ in {
     (import ./gtk.nix { inherit gtk-package pkgs scheme; })
     ./settings.nix
     ./xresources.nix
+    ./shell.nix
     ./programs
   ];
 }

@@ -25,6 +25,7 @@
     (import ./docker.nix { inherit pkgs; }) 
     (import ./graphical-env.nix { inherit pkgs lib; })
     (import ./python.nix { inherit pkgs; })
+    (import ./shell.nix { inherit pkgs; })
     (import ./security.nix)
   ];
 }
