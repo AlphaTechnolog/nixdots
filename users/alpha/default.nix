@@ -43,5 +43,6 @@ in {
     ./settings.nix
     ./xresources.nix
     ./shell.nix
+    ./face.nix
   ];
 }
