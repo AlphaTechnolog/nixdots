@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     spotify
     gh
+    feh
     nodejs
     mongodb-compass
     postman
