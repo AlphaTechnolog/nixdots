@@ -1,5 +1,7 @@
 {pkgs, scheme}: {
-  services.polybar = {
+  services.polybar = let
+    dimmed = "2a2a2a";
+  in {
     enable = true;
     script = ''
       polybar main &
@@ -53,6 +55,33 @@
           font = 1;
           foreground = "#${base01}";
           background = "#${base00}";
+        };
+      };
+      "module/playerctl" = let
+        fetchSong = pkgs.writeScriptBin "fetch-song" ''
+          #!${pkgs.bash}/bin/bash
+          output="$(${pkgs.playerctl}/bin/playerctl metadata --format '{{title}}' 2>&1)"
+          if [[ "$output" == "No players found" ]]; then
+            exit 1 # it will hide its content on polybar
+          fi
+
+          echo "$output"
+        '';
+      in {
+        type = "custom/script";
+        exec = "${fetchSong}/bin/fetch-song";
+        interval = 2;
+        label = let
+          limit = 25;
+          output = "%output:0:${builtins.toString limit}:...%";
+        in {
+          text = "Listening to ${output}";
+          fail = "";
+        };
+        format = {
+          background = "#${base00}";
+          foreground = "#${base06}";
+          font = 7; # small afffff
         };
       };
       "module/powermenu-left" = {
@@ -176,6 +205,10 @@
             inherit background font;
             text = "<ramp-capacity>";
           };
+          full = {
+            inherit background font;
+            text = "<ramp-capacity>";
+          };
         };
         animation = {
           charging = {
@@ -196,6 +229,64 @@
           font = 6;
         };
       };
+      "module/workspaces-start" = {
+        type = "custom/text";
+        content = {
+          text = "";
+          font = 1;
+          foreground = "#${base01}";
+          background = "#${base00}";
+        };
+      };
+      "module/workspaces-space" = {
+        type = "custom/text";
+        content = {
+          text = " ";
+          background = "#${base01}";
+        };
+      };
+      "module/workspaces-end" = {
+        type = "custom/text";
+        content = {
+          text = "";
+          font = 1;
+          foreground = "#${base01}";
+          background = "#${base00}";
+        };
+      };
+      "module/workspaces" = {
+        type = "internal/xworkspaces";
+        pin-workspaces = true;
+        enable-click = true;
+        enable-scroll = false;
+        format = {
+          text = "<label-state>";
+          font = 5;
+          background = "#${base01}";
+        };
+        label = let
+          ghost = " ";
+          circle = " ";
+          circle-dashed = " ";
+        in {
+          active = {
+            text = ghost;
+            foreground = "#${base0D}";
+          };
+          occupied = {
+            text = circle;
+            foreground = "#${base06}";
+          };
+          urgent = {
+            text = circle-dashed;
+            foreground = "#${base08}";
+          };
+          empty = {
+            text = circle-dashed;
+            foreground = "#${dimmed}";
+          };
+        };
+      };
       "global/wm".margin.top = 5;
       "bar/main" = {
         bottom = true;
@@ -213,14 +304,15 @@
         };
         modules = let
           launcher = "launcher-start launcher-icon launcher-sep launcher-label launcher-ending space";
-          dashboard = "dashboard";
-          workspaces = "workspaces-start workspaces workspaces-end";
+          playerctl = "playerctl";
+          dashboard = "dashboard space";
+          workspaces = "workspaces-start workspaces-space workspaces workspaces-end";
           control = "meta-info-prefix battery meta-space volume meta-space brightness meta-info-sufix";
           date = "space date space";
           powermenu = "powermenu-left powermenu-button powermenu-right";
         in {
-          left = "${launcher}";
-          center = "${dashboard}";
+          left = "${launcher} ${playerctl}";
+          center = "${dashboard} ${workspaces}";
           right = "${control} ${date} ${powermenu}";
         };
         font = [
@@ -230,6 +322,7 @@
           "Inter:size=11;2"
           "Phosphor:size=13;4"
           "Phosphor:size=24;7"
+          "Inter:size=10;2"
         ];
       };
     };

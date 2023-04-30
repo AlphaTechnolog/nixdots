@@ -112,25 +112,17 @@
         </font>
       </theme>
       <desktops>
-        <!-- this stuff is only used at startup, pagers allow you to change them
-          during a session
-
-          these are default values to use when other ones are not already set
-          by other applications, or saved in your session
-
-          use obconf if you want to change these without having to log out
-          and back in -->
         <number>6</number>
         <firstdesk>1</firstdesk>
         <names>
-          <!-- set names up here if you want to, like this:
-        <name>desktop 1</name>
-        <name>desktop 2</name>
-        -->
+          <name>I</name>
+          <name>II</name>
+          <name>III</name>
+          <name>IV</name>
+          <name>V</name>
+          <name>VI</name>
         </names>
-        <popupTime>0</popupTime>
-        <!-- The number of milliseconds to show the popup for when switching
-          desktops.  Set this to 0 to disable the popup. -->
+        <popupTime>875</popupTime>
       </desktops>
       <resize>
         <drawContents>yes</drawContents>

@@ -28,7 +28,10 @@ in {
         b = substring 4 2 inputString;
       };
     in hex;
-    colors = lib.mapAttrs (name: value: { hex = toHexColor value; }) scheme.colors;
+    colors = lib.mapAttrs (name: value:
+      if (builtins.substring 0 4 name) != "base" then null
+      else { hex = toHexColor value; }
+    ) scheme.colors;
   in { inherit colors; };
 
   imports = let
