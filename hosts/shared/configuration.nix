@@ -60,7 +60,7 @@
   # making the user with default dummy password.
   users.users.alpha = {
     isNormalUser = true;
-    extraGroups = ["wheel"];
+    extraGroups = ["wheel" "audio" "video"];
     initialPassword = "alpha123.";
   };
 

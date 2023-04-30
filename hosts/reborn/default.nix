@@ -16,7 +16,10 @@
     {
       nixpkgs = {
         inherit overlays;
-        config.allowUnfree = true;
+        config = {
+          allowUnfree = true;
+          pulseaudio = true;
+        };
       };
     }
     inputs.nur.nixosModules.nur
