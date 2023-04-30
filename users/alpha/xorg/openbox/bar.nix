@@ -39,7 +39,7 @@
         type = "custom/text";
         click-left = "${pkgs.rofi}/bin/rofi -show drun";
         content = {
-          text = " Apps ";
+          text = "  Applications ";
           font = 3;
           background = "#${base01}";
           foreground = "#${base06}";
