@@ -1,6 +1,6 @@
 {pkgs, scheme}: {
   services.polybar = let
-    dimmed = "2a2a2a";
+    dimmed = "494d52";
   in {
     enable = true;
     script = ''

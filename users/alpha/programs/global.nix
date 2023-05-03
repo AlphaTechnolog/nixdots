@@ -8,6 +8,8 @@
     postman
     brightnessctl
     light
+    emacs
+    google-chrome
     xclip
     inotify-tools
     cinnamon.nemo

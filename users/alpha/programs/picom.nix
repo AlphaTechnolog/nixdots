@@ -72,6 +72,7 @@
         "_GTK_FRAME_EXTENTS@:c"
         "window_type = 'desktop'"
         "window_type = 'menu'"
+        "window_type = 'dock'"
       ];
 
       mark-wmwin-focused = true;

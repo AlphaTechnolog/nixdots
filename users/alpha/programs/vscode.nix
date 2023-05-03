@@ -5,6 +5,18 @@
     enableUpdateCheck = false;
     extensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
+        name = "decay";
+        publisher = "decaycs";
+        version = "1.0.9";
+        sha256 = "sha256-TwDq8K757CTFEBBBGbP5eOC5nMrQzgf/XYIHi9UCAkU=";
+      }
+      {
+        name = "python";
+        publisher = "ms-python";
+        version = "2023.6.1";
+        sha256 = "sha256-aLsk9sm+bBjiB2fRLPgw85U2MakBh5QSve6OVLxJyjY=";
+      }
+      {
         name = "theme-vitesse";
         publisher = "antfu";
         version = "0.6.4";
@@ -47,9 +59,10 @@
         smoothScrolling = true;
         cursorSmoothCaretAnimation = "on";
         tabSize = 2;
+        bracketPairColorization.enabled = false;
       };
       workbench = {
-        colorTheme = "Vitesse Dark";
+        colorTheme = "Decay";
         iconTheme = "symbols";
         productIconTheme = "icons-carbon";
       };
