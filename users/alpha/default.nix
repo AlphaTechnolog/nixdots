@@ -2,26 +2,26 @@
   lib = pkgs.lib;
 
   scheme = {
-    slug = "ashes";
-    name = "ashes";
-    author = "ashes";
+    slug = "decay";
+    name = "decay";
+    author = "decay";
     colors = {
-      base00 = "1c2023";
-      base01 = "272b2e";
-      base02 = "303437";
-      base03 = "44484b";
-      base04 = "adb3ba";
+      base00 = "0d0f13";
+      base01 = "161a21";
+      base02 = "1f242e";
+      base03 = "394254";
+      base04 = "b6beca";
       base05 = "c7ccd1";
       base06 = "dfe2e5";
       base07 = "f3f4f5";
-      base08 = "c7ae95";
-      base09 = "c7c795";
-      base0A = "aec795";
-      base0B = "95c7ae";
-      base0C = "95aec7";
-      base0D = "ae95c7";
-      base0E = "c795ae";
-      base0F = "c79595";
+      base08 = "f1747b";
+      base09 = "ffd1a6";
+      base0A = "ffd9a0";
+      base0B = "96d1f8";
+      base0C = "7bcea0";
+      base0D = "75a2dd";
+      base0E = "e498e7";
+      base0F = "c898e7";
     };
   };
 in {

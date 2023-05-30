@@ -5,8 +5,8 @@
     nix-colors.url = github:misterio77/nix-colors;
     nur.url = github:nix-community/NUR;
 
-    nvchad = {
-      url = "github:NvChad/NvChad";
+    nvim-config = {
+      url = "github:alphatechnolog/nvim";
       flake = false;
     };
 

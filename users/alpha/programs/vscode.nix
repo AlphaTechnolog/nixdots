@@ -11,6 +11,12 @@
         sha256 = "sha256-TwDq8K757CTFEBBBGbP5eOC5nMrQzgf/XYIHi9UCAkU=";
       }
       {
+        name = "one-monokai";
+        publisher = "azemoh";
+        version = "0.5.0";
+        sha256 = "sha256-ardM7u9lXkkTTPsDVqTl4yniycERYdwTzTQxaa4dD+c=";
+      }
+      {
         name = "python";
         publisher = "ms-python";
         version = "2023.6.1";
@@ -62,7 +68,7 @@
         bracketPairColorization.enabled = false;
       };
       workbench = {
-        colorTheme = "Decay";
+        colorTheme = "One Monokai";
         iconTheme = "symbols";
         productIconTheme = "icons-carbon";
       };

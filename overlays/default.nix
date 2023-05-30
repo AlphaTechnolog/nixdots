@@ -8,7 +8,7 @@
         awesome = awesome-git;
         picom = picom-git;
       }) // {
-        nvchad-source = inputs.nvchad;
+        nvim-config-source = inputs.nvim-config;
       }
   )
 ]
