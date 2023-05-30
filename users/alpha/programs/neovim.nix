@@ -1,6 +1,14 @@
 {pkgs, ...}: {
-  # unzip needed for some tools.
-  home.packages = [pkgs.neovim pkgs.unzip];
+  # installing dev tools
+  home.packages = with pkgs; [
+    neovim
+    unzip
+    sumneko-lua-language-server
+    clang
+    clang-tools
+  ];
+
+  # installing nvim config if needed
   home.activation.installNvchad = ''
     if ! test -d ~/.config/nvim; then
       mkdir -p ~/.config/nvim

@@ -10,8 +10,20 @@
   # nix version, don't change without caution
   system.stateVersion = "22.11"; # read the comment before changing please
 
-  # enable flakes
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  # configuring nix
+  nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = "experimental-features = nix-command flakes";
+    settings = {
+      experimental-features = ["nix-command" "flakes"];
+      auto-optimise-store = true;
+    };
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
+  };
 
   # sound
   sound.enable = true;

@@ -40,6 +40,22 @@
         "type": "github"
       }
     },
+    "cutefetch-source": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1685410136,
+        "narHash": "sha256-m+o7IVny+FCNvdXjH0cjmC/q8H5xT69oqC83EWNFuNU=",
+        "owner": "alphatechnolog",
+        "repo": "cutefetch",
+        "rev": "4a3d4df1b5b7114551708271ed08369c194af15e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "alphatechnolog",
+        "repo": "cutefetch",
+        "type": "github"
+      }
+    },
     "emacs": {
       "inputs": {
         "flake-utils": "flake-utils_2",
@@ -293,11 +309,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1685402758,
-        "narHash": "sha256-IZWiOlVrVQlVQM13cy97oOibYbapB/a+rey3ignrbWk=",
+        "lastModified": 1685407271,
+        "narHash": "sha256-8e9NOm0twooinxHGN81l7r7mSJJvmFXRWEvNClJ8ueQ=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "1faabc69e7400bf8e5a3dce3545d5db6da2ad307",
+        "rev": "840de0c8ee94c92dabfe20c2e400105ba95e7ad9",
         "type": "github"
       },
       "original": {
@@ -324,6 +340,7 @@
     },
     "root": {
       "inputs": {
+        "cutefetch-source": "cutefetch-source",
         "home-manager": "home-manager",
         "nix-colors": "nix-colors",
         "nixpkgs": "nixpkgs",

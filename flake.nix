@@ -10,6 +10,11 @@
       flake = false;
     };
 
+    cutefetch-source = {
+      url = github:alphatechnolog/cutefetch;
+      flake = false;
+    };
+
     home-manager = {
       url = github:nix-community/home-manager;
       inputs.nixpkgs.follows = "nixpkgs";
