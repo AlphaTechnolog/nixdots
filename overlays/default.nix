@@ -8,7 +8,6 @@
         awesome = awesome-git;
         picom = picom-git;
       }) // {
-        nvim-config-source = inputs.nvim-config;
         cutefetch-source = imputs.cutefetch-source;
       }
   )

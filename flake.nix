@@ -5,11 +5,6 @@
     nix-colors.url = github:misterio77/nix-colors;
     nur.url = github:nix-community/NUR;
 
-    nvim-config = {
-      url = "github:alphatechnolog/nvim";
-      flake = false;
-    };
-
     cutefetch-source = {
       url = github:alphatechnolog/cutefetch;
       flake = false;
