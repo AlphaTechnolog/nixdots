@@ -5,7 +5,10 @@
       home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
-        users.alpha.imports = [../../users/alpha];
+        users.alpha.imports = [
+          inputs.nixvim.homeManagerModules.nixvim
+          ../../users/alpha
+        ];
       };
     }
   ];
