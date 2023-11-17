@@ -7,5 +7,6 @@ in {
     wget
     git
     cutefetch
+    firefox
   ];
 }

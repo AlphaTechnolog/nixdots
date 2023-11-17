@@ -8,18 +8,6 @@
       bbenoist.nix
     ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
       {
-        name = "decay";
-        publisher = "decaycs";
-        version = "1.0.9";
-        sha256 = "sha256-TwDq8K757CTFEBBBGbP5eOC5nMrQzgf/XYIHi9UCAkU=";
-      }
-      {
-        name = "one-monokai";
-        publisher = "azemoh";
-        version = "0.5.0";
-        sha256 = "sha256-ardM7u9lXkkTTPsDVqTl4yniycERYdwTzTQxaa4dD+c=";
-      }
-      {
         name = "python";
         publisher = "ms-python";
         version = "2023.6.1";
@@ -51,24 +39,25 @@
       }
     ];
     userSettings = {
-      terminal.integrated.fontSize = 16;
       "[python]".editor.tabSize = 4;
       "[php]".editor.tabSize = 4;
       "[java]".editor.tabSize = 4;
       "[rust]".editor.tabSize = 4;
-      symbols.hidesExplorerArrows = false;
+      "[c]".editor.tabSize = 4;
+      "[cpp]".editor.tabSize = 4;
+      "symbols.hidesExplorerArrows" = false;
+      terminal.integrated.fontSize = 12;
+      html.autoCreateQuotes = false;
       editor = {
         fontFamily = "monospace";
-        fontSize = 18;
+        fontWeight = "bold";
+        fontSize = 13;
         fontLigatures = true;
-        lineHeight = 28;
-        smoothScrolling = true;
-        cursorSmoothCaretAnimation = "on";
         tabSize = 2;
         bracketPairColorization.enabled = false;
       };
       workbench = {
-        colorTheme = "One Monokai";
+        colorTheme = "Vitesse Dark";
         iconTheme = "symbols";
         productIconTheme = "icons-carbon";
       };

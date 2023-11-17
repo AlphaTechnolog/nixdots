@@ -1,16 +1,9 @@
-{ hostname, pkgs, ... }: {
-  # loads the hardware configuration
-  imports = [
-    ./hardware-configuration.nix
-  ];
+{ hostname, pkgs, ...}: {
+  imports = [./hardware-configuration.nix];
 
-  # timezone
   time.timeZone = "America/Caracas";
+  system.stateVersion = "23.11";
 
-  # nix version, don't change without caution
-  system.stateVersion = "22.11"; # read the comment before changing please
-
-  # configuring nix
   nix = {
     package = pkgs.nixFlakes;
     extraOptions = "experimental-features = nix-command flakes";
@@ -25,88 +18,71 @@
     };
   };
 
-  # sound
   sound.enable = true;
 
-  # hardware configuration
   hardware = {
     bluetooth.enable = true;
     pulseaudio.enable = true;
     opengl.enable = true;
   };
 
-  # booting configuration
   boot = {
     kernelPackages = pkgs.linuxPackages_xanmod_latest;
-    kernelParams = [
-      "i8042.dumbkbd"
-    ];
+    tmp = {
+      useTmpfs = true;
+      tmpfsSize = "95%";
+    };
     loader = {
       systemd-boot.enable = false;
       efi = {
         canTouchEfiVariables = true;
-        efiSysMountPoint = "/boot";
+        efiSysMountPoint = "/boot/efi";
       };
       grub = {
         enable = true;
         device = "nodev";
         efiSupport = true;
         useOSProber = true;
-        gfxmodeEfi = "1920x1080";
+        gfxmodeEfi = "1360x768";
       };
     };
   };
 
-  # networking, loading hostname, disabling firewall and enabling
-  # networkmanager which is the most easiest manager for the networks.
   networking = {
     hostName = hostname;
-    firewall.enable = false; # ik security issues but i don't care
+    firewall.enable = false; # idcr
     networkmanager = {
       enable = true;
       insertNameservers = ["8.8.8.8"];
     };
   };
 
-  # making the user with default dummy password.
   users.users.alpha = {
     isNormalUser = true;
     extraGroups = ["wheel" "audio" "video"];
     initialPassword = "alpha123.";
   };
 
-  # some services.
   services = {
-    # auto usb mounting
     devmon.enable = true;
     udisks2.enable = true;
-
-    # blueman
     blueman.enable = true;
-
-    # printing
     printing.enable = true;
-
-    # battery
     upower.enable = true;
 
-    # X server, graphical environments.
     xserver = {
       enable = true;
       layout = "us";
       libinput.enable = true;
     };
 
-    # space issues solving.
     journald.extraConfig = ''
       SystemMaxUse=2G
     '';
 
-    # gnome glib-networking and gnome-keyring
     gnome = {
       glib-networking.enable = true;
       gnome-keyring.enable = true;
     };
   };
 }
-

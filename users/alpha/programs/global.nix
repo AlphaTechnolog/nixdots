@@ -4,13 +4,10 @@
     gh
     feh
     nodejs
-    mongodb-compass
-    postman
     brightnessctl
     light
     xclip
     inotify-tools
-    cinnamon.nemo
     cargo
     rustc
     rust-analyzer

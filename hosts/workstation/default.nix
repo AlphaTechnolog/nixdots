@@ -11,7 +11,7 @@
 
   modules = let
     lib = pkgs.lib;
-    hostname = "reborn";
+    hostname = "workstation";
   in [
     {
       nixpkgs = {
@@ -22,11 +22,10 @@
         };
       };
     }
-    inputs.nur.nixosModules.nur
     (import ../shared { inherit hostname home-manager inputs pkgs; })
     (import ./configuration.nix { inherit pkgs inputs; })
-    (import ./fonts.nix { inherit pkgs; })
-    (import ./docker.nix { inherit pkgs; }) 
+    (import ./fonts.nix { inherit pkgs inputs; })
+    (import ./docker.nix { inherit pkgs; })
     (import ./graphical-env.nix { inherit pkgs lib; })
     (import ./python.nix { inherit pkgs; })
     (import ./shell.nix { inherit pkgs; })

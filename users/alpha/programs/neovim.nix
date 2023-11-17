@@ -1,5 +1,4 @@
-{pkgs, ...}: {
-  # installing dev tools
+{ pkgs, ... }: {
   home.packages = with pkgs; [
     neovim
     unzip
@@ -8,14 +7,15 @@
     clang-tools
   ];
 
-  # installing nvim config if needed
-  home.activation.installNvchad = ''
-    if ! test -d ~/.config/nvim; then
-      mkdir -p ~/.config/nvim
-      git clone https://github.com/alphatechnolog/nvim ~/.config/nvim
-      chown -R $(whoami):wheel ~/.config/nvim
-      chown -R $(whoami):wheel ~/.config/nvim/*
-      chmod -R 777 ~/.config/nvim ~/.config/nvim/*
+  home.activation.installNvChad = let
+    git = "${pkgs.git}/bin/git";
+    config-source = "https://github.com/nvchad/nvchad.git";
+    dest = "~/.config/nvim";
+  in ''
+    if ! test -d ${dest}; then
+      mkdir -pv ${dest}
+      ${git} clone ${config-source} ${dest} --depth=1
+      chown -R $(whoami):wheel ${dest}
     fi
   '';
 }

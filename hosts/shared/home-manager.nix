@@ -5,13 +5,7 @@
       home-manager = {
         useGlobalPkgs = true;
         useUserPackages = true;
-        extraSpecialArgs = { inherit (inputs) nix-colors; };
-        users.alpha.imports = [
-          (import ../../users/alpha {
-            inherit pkgs;
-            inherit (inputs) nix-colors;
-          })
-        ];
+        users.alpha.imports = [../../users/alpha];
       };
     }
   ];

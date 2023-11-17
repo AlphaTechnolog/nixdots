@@ -1,6 +1,6 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   home.packages = with pkgs; [
-    exa
+    eza
     bat
   ];
 
@@ -18,10 +18,10 @@
     set fish_color_param brwhite
     set fish_color_quote bryellow
     set PATH "$PATH:$HOME/.local/bin"
-    set TERM "tmux-256color"
 
-    alias cat="bat"
-    alias ls="exa --icons"
+    alias cat="bat --paging=never --style=plain --theme=base16"
+    alias ls="eza --icons"
+    alias la="ls -la"
     alias tree="ls --tree"
 
     function __fish_command_not_found_handler --on-event fish_command_not_found

@@ -3,8 +3,7 @@
   config,
   pkgs,
   ...
-}:
-with lib; let
+}: with lib; let
   browser = ["firefox.desktop"];
   associations = {
     "application/x-extension-htm" = browser;

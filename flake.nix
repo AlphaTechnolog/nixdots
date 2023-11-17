@@ -1,34 +1,35 @@
 {
   inputs = {
     nixpkgs.url = github:nixos/nixpkgs;
-    nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
-    nix-colors.url = github:misterio77/nix-colors;
-    nur.url = github:nix-community/NUR;
+    nixpkgs-2fk.url = github:moni-dz/nixpkgs-f2k;
 
+    # source code for some packages
+    sf-mono-liga-src = {
+      url = github:shaunsingh/SFMono-Nerd-Font-Ligaturized;
+      flake = false;
+    };
     cutefetch-source = {
       url = github:alphatechnolog/cutefetch;
       flake = false;
     };
-
     home-manager = {
       url = github:nix-community/home-manager;
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: let
+  outputs = { self, nixpkgs, home-manager, ... } @inputs: let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
-    overlays = import ./overlays { inherit inputs pkgs system; };
+    overlays = import ./overlays { inherit pkgs system inputs; };
   in {
-    nixosConfigurations.reborn = import ./hosts/reborn {
+    nixosConfigurations.workstation = import ./hosts/workstation {
       inherit
         nixpkgs
         home-manager
         system
         pkgs
-        inputs
-        overlays;
+        overlays
+        inputs;
     };
   };
 }
