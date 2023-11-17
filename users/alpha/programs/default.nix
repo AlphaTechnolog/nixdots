@@ -1,5 +1,6 @@
 { pkgs }: {
   imports = [
+    ./general.nix
     ./alacritty.nix
     ./global.nix
     ./neovim.nix
