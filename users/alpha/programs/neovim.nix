@@ -48,6 +48,16 @@
           noremap = true;
         };
       }) shortcuts;
+    in mapped-shortcuts) ++ (let
+      navkeys = ["h" "j" "k" "l"];
+      mapped-shortcuts = map (key: {
+        action = "<C-w>${key}";
+        key = "<C-${key}>";
+        options = {
+          silent = true;
+          noremap = true;
+        };
+      }) navkeys;
     in mapped-shortcuts);
     plugins = {
       nvim-autopairs.enable = true;
@@ -66,7 +76,7 @@
         enable = true;
         indent = true;
         ensureInstalled = [
-          "c" "cpp" "lua"
+          "c" "cpp" "lua" "nix"
           "javascript" "typescript"
           "tsx" "bash" "python"
           "rust" "html" "css"
