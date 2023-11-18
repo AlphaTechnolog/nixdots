@@ -2,11 +2,13 @@
   fonts = {
     packages = let
       material-symbols = pkgs.callPackage ../../derivs/material-symbols.nix {}; 
+      iosevkanf = pkgs.nerdfonts.override { fonts = ["Iosevka" ]; };
       sf-mono-liga-bin = pkgs.callPackage ../../derivs/sfmono.nix {
         src = inputs.sf-mono-liga-src;
       };
     in with pkgs; [
       sf-mono-liga-bin
+      iosevkanf
       material-symbols
       inter
       lato
@@ -28,7 +30,7 @@
       subpixel.lcdfilter = "default";
       defaultFonts = {
         emoji = ["Noto Color Emoji"];
-        monospace = ["Liga SFMono Nerd Font"];
+        monospace = ["Iosevka Nerd Font"];
         sansSerif = ["Roboto" "Noto Sans" "Noto Color Emoji"];
         serif = ["Roboto" "Noto Serif" "Noto Color Emoji"];
       };
