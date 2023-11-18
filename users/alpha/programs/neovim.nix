@@ -1,13 +1,24 @@
 { pkgs, ... }: {
+  home.packages = [pkgs.ripgrep];
   programs.nixvim = {
     enable = true;
-    colorscheme = "mountain";
     extraPlugins = let
       mountain = pkgs.callPackage ../../../derivs/mountain.vim.nix {};
-    in [mountain]; 
+      decay = pkgs.callPackage ../../../derivs/decay.nvim.nix {};
+    in [mountain decay];
+    extraConfigLua = ''
+      vim.cmd [[ autocmd VimLeave * set guicursor=n:hor10 ]]
+      require("decay").setup {
+        options = {
+          scheme = "rustic",
+        }
+      }
+    '';
     options = {
       termguicolors = true;
       number = true;
+      wrap = false;
+      guicursor = "i:hor10";
       showmode = false;
       cmdheight = 0;
       shiftwidth = 2;
@@ -17,7 +28,40 @@
       clipboard = "unnamedplus";
       laststatus = 0;
     };
+    keymaps = [
+      {
+        action = "<cmd>NvimTreeToggle<cr>";
+        key = "<C-n>";
+        options = {
+          silent = true;
+          noremap = true;
+        };
+      }
+    ] ++ (let
+      shortcuts = ["jk" "kj" "jj" "kk"];
+      mapped-shortcuts = map (key: {
+        action = "<esc>";
+        mode = "i";
+        inherit key;
+        options = {
+          silent = true;
+          noremap = true;
+        };
+      }) shortcuts;
+    in mapped-shortcuts);
     plugins = {
+      nvim-autopairs.enable = true;
+      nvim-tree = {
+        enable = true;
+        disableNetrw = true;
+      };
+      telescope = {
+        enable = true;
+        keymaps = {
+          "<space>ff" = "find_files";
+          "<space>fg" = "live_grep";
+        };
+      };
       treesitter = {
         enable = true;
         indent = true;
