@@ -15,6 +15,40 @@ local function clip(num, min_num, max_num)
   return max(min(num, max_num), min_num)
 end
 
+-- Color utils extracted from tokyonight.nvim
+function _color.blend(foreground, background, alpha)
+  alpha = type(alpha) == "string" and (tonumber(alpha, 16) / 0xff) or alpha
+
+  local function hex_to_rgb(c)
+    c = string.lower(c)
+    return {
+      tonumber(c:sub(2, 3), 16),
+      tonumber(c:sub(4, 5), 16),
+      tonumber(c:sub(6, 7), 16),
+    }
+  end
+
+  local bg, fg = hex_to_rgb(background), hex_to_rgb(foreground)
+
+  local function blend_channel(i)
+    local ret = (alpha * fg[i] + ((1 - alpha) * bg[i]))
+    return math.floor(math.min(math.max(0, ret), 255) + 0.5)
+  end
+
+  return string.format("#%02x%02x%02x", blend_channel(1), blend_channel(2), blend_channel(3))
+end
+
+-- Darkens a color, mostly used for blending of colors to the dark
+function _color.sutil_darken(hex, amount, bg)
+  return _color.blend(hex, bg or "#000000", amount)
+end
+
+-- Lightens a color, see `_color.sutil_darken` to read the purpose of these
+-- kind of functions, and why using these rather than `_color.lighten` (per example)
+function _color.sutil_lighten(hex, amount, fg)
+  return _color.blend(hex, fg or "#ffffff", amount)
+end
+
 -- Converts the given hex color to hsv
 function _color.hex_to_hsv(color)
   local color = _color.hex_to_rgba(color)
