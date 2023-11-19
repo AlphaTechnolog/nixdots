@@ -10,7 +10,7 @@
       vim.cmd [[ autocmd VimLeave * set guicursor=n:hor10 ]]
       require("decay").setup {
         options = {
-          scheme = "default",
+          scheme = "rustic",
         }
       }
     '';
