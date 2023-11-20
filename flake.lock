@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "apple-cursor-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1676710395,
+        "narHash": "sha256-2EH+6PE2ABeyUSUgXShKTZDfNp/P/vIaXHlZhweiyOA=",
+        "owner": "ful1e5",
+        "repo": "apple_cursor",
+        "rev": "7af6c433dc72d0f2eab022e7e8c1bb989a4bb468",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ful1e5",
+        "repo": "apple_cursor",
+        "type": "github"
+      }
+    },
     "beautysh": {
       "inputs": {
         "nixpkgs": [
@@ -206,6 +222,22 @@
       "original": {
         "owner": "nix-community",
         "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "materia-theme-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1674682848,
+        "narHash": "sha256-I6hpH0VTmftU4+/pRbztuTQcBKcOFBFbNZXJL/2bcgU=",
+        "owner": "nana-4",
+        "repo": "materia-theme",
+        "rev": "6e5850388a25f424b8193fe4523504d1dc364175",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nana-4",
+        "repo": "materia-theme",
         "type": "github"
       }
     },
@@ -445,8 +477,10 @@
     },
     "root": {
       "inputs": {
+        "apple-cursor-src": "apple-cursor-src",
         "cutefetch-source": "cutefetch-source",
         "home-manager": "home-manager",
+        "materia-theme-src": "materia-theme-src",
         "nixpkgs": "nixpkgs",
         "nixpkgs-2fk": "nixpkgs-2fk",
         "nixvim": "nixvim",

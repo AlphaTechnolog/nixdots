@@ -11,5 +11,6 @@
     cargo
     rustc
     rust-analyzer
+    cinnamon.nemo
   ];
 }

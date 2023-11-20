@@ -19,6 +19,16 @@
       flake = false;
     };
 
+    materia-theme-src = {
+      url = github:nana-4/materia-theme;
+      flake = false;
+    };
+
+    apple-cursor-src = {
+      url = github:ful1e5/apple_cursor;
+      flake = false;
+    };
+
     cutefetch-source = {
       url = github:alphatechnolog/cutefetch;
       flake = false;
