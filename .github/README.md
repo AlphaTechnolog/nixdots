@@ -16,6 +16,13 @@ My personal dotfiles for a Nix-Managed Operative System (NixOS).
 
 ![wayland](./assets/wayland.png)
 
+> [!TIP]
+> If you're looking for a (imo) very better structured nixos configuration, you could
+> look at my new maintained nixos configuration [nixmoment](https://github.com/alphatechnolog/nixmoment)
+> imo it's far organised and i've put more nix experience in the building process of it
+> this one could be pretty outdated when it comes to packages and you may experience
+> issues when updating the system now since things could've changed a lot
+
 ## Installation
 
 To install it see the next steps:
